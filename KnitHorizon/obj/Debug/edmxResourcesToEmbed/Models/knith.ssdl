@@ -1,0 +1,2415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="knithModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Advance_Mast">
+    <Key>
+      <PropertyRef Name="VNO" />
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="VNO" Type="int" Nullable="false" />
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="AMT" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="BalAmt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="INST" Type="int" />
+    <Property Name="InstBal" Type="int" />
+    <Property Name="ADVON" Type="datetime" />
+    <Property Name="acct_Vno" Type="int" />
+    <Property Name="Acct_Vdate" Type="datetime" />
+    <Property Name="ChqNo" Type="varchar" MaxLength="15" />
+    <Property Name="ChqDate" Type="datetime" />
+    <Property Name="Bank_Name" Type="varchar" MaxLength="50" />
+    <Property Name="WEFrom" Type="datetime" />
+    <Property Name="EffectedFrom" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ADVance_Trans">
+    <Key>
+      <PropertyRef Name="VNo" />
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Comp_Code" />
+      <PropertyRef Name="InstNo" />
+    </Key>
+    <Property Name="VNo" Type="int" Nullable="false" />
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="InstNo" Type="int" Nullable="false" />
+    <Property Name="AdvTotAmt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="AdvDedAmt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="PDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ATTENDANCE">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="WDATE" />
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="WDATE" Type="datetime" Nullable="false" />
+    <Property Name="SNO" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="12" />
+    <Property Name="STATUS" Type="varchar" MaxLength="1" />
+    <Property Name="LType" Type="varchar" MaxLength="10" />
+    <Property Name="Time_Out_Date" Type="datetime" />
+    <Property Name="TIME_IN" Type="datetime" />
+    <Property Name="TIME_OUT" Type="datetime" />
+    <Property Name="PER" Type="varchar" MaxLength="1" />
+    <Property Name="LNodeduct" Type="char" MaxLength="1" />
+    <Property Name="ENodeduct" Type="char" MaxLength="1" />
+    <Property Name="LPer" Type="char" MaxLength="1" />
+    <Property Name="EPer" Type="char" MaxLength="1" />
+    <Property Name="AUTH" Type="varchar" MaxLength="80" />
+    <Property Name="shift" Type="varchar" MaxLength="1" />
+    <Property Name="Time_Worked" Type="nvarchar" MaxLength="50" />
+    <Property Name="Time_tobeCal" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="TrType" Type="char" MaxLength="1" />
+    <Property Name="UserId" Type="varchar" MaxLength="20" />
+    <Property Name="LNo" Type="int" />
+    <Property Name="Freeze" Type="char" MaxLength="1" />
+    <Property Name="late" Type="int" />
+    <Property Name="lc" Type="int" />
+    <Property Name="eo" Type="int" />
+    <Property Name="ot" Type="int" />
+  </EntityType>
+  <EntityType Name="AttendIntegrity">
+    <Key>
+      <PropertyRef Name="Eno" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="CheckFDate" Type="datetime" Nullable="false" />
+    <Property Name="CheckTDate" Type="datetime" Nullable="false" />
+    <Property Name="Checked" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="AttendSummary">
+    <Key>
+      <PropertyRef Name="EmpNo" />
+      <PropertyRef Name="CurMonth" />
+      <PropertyRef Name="CurYear" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="EmpNo" Type="int" Nullable="false" />
+    <Property Name="CurMonth" Type="int" Nullable="false" />
+    <Property Name="CurYear" Type="int" Nullable="false" />
+    <Property Name="CL" Type="varchar" MaxLength="50" />
+    <Property Name="EL" Type="varchar" MaxLength="50" />
+    <Property Name="COFF" Type="varchar" MaxLength="50" />
+    <Property Name="LOP" Type="varchar" MaxLength="50" />
+    <Property Name="Holidays" Type="int" />
+    <Property Name="PresentDays" Type="int" />
+    <Property Name="Total" Type="int" />
+    <Property Name="UserId" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.attnupdate_log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="attnupdate_log">
+    <Key>
+      <PropertyRef Name="attndate" />
+    </Key>
+    <Property Name="attndate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Auth_Master">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="smallint" Nullable="false" />
+    <Property Name="Auth_Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BiAnnualReport">
+    <Key>
+      <PropertyRef Name="BiAnnualYear" />
+      <PropertyRef Name="BiAnnualMonth" />
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="FormType" Type="varchar" MaxLength="50" />
+    <Property Name="BiAnnualYear" Type="int" Nullable="false" />
+    <Property Name="BiAnnualMonth" Type="int" Nullable="false" />
+    <Property Name="SNo" Type="int" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="255" />
+    <Property Name="PrintAs" Type="varchar" MaxLength="255" />
+    <Property Name="Women" Type="varchar" MaxLength="50" />
+    <Property Name="Men" Type="varchar" MaxLength="50" />
+    <Property Name="Total" Type="int" />
+    <Property Name="Comments" Type="varchar" MaxLength="255" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bonus">
+    <Key>
+      <PropertyRef Name="Eno" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Ename" Type="varchar" MaxLength="50" />
+    <Property Name="Doj" Type="varchar" MaxLength="50" />
+    <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Incentive" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="BonusLtStmt">
+    <Key>
+      <PropertyRef Name="Eno" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="EName" Type="varchar" MaxLength="50" />
+    <Property Name="Apr" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="May" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Jun" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Jul" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Aug" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Sep" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Oct" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Nov" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Dec" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Jan" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Feb" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Mar" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TotalSalary" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Bonus" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Coff_Requests">
+    <Key>
+      <PropertyRef Name="ReqNo" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="ReqNo" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ReqDate" Type="smalldatetime" />
+    <Property Name="Eno" Type="int" />
+    <Property Name="Shift" Type="char" MaxLength="1" />
+    <Property Name="WDate" Type="datetime" />
+    <Property Name="Stime" Type="varchar" MaxLength="20" />
+    <Property Name="CDate" Type="datetime" />
+    <Property Name="CTime" Type="varchar" MaxLength="20" />
+    <Property Name="TotHrs" Type="varchar" MaxLength="20" />
+    <Property Name="No_of_Coffs" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Purpose" Type="varchar" MaxLength="250" />
+    <Property Name="Authority" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="StatusRem" Type="varchar" MaxLength="250" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="SysName" Type="varchar" MaxLength="50" />
+    <Property Name="DayName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.COFFREQMAY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="COFFREQMAY">
+    <Key>
+      <PropertyRef Name="ReqNo" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="ReqNo" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ReqDate" Type="smalldatetime" />
+    <Property Name="Eno" Type="int" />
+    <Property Name="Shift" Type="char" MaxLength="1" />
+    <Property Name="WDate" Type="datetime" />
+    <Property Name="Stime" Type="varchar" MaxLength="20" />
+    <Property Name="CDate" Type="datetime" />
+    <Property Name="CTime" Type="varchar" MaxLength="20" />
+    <Property Name="TotHrs" Type="varchar" MaxLength="20" />
+    <Property Name="No_of_Coffs" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Purpose" Type="varchar" MaxLength="250" />
+    <Property Name="Authority" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="StatusRem" Type="varchar" MaxLength="250" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="SysName" Type="varchar" MaxLength="50" />
+    <Property Name="DayName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Coffs_Trans">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Comp_code" />
+      <PropertyRef Name="Wdate" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Comp_code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Shift" Type="char" MaxLength="1" />
+    <Property Name="Wdate" Type="datetime" Nullable="false" />
+    <Property Name="OutDate" Type="datetime" />
+    <Property Name="Time_in" Type="datetime" />
+    <Property Name="Time_out" Type="datetime" />
+    <Property Name="Total_Wtime" Type="datetime" />
+    <Property Name="No_of_Coffs" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CoffTemp">
+    <Key>
+      <PropertyRef Name="SlNo" />
+    </Key>
+    <Property Name="SlNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SNo" Type="int" />
+    <Property Name="Eno" Type="int" />
+    <Property Name="ExtraTime" Type="varchar" MaxLength="50" />
+    <Property Name="TimeIn_Date" Type="datetime" />
+    <Property Name="TimeOut_Date" Type="datetime" />
+    <Property Name="Time_In" Type="varchar" MaxLength="50" />
+    <Property Name="Time_Out" Type="varchar" MaxLength="50" />
+    <Property Name="DayName" Type="varchar" MaxLength="50" />
+    <Property Name="STime" Type="datetime" />
+    <Property Name="NoOfDays" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="YearName" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CompId" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Comp_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Comp_Descp" Type="varchar" MaxLength="250" />
+    <Property Name="Comp_Addr" Type="varchar" MaxLength="250" />
+    <Property Name="Reports_Path" Type="varchar" MaxLength="250" />
+    <Property Name="DSN" Type="varchar" MaxLength="50" />
+    <Property Name="Server_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Setup_Pass" Type="varchar" MaxLength="24" />
+    <Property Name="YearName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="YearSDate" Type="smalldatetime" />
+    <Property Name="YearCDate" Type="smalldatetime" />
+    <Property Name="DbName" Type="varchar" MaxLength="20" />
+    <Property Name="BackupDevice" Type="varchar" MaxLength="20" />
+    <Property Name="Estd_Year" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DailyAttend">
+    <Key>
+      <PropertyRef Name="Wdate" />
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Ename" />
+    </Key>
+    <Property Name="Wdate" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Ename" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TrType" Type="char" MaxLength="10" />
+    <Property Name="TimeIn" Type="varchar" MaxLength="50" />
+    <Property Name="TimeOut_Date" Type="varchar" MaxLength="50" />
+    <Property Name="TimeOut" Type="varchar" MaxLength="50" />
+    <Property Name="Shit" Type="char" MaxLength="1" />
+    <Property Name="Lper" Type="char" MaxLength="1" />
+    <Property Name="LperNDed" Type="char" MaxLength="1" />
+    <Property Name="EPer" Type="char" MaxLength="1" />
+    <Property Name="EPerNDed" Type="char" MaxLength="1" />
+    <Property Name="User_ID" Type="varchar" MaxLength="20" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+    <Property Name="worked" Type="nvarchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="DaysCount">
+    <Key>
+      <PropertyRef Name="SlNo" />
+    </Key>
+    <Property Name="SlNo" Type="int" Nullable="false" />
+    <Property Name="SWDays" Type="int" />
+    <Property Name="NoOfMDaysWkd" Type="int" />
+    <Property Name="NoOfMDaysAbsnt" Type="int" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="SlNo" />
+      <PropertyRef Name="Department" />
+    </Key>
+    <Property Name="SlNo" Type="int" Nullable="false" />
+    <Property Name="Department" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Dept_Desc" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="SlNo" />
+      <PropertyRef Name="Designation" />
+    </Key>
+    <Property Name="SlNo" Type="int" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Desg_Desc" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'knith.dbo.deviceinout' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="deviceinout">
+          <Property Name="deviceip" Type="nvarchar" MaxLength="50" />
+          <Property Name="punchtype" Type="nvarchar" MaxLength="3" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.EMP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EMP">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Comp_Code" />
+      <PropertyRef Name="ENAME" />
+      <PropertyRef Name="BASIC" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="ENAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FHGName" Type="varchar" MaxLength="80" />
+    <Property Name="AReg_Sno" Type="nvarchar" MaxLength="50" />
+    <Property Name="SEX" Type="char" MaxLength="1" />
+    <Property Name="Qualification" Type="varchar" MaxLength="255" />
+    <Property Name="DESIGNATION" Type="varchar" MaxLength="100" />
+    <Property Name="Emp_Type" Type="char" MaxLength="1" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="DOJ" Type="datetime" />
+    <Property Name="ADDR1" Type="varchar" MaxLength="80" />
+    <Property Name="ADDR2" Type="varchar" MaxLength="80" />
+    <Property Name="ADDR3" Type="varchar" MaxLength="80" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="BASIC" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="DA" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="OALL" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="HRA" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="CONV" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="ChdEduAll" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="Incentives" Type="char" MaxLength="1" />
+    <Property Name="OTST" Type="char" MaxLength="1" />
+    <Property Name="ITST" Type="char" MaxLength="1" />
+    <Property Name="ESIST" Type="char" MaxLength="1" />
+    <Property Name="PFST" Type="char" MaxLength="1" />
+    <Property Name="ottype" Type="char" MaxLength="1" />
+    <Property Name="shift" Type="char" MaxLength="1" />
+    <Property Name="OSTAY" Type="char" MaxLength="1" />
+    <Property Name="MOP" Type="char" MaxLength="1" />
+    <Property Name="PFNO" Type="varchar" MaxLength="50" />
+    <Property Name="ESINO" Type="varchar" MaxLength="50" />
+    <Property Name="PROFTAX" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="WEFROM" Type="smalldatetime" />
+    <Property Name="EMPSTATUS" Type="char" MaxLength="1" />
+    <Property Name="DOL" Type="datetime" />
+    <Property Name="Reason" Type="varchar" MaxLength="250" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="compensate" Type="char" MaxLength="1" />
+    <Property Name="TDS" Type="char" MaxLength="1" />
+    <Property Name="TDS_Amt" Type="float" />
+    <Property Name="PTSts" Type="char" MaxLength="1" />
+    <Property Name="Bank_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Bank_Ac" Type="varchar" MaxLength="50" />
+    <Property Name="Bank_Sts" Type="char" MaxLength="1" />
+    <Property Name="LIC_Sts" Type="char" MaxLength="1" />
+    <Property Name="LIC_No" Type="varchar" MaxLength="150" />
+    <Property Name="LicAmt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Dept" Type="varchar" MaxLength="100" />
+    <Property Name="RegDate" Type="datetime" />
+    <Property Name="MaritalStatus" Type="varchar" MaxLength="10" />
+    <Property Name="CoffStatus" Type="varchar" MaxLength="1" />
+    <Property Name="Grade" Type="varchar" MaxLength="5" />
+    <Property Name="RFL" Type="varchar" MaxLength="1" />
+    <Property Name="SSN" Type="varchar" MaxLength="50" />
+    <Property Name="act_gross" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="comp_gross" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="emp_multi_shift">
+    <Key>
+      <PropertyRef Name="TODAY" />
+      <PropertyRef Name="emp_Code" />
+    </Key>
+    <Property Name="TODAY" Type="datetime" Nullable="false" />
+    <Property Name="emp_Code" Type="int" Nullable="false" />
+    <Property Name="WORH" Type="char" MaxLength="1" />
+    <Property Name="Shift" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'knith.dbo.EMP_TEMP' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EMP_TEMP">
+          <Property Name="SLNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="ENAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="DESIGNATION" Type="nvarchar" MaxLength="255" />
+          <Property Name="IDNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOJ" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="EmpAttandance">
+    <Key>
+      <PropertyRef Name="Wdate" />
+    </Key>
+    <Property Name="EmpNo" Type="int" Nullable="false" />
+    <Property Name="Ename" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="Wdate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeIn" Type="varchar" MaxLength="50" />
+    <Property Name="TOutDate" Type="varchar" MaxLength="50" />
+    <Property Name="TimeOut" Type="varchar" MaxLength="50" />
+    <Property Name="TotHrs" Type="varchar" MaxLength="50" />
+    <Property Name="shift" Type="char" MaxLength="10" />
+    <Property Name="LType" Type="char" MaxLength="10" />
+    <Property Name="Per" Type="char" MaxLength="10" />
+    <Property Name="Auth" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="char" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.empyrsalreport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="empyrsalreport">
+    <Key>
+      <PropertyRef Name="comp_code" />
+      <PropertyRef Name="eno" />
+      <PropertyRef Name="pmon" />
+      <PropertyRef Name="ename" />
+    </Key>
+    <Property Name="comp_code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="eno" Type="int" Nullable="false" />
+    <Property Name="pmon" Type="datetime" Nullable="false" />
+    <Property Name="ename" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="GrossSal" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="basic" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="da" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Other_Allow" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="hra" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Conv" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="advance_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Pf_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Esi_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="ptax_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Tds_ded" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="late_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Lic_amt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Actual_Netsal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="other_ded" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="tot_ded" Type="numeric" Precision="12" Scale="2" />
+  </EntityType>
+  <EntityType Name="ESIContribution">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="ESIMonth" />
+      <PropertyRef Name="ESIYear" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="CompCode" />
+    </Key>
+    <Property Name="SNo" Type="int" Nullable="false" />
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Ename" Type="varchar" MaxLength="100" />
+    <Property Name="ESINo" Type="varchar" MaxLength="50" />
+    <Property Name="Present_Days" Type="int" />
+    <Property Name="GrossSalary" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="EmployeeShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="EmployerShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Total" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ESIMonth" Type="int" Nullable="false" />
+    <Property Name="ESIYear" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompCode" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EsiHalfYrCntrbn">
+    <Key>
+      <PropertyRef Name="Slno" />
+    </Key>
+    <Property Name="Slno" Type="int" Nullable="false" />
+    <Property Name="Eno" Type="int" />
+    <Property Name="Ename" Type="varchar" MaxLength="30" />
+    <Property Name="GrossSal" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="EsiNo" Type="int" />
+    <Property Name="Present_Days" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.EsiHalfYrTemp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EsiHalfYrTemp">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="ENAME" />
+      <PropertyRef Name="PMON" />
+      <PropertyRef Name="Comp_code" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="ENAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PMON" Type="datetime" Nullable="false" />
+    <Property Name="GrossSal" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="ESINO" Type="varchar" MaxLength="50" />
+    <Property Name="Present_Days" Type="int" />
+    <Property Name="Comp_code" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EVERYDAY">
+    <Key>
+      <PropertyRef Name="TODAY" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="TODAY" Type="datetime" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="WORH" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Shift" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ExcessELs">
+    <Key>
+      <PropertyRef Name="ENO" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="EName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotELs" Type="int" />
+    <Property Name="ExsELs" Type="int" />
+  </EntityType>
+  <EntityType Name="Form10">
+    <Key>
+      <PropertyRef Name="SlNo" />
+    </Key>
+    <Property Name="SlNo" Type="int" Nullable="false" />
+    <Property Name="PfNo" Type="int" />
+    <Property Name="EmpName" Type="varchar" MaxLength="50" />
+    <Property Name="FName" Type="varchar" MaxLength="50" />
+    <Property Name="Nominee" Type="varchar" MaxLength="50" />
+    <Property Name="Dol" Type="varchar" MaxLength="50" />
+    <Property Name="Reason" Type="varchar" MaxLength="100" />
+    <Property Name="Remarks" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Form2">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="NomName" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Ename" Type="varchar" MaxLength="50" />
+    <Property Name="NomName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NomRelation" Type="varchar" MaxLength="12" />
+    <Property Name="NomDob" Type="varchar" MaxLength="15" />
+    <Property Name="NomAdd" Type="varchar" MaxLength="50" />
+    <Property Name="GuardianName" Type="varchar" MaxLength="50" />
+    <Property Name="GuardAdd" Type="varchar" MaxLength="50" />
+    <Property Name="NomFName" Type="varchar" MaxLength="50" />
+    <Property Name="LocalOffice" Type="varchar" MaxLength="12" />
+    <Property Name="Dispensary" Type="varchar" MaxLength="15" />
+    <Property Name="PfShare" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Form5">
+    <Key>
+      <PropertyRef Name="SlNo" />
+    </Key>
+    <Property Name="SlNo" Type="int" Nullable="false" />
+    <Property Name="PfNo" Type="int" />
+    <Property Name="EmpName" Type="varchar" MaxLength="50" />
+    <Property Name="Fname" Type="varchar" MaxLength="50" />
+    <Property Name="Dob" Type="datetime" />
+    <Property Name="Sex" Type="char" MaxLength="1" />
+    <Property Name="DoF" Type="varchar" MaxLength="50" />
+    <Property Name="FundService" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FormAR">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" />
+    <Property Name="RegNo" Type="varchar" MaxLength="50" />
+    <Property Name="CompName" Type="varchar" MaxLength="50" />
+    <Property Name="CompAddr" Type="varchar" MaxLength="50" />
+    <Property Name="OccName" Type="varchar" MaxLength="50" />
+    <Property Name="OccAddr" Type="varchar" MaxLength="50" />
+    <Property Name="MgrName" Type="varchar" MaxLength="50" />
+    <Property Name="MgrAddr" Type="varchar" MaxLength="50" />
+    <Property Name="ESICode" Type="varchar" MaxLength="50" />
+    <Property Name="SSICode" Type="varchar" MaxLength="50" />
+    <Property Name="Nature" Type="text" />
+    <Property Name="WorkDays" Type="int" />
+    <Property Name="MManDays" Type="int" />
+    <Property Name="WMandays" Type="int" />
+    <Property Name="CManDays" Type="int" />
+    <Property Name="AvgMEmployed" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="AvgWEmployed" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="AvgCEmployed" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="OTMHrs" Type="varchar" MaxLength="50" />
+    <Property Name="OTWHrs" Type="varchar" MaxLength="50" />
+    <Property Name="OTCHrs" Type="varchar" MaxLength="50" />
+    <Property Name="OTMAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="OTWAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="OTCAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="AvgNoWorkers" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Salary" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="BonusAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="BonusRate" Type="int" />
+    <Property Name="WelfareAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="CDWater" Type="varchar" MaxLength="50" />
+    <Property Name="Canteen" Type="varchar" MaxLength="50" />
+    <Property Name="SafetyOfficers" Type="varchar" MaxLength="50" />
+    <Property Name="Shelters" Type="varchar" MaxLength="50" />
+    <Property Name="AmbulanceRoom" Type="varchar" MaxLength="50" />
+    <Property Name="Creche" Type="varchar" MaxLength="50" />
+    <Property Name="MedicalOfficer" Type="varchar" MaxLength="50" />
+    <Property Name="WelfareOfficer" Type="varchar" MaxLength="50" />
+    <Property Name="FatalAcc" Type="int" />
+    <Property Name="NonFatalAcc" Type="int" />
+    <Property Name="DaysLost" Type="int" />
+    <Property Name="MaternityCases" Type="int" />
+    <Property Name="MedicalCases" Type="int" />
+    <Property Name="MisCarriageCases" Type="int" />
+    <Property Name="Illnessleave" Type="int" />
+    <Property Name="MaternityAmt" Type="int" />
+    <Property Name="EntitledWorkers" Type="int" />
+    <Property Name="AllowedWorkers" Type="int" />
+    <Property Name="AnnualAmt" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="FormF">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" />
+    <Property Name="EmployerName" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="255" />
+    <Property Name="WelfareAddress" Type="varchar" MaxLength="255" />
+    <Property Name="CompName" Type="varchar" MaxLength="100" />
+    <Property Name="CompAddr" Type="varchar" MaxLength="255" />
+    <Property Name="Class" Type="varchar" MaxLength="50" />
+    <Property Name="Others" Type="varchar" MaxLength="50" />
+    <Property Name="NoofEmp" Type="int" />
+    <Property Name="NoofEmpContr" Type="int" />
+    <Property Name="EmployeeAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="EmployerAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="FullPayment" Type="varchar" MaxLength="10" />
+    <Property Name="AmtPaid" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Reasons" Type="varchar" MaxLength="255" />
+    <Property Name="PaymentMode" Type="varchar" MaxLength="50" />
+    <Property Name="DDNo" Type="varchar" MaxLength="50" />
+    <Property Name="DDDate" Type="datetime" />
+    <Property Name="BankName" Type="varchar" MaxLength="100" />
+    <Property Name="Branch" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar" MaxLength="255" />
+    <Property Name="Remarks" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.FORMR1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FORMR1">
+    <Key>
+      <PropertyRef Name="ENAME" />
+    </Key>
+    <Property Name="ENAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NO" Type="int" />
+    <Property Name="PFMon" Type="int" />
+    <Property Name="Wages" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="DOJ" Type="int" />
+    <Property Name="DOL" Type="int" />
+    <Property Name="EPF" Type="numeric" Precision="16" Scale="6" />
+    <Property Name="EPFDiff" Type="numeric" Precision="18" Scale="8" />
+    <Property Name="PensionFund" Type="numeric" Precision="19" Scale="8" />
+    <Property Name="RFL" Type="varchar" MaxLength="1" />
+    <Property Name="NCP" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.FORMR11' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FORMR11">
+    <Key>
+      <PropertyRef Name="ENAME" />
+    </Key>
+    <Property Name="ENAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NO" Type="int" />
+    <Property Name="PFMon" Type="int" />
+    <Property Name="Wages" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="DOJ" Type="int" />
+    <Property Name="DOL" Type="int" />
+    <Property Name="EPF" Type="numeric" Precision="16" Scale="6" />
+    <Property Name="EPFDiff" Type="numeric" Precision="18" Scale="8" />
+    <Property Name="PensionFund" Type="numeric" Precision="19" Scale="8" />
+    <Property Name="RFL" Type="varchar" MaxLength="1" />
+    <Property Name="NCP" Type="int" />
+  </EntityType>
+  <EntityType Name="FORMR12">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ENAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NO" Type="int" />
+    <Property Name="PFMon" Type="int" />
+    <Property Name="Wages" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="DOJ" Type="int" />
+    <Property Name="DOL" Type="int" />
+    <Property Name="EPF" Type="numeric" Precision="16" Scale="6" />
+    <Property Name="EPFDiff" Type="numeric" Precision="18" Scale="8" />
+    <Property Name="PensionFund" Type="numeric" Precision="19" Scale="8" />
+    <Property Name="RFL" Type="varchar" MaxLength="1" />
+    <Property Name="NCP" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.FURTIVE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FURTIVE">
+    <Key>
+      <PropertyRef Name="FORM" />
+    </Key>
+    <Property Name="FORM" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="OCCULT" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Grat_Payments">
+    <Key>
+      <PropertyRef Name="ENo" />
+      <PropertyRef Name="PaySno" />
+      <PropertyRef Name="CCode" />
+    </Key>
+    <Property Name="ENo" Type="int" Nullable="false" />
+    <Property Name="PaySno" Type="int" Nullable="false" />
+    <Property Name="CCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Bank_name" Type="varchar" MaxLength="100" />
+    <Property Name="PayAmount" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="PaidOn" Type="datetime" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="RefDate" Type="datetime" />
+    <Property Name="TotalAmt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="PaidTillNow" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="IncentivesStmt">
+    <Key>
+      <PropertyRef Name="Eno" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="EName" Type="varchar" MaxLength="50" />
+    <Property Name="Apr" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="May" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Jun" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Jul" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Aug" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Sep" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Oct" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Nov" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Dec" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Jan" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Feb" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Mar" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TotalSalary" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Increment">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Sno" />
+      <PropertyRef Name="Comp_code" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Sno" Type="int" Nullable="false" />
+    <Property Name="Comp_code" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="DOJ" Type="datetime" />
+    <Property Name="Start_Sal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Incr_Date" Type="datetime" />
+    <Property Name="Incr_Sal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="last_incr_date" Type="datetime" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="EffFrom" Type="varchar" MaxLength="50" />
+    <Property Name="Grade" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="LEV_MAST">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Cl_Open" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="EL_Open" Type="int" />
+    <Property Name="Coff_Open" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CL" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="EL" Type="int" />
+    <Property Name="SL" Type="int" />
+    <Property Name="ML" Type="int" />
+    <Property Name="COFF" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CLBAL" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ELBAL" Type="int" />
+    <Property Name="SLBAL" Type="int" />
+    <Property Name="MLBAL" Type="int" />
+    <Property Name="COFFBAL" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.LEV_MAST1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="LEV_MAST1">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Cl_Open" Type="int" />
+    <Property Name="EL_Open" Type="int" />
+    <Property Name="Coff_Open" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CL" Type="numeric" Precision="4" Scale="1" />
+    <Property Name="EL" Type="int" />
+    <Property Name="SL" Type="int" />
+    <Property Name="ML" Type="int" />
+    <Property Name="COFF" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CLBAL" Type="numeric" Precision="4" Scale="1" />
+    <Property Name="ELBAL" Type="int" />
+    <Property Name="SLBAL" Type="int" />
+    <Property Name="MLBAL" Type="int" />
+    <Property Name="COFFBAL" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="LEV_TRANS">
+    <Key>
+      <PropertyRef Name="LNo" />
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Comp_Code" />
+      <PropertyRef Name="LTYPE" />
+      <PropertyRef Name="LDATE" />
+    </Key>
+    <Property Name="LNo" Type="int" Nullable="false" />
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="LTYPE" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="LDATE" Type="smalldatetime" Nullable="false" />
+    <Property Name="FDATE" Type="smalldatetime" />
+    <Property Name="TDATE" Type="smalldatetime" />
+    <Property Name="No_Of_Days" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Reason" Type="varchar" MaxLength="250" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="RDate" Type="smalldatetime" />
+    <Property Name="EDate" Type="smalldatetime" />
+    <Property Name="Leave_Adate" Type="smalldatetime" />
+    <Property Name="Auth" Type="varchar" MaxLength="80" />
+    <Property Name="sno" Type="int" />
+    <Property Name="clbal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="elbal" Type="int" />
+    <Property Name="coffbal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="pldetails" Type="varchar" MaxLength="255" />
+    <Property Name="ClBalAfter" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ElBalAfter" Type="int" />
+    <Property Name="CoffBalAfter" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Freeze" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="LicStatus">
+    <Key>
+      <PropertyRef Name="eno" />
+      <PropertyRef Name="lic_NO" />
+    </Key>
+    <Property Name="eno" Type="int" Nullable="false" />
+    <Property Name="ename" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="lic_sts" Type="char" MaxLength="1" />
+    <Property Name="lic_NO" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="LicAmt" Type="numeric" Precision="18" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'knith.dbo.Operator' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Operator">
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Designation" Type="nvarchar(max)" />
+          <Property Name="Qualification" Type="nvarchar(max)" />
+          <Property Name="CardNo" Type="nvarchar(max)" />
+          <Property Name="Grade" Type="nvarchar(max)" />
+          <Property Name="DOJ" Type="nvarchar(max)" />
+          <Property Name="Salary" Type="decimal" Precision="12" Scale="2" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'knith.dbo.OperatorList' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="OperatorList">
+          <Property Name="SLNo" Type="float" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Designation" Type="nvarchar(max)" />
+          <Property Name="Qualification" Type="nvarchar(max)" />
+          <Property Name="CardNO" Type="nvarchar(max)" />
+          <Property Name="Grade" Type="float" />
+          <Property Name="DOJ" Type="nvarchar(max)" />
+          <Property Name="Salary" Type="float" />
+        </EntityType>-->
+  <EntityType Name="PAYREG">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="PMON" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="PMON" Type="datetime" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="10" />
+    <Property Name="act_basic" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_da" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_hra" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_conv" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_oallow" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_ChdEduAll" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Fdate" Type="datetime" />
+    <Property Name="Tdate" Type="datetime" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="BASIC" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="DA" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Other_allow" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="HRA" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="CONV" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="ChdEduAll" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Advance_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="IT_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="PF_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="ESI_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="PTax_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="TDS_Ded" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Late_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Lic_Amt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="OT_Amt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="GrossSal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="NetSal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Actual_NetSal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Absent_Days" Type="int" />
+    <Property Name="Present_Days" Type="int" />
+    <Property Name="Available_Days" Type="int" />
+    <Property Name="Tot_Ded" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Other_Earnings" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Other_Ded" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Other_Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="CL_Bal" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="EL_Bal" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="PrevMon_Ded" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Freeze" Type="char" MaxLength="1" />
+    <Property Name="prod_bonus" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="tiffin_bill" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="currency_rate" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="net_pay_Tk" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="FH" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="SH" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="ML" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="SL" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="ot_rate" Type="numeric" Precision="18" Scale="4" />
+    <Property Name="ot_hr" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="samplepay" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="finededuct" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="prodwages" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="otherpay" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="firststsamity" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="secondsamity" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="milk" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="advancepay" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="sampleday" Type="int" />
+    <Property Name="noworkpay" Type="numeric" Precision="18" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.Payreg1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Payreg1">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="PMON" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="PMON" Type="datetime" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="10" />
+    <Property Name="act_basic" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_da" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_hra" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_conv" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="act_oallow" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="act_ChdEduAll" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Fdate" Type="datetime" />
+    <Property Name="Tdate" Type="datetime" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="BASIC" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="DA" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Other_allow" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="HRA" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="CONV" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="ChdEduAll" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Advance_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="IT_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="PF_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="ESI_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="PTax_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="TDS_Ded" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Late_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Lic_Amt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="OT_Amt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="GrossSal" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="NetSal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Actual_NetSal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Absent_Days" Type="int" />
+    <Property Name="Present_Days" Type="int" />
+    <Property Name="Available_Days" Type="int" />
+    <Property Name="Tot_Ded" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Other_Earnings" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Other_Ded" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Other_Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="CL_Bal" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="EL_Bal" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="PrevMon_Ded" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Freeze" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="PAYREGC">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="PMON" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="PMON" Type="datetime" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="10" />
+    <Property Name="act_basic" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_da" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_hra" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_conv" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_oallow" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="act_ChdEduAll" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Fdate" Type="datetime" />
+    <Property Name="Tdate" Type="datetime" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="BASIC" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="DA" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Other_allow" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="HRA" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="CONV" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="ChdEduAll" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Advance_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="IT_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="PF_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="ESI_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="PTax_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="TDS_Ded" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Late_Ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="Lic_Amt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="OT_Amt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="GrossSal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="NetSal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Actual_NetSal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Absent_Days" Type="int" />
+    <Property Name="Present_Days" Type="int" />
+    <Property Name="Available_Days" Type="int" />
+    <Property Name="Tot_Ded" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Other_Earnings" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Other_Ded" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Other_Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="CL_Bal" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="EL_Bal" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="PrevMon_Ded" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Freeze" Type="char" MaxLength="1" />
+    <Property Name="prod_bonus" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="tiffin_bill" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="currency_rate" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="net_pay_Tk" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="FH" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="SH" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="ML" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="SL" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="ot_rate" Type="numeric" Precision="18" Scale="4" />
+    <Property Name="ot_hr" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="samplepay" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="finededuct" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="prodwages" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="otherpay" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="firststsamity" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="secondsamity" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="milk" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="advancepay" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="sampleday" Type="int" />
+    <Property Name="noworkpay" Type="numeric" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PERMISSION">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Per_No" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="Per_No" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="10" />
+    <Property Name="SHIFT" Type="char" MaxLength="1" />
+    <Property Name="ADATE" Type="datetime" />
+    <Property Name="REASON" Type="varchar" MaxLength="255" />
+    <Property Name="TIME_OUT" Type="datetime" />
+    <Property Name="TIME_IN" Type="datetime" />
+    <Property Name="EXPECTED_TIME" Type="datetime" />
+    <Property Name="AUTHORITY" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="PERMISSIONS">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UNAME" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="UNAME" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="menu_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="menuCtrl_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Permitted" Type="varchar" MaxLength="1" />
+    <Property Name="Operation" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="PFContribution">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="PFMonth" />
+      <PropertyRef Name="PFYear" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="CompCode" />
+    </Key>
+    <Property Name="SNo" Type="int" Nullable="false" />
+    <Property Name="ENo" Type="int" />
+    <Property Name="AccountNo" Type="int" />
+    <Property Name="EName" Type="varchar" MaxLength="100" />
+    <Property Name="MonSalary" Type="varchar" MaxLength="50" />
+    <Property Name="MonDa" Type="varchar" MaxLength="50" />
+    <Property Name="PFSalary" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="EPF" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="EPF1" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="FPF" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="EDLI" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Total" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="PFMonth" Type="int" Nullable="false" />
+    <Property Name="PFYear" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompCode" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PFSummary">
+    <Key>
+      <PropertyRef Name="HeadId" />
+      <PropertyRef Name="PFMonth" />
+      <PropertyRef Name="PFYear" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="CompCode" />
+    </Key>
+    <Property Name="HeadId" Type="int" Nullable="false" />
+    <Property Name="Head" Type="varchar" MaxLength="250" />
+    <Property Name="AccountNo" Type="varchar" MaxLength="50" />
+    <Property Name="PFSalary" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="EmployeePer" Type="char" MaxLength="10" />
+    <Property Name="EmployerPer" Type="char" MaxLength="10" />
+    <Property Name="EmployeeShare" Type="varchar" MaxLength="50" />
+    <Property Name="EmployerShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Total" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="PFMonth" Type="int" Nullable="false" />
+    <Property Name="PFYear" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CompCode" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.PfYearContribution' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PfYearContribution">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="PMon" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="PMon" Type="datetime" Nullable="false" />
+    <Property Name="PfSal" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="EPF" Type="numeric" Precision="15" Scale="6" />
+    <Property Name="EPF_Diff" Type="numeric" Precision="16" Scale="8" />
+    <Property Name="PensionFund" Type="numeric" Precision="16" Scale="8" />
+    <Property Name="Absent_Days" Type="int" />
+  </EntityType>
+  <EntityType Name="ProvidentFund">
+    <Key>
+      <PropertyRef Name="PFMonth" />
+      <PropertyRef Name="PFYear" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="PFMonth" Type="int" Nullable="false" />
+    <Property Name="PFYear" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompCode" Type="varchar" MaxLength="50" />
+    <Property Name="Subscribers" Type="int" />
+    <Property Name="WagesDue" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="Ac1_EmployerShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac2_EmployerShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac10_EmployerShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac21_EmployerShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac22_EmployerShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac1_EmployeeShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac2_EmployeeShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac10_EmployeeShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac21_EmployeeShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac22_EmployeeShare" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac1_AdmnCharges" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac2_AdmnCharges" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac10_AdmnCharges" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac21_AdmnCharges" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac22_AdmnCharges" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac1_InspCharges" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac2_InspCharges" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac10_InspCharges" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac21_InspCharges" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac22_InspCharges" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac1_PenalDamages14" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac2_PenalDamages14" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac10_PenalDamages14" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac21_PenalDamages14" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac22_PenalDamages14" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac1_PenalDamages7" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac2_PenalDamages7" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac10_PenalDamages7" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac21_PenalDamages7" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac22_PenalDamages7" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac1_MiscPayment" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac2_MiscPayment" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac10_MiscPayment" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac21_MiscPayment" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Ac22_MiscPayment" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ModeOfPayment" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="BankName" Type="varchar" MaxLength="50" />
+    <Property Name="ChequeNo" Type="varchar" MaxLength="50" />
+    <Property Name="ChequeDate" Type="datetime" />
+    <Property Name="DepositorName" Type="varchar" MaxLength="50" />
+    <Property Name="DepBankCode" Type="varchar" MaxLength="100" />
+    <Property Name="DepBankName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PTaxReturns">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="PTaxMonth" />
+      <PropertyRef Name="PTaxYear" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="SNo" Type="int" Nullable="false" />
+    <Property Name="PTaxMonth" Type="int" Nullable="false" />
+    <Property Name="PTaxYear" Type="int" Nullable="false" />
+    <Property Name="SalRange" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NoOfEmp" Type="varchar" MaxLength="50" />
+    <Property Name="PTax_Ded" Type="varchar" MaxLength="50" />
+    <Property Name="TotalTax" Type="varchar" MaxLength="50" />
+    <Property Name="Amount_Paid" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Qualification">
+    <Key>
+      <PropertyRef Name="SlNo" />
+      <PropertyRef Name="Qualification" />
+    </Key>
+    <Property Name="SlNo" Type="int" Nullable="false" />
+    <Property Name="Qualification" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Qual_Desc" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuarterReport">
+    <Key>
+      <PropertyRef Name="QuarterYear" />
+      <PropertyRef Name="QuarterMonth" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="FormType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="QuarterYear" Type="int" Nullable="false" />
+    <Property Name="QuarterMonth" Type="int" Nullable="false" />
+    <Property Name="PQuarterMen" Type="int" />
+    <Property Name="PQuarterWomen" Type="int" />
+    <Property Name="CQuarterMen" Type="int" />
+    <Property Name="CQuarterWomen" Type="int" />
+    <Property Name="Reason1b" Type="varchar" MaxLength="255" />
+    <Property Name="NOOccurred" Type="varchar" MaxLength="255" />
+    <Property Name="LEE" Type="varchar" MaxLength="255" />
+    <Property Name="CEE" Type="varchar" MaxLength="255" />
+    <Property Name="Filled" Type="varchar" MaxLength="255" />
+    <Property Name="Source" Type="varchar" MaxLength="255" />
+    <Property Name="Reason2b" Type="varchar" MaxLength="255" />
+    <Property Name="Manpower" Type="varchar" MaxLength="255" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RANGES">
+    <Key>
+      <PropertyRef Name="Col_Name" />
+      <PropertyRef Name="Range_From" />
+    </Key>
+    <Property Name="Col_Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Range_From" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Range_To" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Range_amt" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reminders">
+    <Key>
+      <PropertyRef Name="Rep_Type" />
+      <PropertyRef Name="Duration" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="Rep_Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Duration" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="From_Date" Type="datetime" />
+    <Property Name="To_Date" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReminderStatus">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="QuarterStatus" Type="int" Nullable="false" />
+    <Property Name="AnnualStatus" Type="int" Nullable="false" />
+    <Property Name="PTaxStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RepAttend">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="eno" Type="int" Nullable="false" />
+    <Property Name="wdate" Type="datetime" />
+    <Property Name="time_In" Type="varchar" MaxLength="50" />
+    <Property Name="TimeOut_Date" Type="datetime" />
+    <Property Name="Time_Out" Type="varchar" MaxLength="50" />
+    <Property Name="TotHrs" Type="varchar" MaxLength="50" />
+    <Property Name="Shift" Type="char" MaxLength="1" />
+    <Property Name="Per" Type="char" MaxLength="1" />
+    <Property Name="Auth" Type="varchar" MaxLength="50" />
+    <Property Name="Sts" Type="char" MaxLength="1" />
+    <Property Name="LType" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="RepAttendance">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="User_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Day1TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day1TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day2TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day2TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day3TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day3TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day4TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day4TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day5TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day5TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day6TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day6TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day7TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day7TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day8TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day8TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day9TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day9TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day10TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day10TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day11TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day11TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day12TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day12TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day13TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day13TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day14TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day14TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day15TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day15TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day16TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day16TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day17TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day17TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day18TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day18TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day19TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day19TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day20TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day20TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day21TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day21TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day22TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day22TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day23TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day23TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day24TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day24TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day25TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day25TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day26TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day26TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day27TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day27TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day28TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day28TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day29TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day29TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day30TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day30TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Day31TIn" Type="varchar" MaxLength="20" />
+    <Property Name="Day31TOut" Type="varchar" MaxLength="20" />
+    <Property Name="Comp_code" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="RepCoff">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Ename" Type="varchar" MaxLength="100" />
+    <Property Name="WDate" Type="datetime" />
+    <Property Name="DayName" Type="varchar" MaxLength="3" />
+    <Property Name="Time_in" Type="varchar" MaxLength="15" />
+    <Property Name="TOut_Date" Type="datetime" />
+    <Property Name="Time_Out" Type="varchar" MaxLength="15" />
+    <Property Name="TotalHrs" Type="varchar" MaxLength="15" />
+    <Property Name="Coffs" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Authority" Type="varchar" MaxLength="100" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="RepGrat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Eno" Type="int" />
+    <Property Name="DOL" Type="datetime" />
+    <Property Name="Grat_Amt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Till_Paid" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Bank_name" Type="varchar" MaxLength="100" />
+    <Property Name="PayAmount" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="PaidOn" Type="datetime" />
+    <Property Name="RefNo" Type="varchar" MaxLength="50" />
+    <Property Name="RefDate" Type="datetime" />
+    <Property Name="TotYears" Type="int" />
+  </EntityType>
+  <EntityType Name="RepSecurity">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Pdate" />
+      <PropertyRef Name="Ptime" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Pdate" Type="datetime" Nullable="false" />
+    <Property Name="Ptime" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.RPTATTEND' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RPTATTEND">
+    <Key>
+      <PropertyRef Name="INTIME" />
+      <PropertyRef Name="WDATE" />
+      <PropertyRef Name="ENO" />
+    </Key>
+    <Property Name="INTIME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="OUTTIME" Type="varchar" MaxLength="20" />
+    <Property Name="WDATE" Type="datetime" Nullable="false" />
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="STAT" Type="varchar" MaxLength="1" />
+    <Property Name="ENAME" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.RPTESI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RPTESI">
+    <Key>
+      <PropertyRef Name="ENO" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="ENAME" Type="varchar" MaxLength="80" />
+    <Property Name="ESINO" Type="varchar" MaxLength="80" />
+    <Property Name="TDAYS" Type="int" />
+    <Property Name="TWAGE" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="TESI" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="DWAGE" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.RPTOT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RPTOT">
+    <Key>
+      <PropertyRef Name="ENO" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="ENAME" Type="varchar" MaxLength="80" />
+    <Property Name="OTIME" Type="varchar" MaxLength="20" />
+    <Property Name="GROSS" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="NP" Type="int" />
+    <Property Name="PAY" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="LUNCH" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="TOTPAY" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="SUNPAY" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.RULES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RULES">
+    <Key>
+      <PropertyRef Name="APD" />
+      <PropertyRef Name="ALLOWCL" />
+      <PropertyRef Name="ALLOWEL" />
+      <PropertyRef Name="ALLOWSL" />
+      <PropertyRef Name="ALLOWML" />
+      <PropertyRef Name="ALLOWHDC" />
+      <PropertyRef Name="ALLOWFDC" />
+      <PropertyRef Name="ALLOWGT" />
+      <PropertyRef Name="ALLOWOS" />
+      <PropertyRef Name="ALLOWCF" />
+      <PropertyRef Name="ITIME" />
+      <PropertyRef Name="OTIME" />
+      <PropertyRef Name="PFP" />
+      <PropertyRef Name="ESIP" />
+    </Key>
+    <Property Name="YEARCL" Type="int" />
+    <Property Name="MONTHCL" Type="int" />
+    <Property Name="APD" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="ALLOWCL" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="MINEL" Type="int" />
+    <Property Name="DAYEL" Type="int" />
+    <Property Name="CONTEL" Type="int" />
+    <Property Name="MAXEL" Type="int" />
+    <Property Name="ALLOWEL" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="YEARSL" Type="int" />
+    <Property Name="NOSL" Type="int" />
+    <Property Name="ALLOWSL" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="YEARML" Type="int" />
+    <Property Name="NOML" Type="int" />
+    <Property Name="ALLOWML" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="HDCS" Type="datetime" />
+    <Property Name="HDCE" Type="datetime" />
+    <Property Name="NOHD" Type="int" />
+    <Property Name="ALLOWHDC" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="FDCS" Type="datetime" />
+    <Property Name="FDCE" Type="datetime" />
+    <Property Name="NOFD" Type="int" />
+    <Property Name="ALLOWFDC" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="GPUT" Type="datetime" />
+    <Property Name="NOGD" Type="int" />
+    <Property Name="ALLOWGT" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="OSTAY" Type="varchar" MaxLength="1" />
+    <Property Name="ALLOWOS" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="ALLOWCF" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="ITIME" Type="datetime" Nullable="false" />
+    <Property Name="OTIME" Type="datetime" Nullable="false" />
+    <Property Name="PFP" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ESIP" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="LTS" Type="datetime" />
+    <Property Name="LTE" Type="datetime" />
+    <Property Name="HDCL" Type="varchar" MaxLength="1" />
+    <Property Name="EGO" Type="varchar" MaxLength="1" />
+    <Property Name="COVER" Type="varchar" MaxLength="1" />
+    <Property Name="CONV" Type="int" />
+    <Property Name="HDPD" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.rupayan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="rupayan">
+    <Key>
+      <PropertyRef Name="ID1" />
+    </Key>
+    <Property Name="ID1" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="ID" Type="smallint" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="255" />
+    <Property Name="Joining" Type="datetime" />
+    <Property Name="Department" Type="nvarchar" MaxLength="255" />
+    <Property Name="Grade" Type="smallint" />
+    <Property Name="Basic" Type="float" />
+    <Property Name="HouseRent" Type="float" />
+    <Property Name="Medical" Type="float" />
+    <Property Name="Gross" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'knith.dbo.SALARY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SALARY">
+          <Property Name="ID No" Type="nvarchar" MaxLength="255" />
+          <Property Name="Real Salary" Type="float" />
+          <Property Name="Compliance Salary" Type="float" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="255" />
+          <Property Name="Field5" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'knith.dbo.SalaryList' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SalaryList">
+          <Property Name="EMPNAME" Type="nvarchar(max)" />
+          <Property Name="Designation" Type="nvarchar(max)" />
+          <Property Name="Section" Type="nvarchar(max)" />
+          <Property Name="CardNO" Type="nvarchar(max)" />
+          <Property Name="Grade" Type="float" />
+          <Property Name="GSalary" Type="nvarchar(max)" />
+        </EntityType>-->
+  <EntityType Name="SecPunches">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="PDate" />
+      <PropertyRef Name="Sno" />
+      <PropertyRef Name="PTime" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="PDate" Type="datetime" Nullable="false" />
+    <Property Name="Sno" Type="int" Nullable="false" />
+    <Property Name="PTime" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHIFT_MASTER">
+    <Key>
+      <PropertyRef Name="SHIFT_NAME" />
+    </Key>
+    <Property Name="SHIFT_NAME" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="SHIFT_DESC" Type="varchar" MaxLength="50" />
+    <Property Name="SHIFT_IN" Type="datetime" Nullable="false" />
+    <Property Name="SHIFT_OUT" Type="datetime" Nullable="false" />
+    <Property Name="LUNCH_START" Type="datetime" />
+    <Property Name="LUNCH_END" Type="datetime" />
+    <Property Name="NEXTDAY_FLAG" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.SHIFTB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SHIFTB">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="WDATE" />
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="WDATE" Type="datetime" Nullable="false" />
+    <Property Name="SNO" Type="int" Nullable="false" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="10" />
+    <Property Name="STATUS" Type="varchar" MaxLength="1" />
+    <Property Name="LType" Type="varchar" MaxLength="10" />
+    <Property Name="Time_Out_Date" Type="datetime" />
+    <Property Name="TIME_IN" Type="datetime" />
+    <Property Name="TIME_OUT" Type="datetime" />
+    <Property Name="PER" Type="varchar" MaxLength="1" />
+    <Property Name="LNodeduct" Type="char" MaxLength="1" />
+    <Property Name="ENodeduct" Type="char" MaxLength="1" />
+    <Property Name="LPer" Type="char" MaxLength="1" />
+    <Property Name="EPer" Type="char" MaxLength="1" />
+    <Property Name="AUTH" Type="varchar" MaxLength="80" />
+    <Property Name="shift" Type="varchar" MaxLength="1" />
+    <Property Name="Time_Worked" Type="datetime" />
+    <Property Name="Time_tobeCal" Type="datetime" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+    <Property Name="TrType" Type="char" MaxLength="1" />
+    <Property Name="UserId" Type="varchar" MaxLength="20" />
+    <Property Name="LNo" Type="int" />
+    <Property Name="Freeze" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.tbl_sl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_sl">
+    <Key>
+      <PropertyRef Name="SL" />
+    </Key>
+    <Property Name="SL" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.tbl_style' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_style">
+    <Key>
+      <PropertyRef Name="styleID" />
+      <PropertyRef Name="StyleName" />
+      <PropertyRef Name="style_desc" />
+    </Key>
+    <Property Name="styleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StyleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="style_desc" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="buyer" Type="nvarchar" MaxLength="50" />
+    <Property Name="order_qty" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.tblBonusRange' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblBonusRange">
+    <Key>
+      <PropertyRef Name="rangemin" />
+      <PropertyRef Name="rangemax" />
+      <PropertyRef Name="bonusamount" />
+    </Key>
+    <Property Name="rangemin" Type="int" Nullable="false" />
+    <Property Name="rangemax" Type="int" Nullable="false" />
+    <Property Name="bonusamount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblbuyer">
+    <Key>
+      <PropertyRef Name="buyerid" />
+    </Key>
+    <Property Name="buyerid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="buyername" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.tblextrapaycode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblextrapaycode">
+    <Key>
+      <PropertyRef Name="uid" />
+      <PropertyRef Name="year" />
+      <PropertyRef Name="month" />
+      <PropertyRef Name="empid" />
+      <PropertyRef Name="paycode" />
+      <PropertyRef Name="payvalue" />
+      <PropertyRef Name="adjtype" />
+    </Key>
+    <Property Name="uid" Type="int" Nullable="false" />
+    <Property Name="year" Type="int" Nullable="false" />
+    <Property Name="month" Type="int" Nullable="false" />
+    <Property Name="empid" Type="int" Nullable="false" />
+    <Property Name="paycode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="payvalue" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="payformula" Type="nvarchar" MaxLength="50" />
+    <Property Name="adjtype" Type="nchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblpaycode">
+    <Key>
+      <PropertyRef Name="payid" />
+    </Key>
+    <Property Name="payid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="paycode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="payformula" Type="nvarchar" MaxLength="100" />
+    <Property Name="adjtype" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'knith.dbo.tblProduction' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tblProduction">
+          <Property Name="refid" Type="int" />
+          <Property Name="slno" Type="int" />
+          <Property Name="eno" Type="int" />
+          <Property Name="ename" Type="nvarchar" MaxLength="50" />
+          <Property Name="Month" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year" Type="int" />
+          <Property Name="trandate" Type="date" />
+          <Property Name="OperationName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Stylename" Type="nvarchar" MaxLength="50" />
+          <Property Name="PartsName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rate" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.tblStyleParts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblStyleParts">
+    <Key>
+      <PropertyRef Name="PartsID" />
+      <PropertyRef Name="PartsName" />
+      <PropertyRef Name="parts_desc" />
+    </Key>
+    <Property Name="PartsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartsName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parts_desc" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PartsCategory" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.tblStyleRate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblStyleRate">
+    <Key>
+      <PropertyRef Name="uid" />
+    </Key>
+    <Property Name="uid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OperationName" Type="nvarchar" MaxLength="50" />
+    <Property Name="fk_styleID" Type="int" />
+    <Property Name="Stylename" Type="nvarchar" MaxLength="50" />
+    <Property Name="fk_partsID" Type="int" />
+    <Property Name="partsCategory" Type="nvarchar" MaxLength="50" />
+    <Property Name="Partsname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rate" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="remarks" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TempAttend">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="WDate" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Ename" Type="varchar" MaxLength="100" />
+    <Property Name="Shift" Type="varchar" MaxLength="50" />
+    <Property Name="WDate" Type="datetime" Nullable="false" />
+    <Property Name="TimeIn" Type="varchar" MaxLength="50" />
+    <Property Name="TimeOut" Type="varchar" MaxLength="50" />
+    <Property Name="OutDate" Type="datetime" />
+    <Property Name="Comp_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="Time_Worked" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TempDailyAttend">
+    <Key>
+      <PropertyRef Name="Wdate" />
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Ename" />
+    </Key>
+    <Property Name="Wdate" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Eno" Type="int" Nullable="false" />
+    <Property Name="Ename" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeIn" Type="varchar" MaxLength="50" />
+    <Property Name="TimeOut" Type="varchar" MaxLength="50" />
+    <Property Name="Shit" Type="char" MaxLength="1" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TempEsiHalfYr">
+    <Key>
+      <PropertyRef Name="ENO" />
+    </Key>
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="ENAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="GrossSal" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="ESINO" Type="varchar" MaxLength="50" />
+    <Property Name="Present_Days" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.temppayreg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="temppayreg">
+    <Key>
+      <PropertyRef Name="comp_code" />
+      <PropertyRef Name="eno" />
+      <PropertyRef Name="pmon" />
+      <PropertyRef Name="ename" />
+    </Key>
+    <Property Name="comp_code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="eno" Type="int" Nullable="false" />
+    <Property Name="pmon" Type="datetime" Nullable="false" />
+    <Property Name="ename" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="grosssal" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="basic" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="da" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="other_allow" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="hra" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="conv" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="advance_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="pf_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="esi_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="ptax_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="tds_ded" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="late_ded" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="lic_amt" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="actual_netsal" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="other_ded" Type="numeric" Precision="12" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'knith.dbo.tempyrsal' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tempyrsal">
+    <Key>
+      <PropertyRef Name="COMP_CODE" />
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="PMON" />
+      <PropertyRef Name="ENAME" />
+    </Key>
+    <Property Name="COMP_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ENO" Type="int" Nullable="false" />
+    <Property Name="PMON" Type="datetime" Nullable="false" />
+    <Property Name="ENAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="GROSSSAL" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="BASIC" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="DA" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="OTHER_ALLOW" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="HRA" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="CONV" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="ADVANCE_DED" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="PF_DED" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="ESI_DED" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="PTAX_DED" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="TDS_DED" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="LATE_DED" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="LIC_AMT" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ACTUAL_NETSAL" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="OTHER_DED" Type="numeric" Precision="12" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'knith.dbo.tmpGrossSalaries' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tmpGrossSalaries">
+          <Property Name="Eno" Type="int" />
+          <Property Name="Ename" Type="varchar" MaxLength="100" />
+          <Property Name="GrossSal" Type="numeric" Precision="38" Scale="0" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'knith.dbo.TmpPuches' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TmpPuches">
+          <Property Name="cardno" Type="nvarchar" MaxLength="50" />
+          <Property Name="wdate" Type="varchar" MaxLength="8" />
+          <Property Name="wtime" Type="varchar" MaxLength="8" />
+          <Property Name="mcIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="salve" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UType_Master">
+    <Key>
+      <PropertyRef Name="User_Type" />
+    </Key>
+    <Property Name="SlNo" Type="int" Nullable="false" />
+    <Property Name="User_Type" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="Type_Desc" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'knith.dbo.XlsAttendance' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="XlsAttendance">
+          <Property Name="Eno" Type="int" />
+          <Property Name="Ename" Type="varchar" MaxLength="100" />
+          <Property Name="Shift" Type="char" MaxLength="1" />
+          <Property Name="WDate" Type="datetime" />
+          <Property Name="TimeIn" Type="varchar" MaxLength="50" />
+          <Property Name="OutDate" Type="datetime" />
+          <Property Name="TimeOut" Type="varchar" MaxLength="50" />
+          <Property Name="Comp_Code" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="1" />
+          <Property Name="Time_Worked" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityContainer Name="knithModelStoreContainer">
+    <EntitySet Name="Advance_Mast" EntityType="Self.Advance_Mast" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADVance_Trans" EntityType="Self.ADVance_Trans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ATTENDANCE" EntityType="Self.ATTENDANCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AttendIntegrity" EntityType="Self.AttendIntegrity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AttendSummary" EntityType="Self.AttendSummary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Auth_Master" EntityType="Self.Auth_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BiAnnualReport" EntityType="Self.BiAnnualReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bonus" EntityType="Self.Bonus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BonusLtStmt" EntityType="Self.BonusLtStmt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Coff_Requests" EntityType="Self.Coff_Requests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Coffs_Trans" EntityType="Self.Coffs_Trans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CoffTemp" EntityType="Self.CoffTemp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DailyAttend" EntityType="Self.DailyAttend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DaysCount" EntityType="Self.DaysCount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Designation" EntityType="Self.Designation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="emp_multi_shift" EntityType="Self.emp_multi_shift" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpAttandance" EntityType="Self.EmpAttandance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESIContribution" EntityType="Self.ESIContribution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EsiHalfYrCntrbn" EntityType="Self.EsiHalfYrCntrbn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EVERYDAY" EntityType="Self.EVERYDAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExcessELs" EntityType="Self.ExcessELs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Form10" EntityType="Self.Form10" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Form2" EntityType="Self.Form2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Form5" EntityType="Self.Form5" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FormAR" EntityType="Self.FormAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FormF" EntityType="Self.FormF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FORMR12" EntityType="Self.FORMR12" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grat_Payments" EntityType="Self.Grat_Payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IncentivesStmt" EntityType="Self.IncentivesStmt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Increment" EntityType="Self.Increment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LEV_MAST" EntityType="Self.LEV_MAST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LEV_TRANS" EntityType="Self.LEV_TRANS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LicStatus" EntityType="Self.LicStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAYREG" EntityType="Self.PAYREG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAYREGC" EntityType="Self.PAYREGC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERMISSION" EntityType="Self.PERMISSION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERMISSIONS" EntityType="Self.PERMISSIONS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PFContribution" EntityType="Self.PFContribution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PFSummary" EntityType="Self.PFSummary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProvidentFund" EntityType="Self.ProvidentFund" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTaxReturns" EntityType="Self.PTaxReturns" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Qualification" EntityType="Self.Qualification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuarterReport" EntityType="Self.QuarterReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RANGES" EntityType="Self.RANGES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reminders" EntityType="Self.Reminders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReminderStatus" EntityType="Self.ReminderStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RepAttend" EntityType="Self.RepAttend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RepAttendance" EntityType="Self.RepAttendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RepCoff" EntityType="Self.RepCoff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RepGrat" EntityType="Self.RepGrat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RepSecurity" EntityType="Self.RepSecurity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecPunches" EntityType="Self.SecPunches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SHIFT_MASTER" EntityType="Self.SHIFT_MASTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblbuyer" EntityType="Self.tblbuyer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblpaycode" EntityType="Self.tblpaycode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TempAttend" EntityType="Self.TempAttend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TempDailyAttend" EntityType="Self.TempDailyAttend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TempEsiHalfYr" EntityType="Self.TempEsiHalfYr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UType_Master" EntityType="Self.UType_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="attnupdate_log" EntityType="Self.attnupdate_log" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [attnupdate_log].[attndate] AS [attndate]
+    FROM [dbo].[attnupdate_log] AS [attnupdate_log]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="COFFREQMAY" EntityType="Self.COFFREQMAY" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [COFFREQMAY].[ReqNo] AS [ReqNo], 
+    [COFFREQMAY].[Comp_Code] AS [Comp_Code], 
+    [COFFREQMAY].[ReqDate] AS [ReqDate], 
+    [COFFREQMAY].[Eno] AS [Eno], 
+    [COFFREQMAY].[Shift] AS [Shift], 
+    [COFFREQMAY].[WDate] AS [WDate], 
+    [COFFREQMAY].[Stime] AS [Stime], 
+    [COFFREQMAY].[CDate] AS [CDate], 
+    [COFFREQMAY].[CTime] AS [CTime], 
+    [COFFREQMAY].[TotHrs] AS [TotHrs], 
+    [COFFREQMAY].[No_of_Coffs] AS [No_of_Coffs], 
+    [COFFREQMAY].[Purpose] AS [Purpose], 
+    [COFFREQMAY].[Authority] AS [Authority], 
+    [COFFREQMAY].[Status] AS [Status], 
+    [COFFREQMAY].[Remarks] AS [Remarks], 
+    [COFFREQMAY].[StatusRem] AS [StatusRem], 
+    [COFFREQMAY].[UserId] AS [UserId], 
+    [COFFREQMAY].[SysName] AS [SysName], 
+    [COFFREQMAY].[DayName] AS [DayName]
+    FROM [dbo].[COFFREQMAY] AS [COFFREQMAY]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EMP" EntityType="Self.EMP" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EMP].[ENO] AS [ENO], 
+    [EMP].[Comp_Code] AS [Comp_Code], 
+    [EMP].[ENAME] AS [ENAME], 
+    [EMP].[FHGName] AS [FHGName], 
+    [EMP].[AReg_Sno] AS [AReg_Sno], 
+    [EMP].[SEX] AS [SEX], 
+    [EMP].[Qualification] AS [Qualification], 
+    [EMP].[DESIGNATION] AS [DESIGNATION], 
+    [EMP].[Emp_Type] AS [Emp_Type], 
+    [EMP].[DOB] AS [DOB], 
+    [EMP].[DOJ] AS [DOJ], 
+    [EMP].[ADDR1] AS [ADDR1], 
+    [EMP].[ADDR2] AS [ADDR2], 
+    [EMP].[ADDR3] AS [ADDR3], 
+    [EMP].[phone] AS [phone], 
+    [EMP].[email] AS [email], 
+    [EMP].[Photo] AS [Photo], 
+    [EMP].[BASIC] AS [BASIC], 
+    [EMP].[DA] AS [DA], 
+    [EMP].[OALL] AS [OALL], 
+    [EMP].[HRA] AS [HRA], 
+    [EMP].[CONV] AS [CONV], 
+    [EMP].[ChdEduAll] AS [ChdEduAll], 
+    [EMP].[Incentives] AS [Incentives], 
+    [EMP].[OTST] AS [OTST], 
+    [EMP].[ITST] AS [ITST], 
+    [EMP].[ESIST] AS [ESIST], 
+    [EMP].[PFST] AS [PFST], 
+    [EMP].[ottype] AS [ottype], 
+    [EMP].[shift] AS [shift], 
+    [EMP].[OSTAY] AS [OSTAY], 
+    [EMP].[MOP] AS [MOP], 
+    [EMP].[PFNO] AS [PFNO], 
+    [EMP].[ESINO] AS [ESINO], 
+    [EMP].[PROFTAX] AS [PROFTAX], 
+    [EMP].[WEFROM] AS [WEFROM], 
+    [EMP].[EMPSTATUS] AS [EMPSTATUS], 
+    [EMP].[DOL] AS [DOL], 
+    [EMP].[Reason] AS [Reason], 
+    [EMP].[Remarks] AS [Remarks], 
+    [EMP].[compensate] AS [compensate], 
+    [EMP].[TDS] AS [TDS], 
+    [EMP].[TDS_Amt] AS [TDS_Amt], 
+    [EMP].[PTSts] AS [PTSts], 
+    [EMP].[Bank_Name] AS [Bank_Name], 
+    [EMP].[Bank_Ac] AS [Bank_Ac], 
+    [EMP].[Bank_Sts] AS [Bank_Sts], 
+    [EMP].[LIC_Sts] AS [LIC_Sts], 
+    [EMP].[LIC_No] AS [LIC_No], 
+    [EMP].[LicAmt] AS [LicAmt], 
+    [EMP].[Dept] AS [Dept], 
+    [EMP].[RegDate] AS [RegDate], 
+    [EMP].[MaritalStatus] AS [MaritalStatus], 
+    [EMP].[CoffStatus] AS [CoffStatus], 
+    [EMP].[Grade] AS [Grade], 
+    [EMP].[RFL] AS [RFL], 
+    [EMP].[SSN] AS [SSN], 
+    [EMP].[act_gross] AS [act_gross], 
+    [EMP].[comp_gross] AS [comp_gross]
+    FROM [dbo].[EMP] AS [EMP]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="empyrsalreport" EntityType="Self.empyrsalreport" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [empyrsalreport].[comp_code] AS [comp_code], 
+    [empyrsalreport].[eno] AS [eno], 
+    [empyrsalreport].[pmon] AS [pmon], 
+    [empyrsalreport].[ename] AS [ename], 
+    [empyrsalreport].[GrossSal] AS [GrossSal], 
+    [empyrsalreport].[basic] AS [basic], 
+    [empyrsalreport].[da] AS [da], 
+    [empyrsalreport].[Other_Allow] AS [Other_Allow], 
+    [empyrsalreport].[hra] AS [hra], 
+    [empyrsalreport].[Conv] AS [Conv], 
+    [empyrsalreport].[advance_ded] AS [advance_ded], 
+    [empyrsalreport].[Pf_Ded] AS [Pf_Ded], 
+    [empyrsalreport].[Esi_Ded] AS [Esi_Ded], 
+    [empyrsalreport].[ptax_ded] AS [ptax_ded], 
+    [empyrsalreport].[Tds_ded] AS [Tds_ded], 
+    [empyrsalreport].[late_ded] AS [late_ded], 
+    [empyrsalreport].[Lic_amt] AS [Lic_amt], 
+    [empyrsalreport].[Actual_Netsal] AS [Actual_Netsal], 
+    [empyrsalreport].[other_ded] AS [other_ded], 
+    [empyrsalreport].[tot_ded] AS [tot_ded]
+    FROM [dbo].[empyrsalreport] AS [empyrsalreport]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EsiHalfYrTemp" EntityType="Self.EsiHalfYrTemp" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EsiHalfYrTemp].[ENO] AS [ENO], 
+    [EsiHalfYrTemp].[ENAME] AS [ENAME], 
+    [EsiHalfYrTemp].[PMON] AS [PMON], 
+    [EsiHalfYrTemp].[GrossSal] AS [GrossSal], 
+    [EsiHalfYrTemp].[ESINO] AS [ESINO], 
+    [EsiHalfYrTemp].[Present_Days] AS [Present_Days], 
+    [EsiHalfYrTemp].[Comp_code] AS [Comp_code]
+    FROM [dbo].[EsiHalfYrTemp] AS [EsiHalfYrTemp]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FORMR1" EntityType="Self.FORMR1" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [FORMR1].[ENAME] AS [ENAME], 
+    [FORMR1].[NO] AS [NO], 
+    [FORMR1].[PFMon] AS [PFMon], 
+    [FORMR1].[Wages] AS [Wages], 
+    [FORMR1].[DOJ] AS [DOJ], 
+    [FORMR1].[DOL] AS [DOL], 
+    [FORMR1].[EPF] AS [EPF], 
+    [FORMR1].[EPFDiff] AS [EPFDiff], 
+    [FORMR1].[PensionFund] AS [PensionFund], 
+    [FORMR1].[RFL] AS [RFL], 
+    [FORMR1].[NCP] AS [NCP]
+    FROM [dbo].[FORMR1] AS [FORMR1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FORMR11" EntityType="Self.FORMR11" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [FORMR11].[ENAME] AS [ENAME], 
+    [FORMR11].[NO] AS [NO], 
+    [FORMR11].[PFMon] AS [PFMon], 
+    [FORMR11].[Wages] AS [Wages], 
+    [FORMR11].[DOJ] AS [DOJ], 
+    [FORMR11].[DOL] AS [DOL], 
+    [FORMR11].[EPF] AS [EPF], 
+    [FORMR11].[EPFDiff] AS [EPFDiff], 
+    [FORMR11].[PensionFund] AS [PensionFund], 
+    [FORMR11].[RFL] AS [RFL], 
+    [FORMR11].[NCP] AS [NCP]
+    FROM [dbo].[FORMR11] AS [FORMR11]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FURTIVE" EntityType="Self.FURTIVE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [FURTIVE].[FORM] AS [FORM], 
+    [FURTIVE].[OCCULT] AS [OCCULT]
+    FROM [dbo].[FURTIVE] AS [FURTIVE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LEV_MAST1" EntityType="Self.LEV_MAST1" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LEV_MAST1].[ENO] AS [ENO], 
+    [LEV_MAST1].[Comp_Code] AS [Comp_Code], 
+    [LEV_MAST1].[Cl_Open] AS [Cl_Open], 
+    [LEV_MAST1].[EL_Open] AS [EL_Open], 
+    [LEV_MAST1].[Coff_Open] AS [Coff_Open], 
+    [LEV_MAST1].[CL] AS [CL], 
+    [LEV_MAST1].[EL] AS [EL], 
+    [LEV_MAST1].[SL] AS [SL], 
+    [LEV_MAST1].[ML] AS [ML], 
+    [LEV_MAST1].[COFF] AS [COFF], 
+    [LEV_MAST1].[CLBAL] AS [CLBAL], 
+    [LEV_MAST1].[ELBAL] AS [ELBAL], 
+    [LEV_MAST1].[SLBAL] AS [SLBAL], 
+    [LEV_MAST1].[MLBAL] AS [MLBAL], 
+    [LEV_MAST1].[COFFBAL] AS [COFFBAL]
+    FROM [dbo].[LEV_MAST1] AS [LEV_MAST1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Payreg1" EntityType="Self.Payreg1" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Payreg1].[ENO] AS [ENO], 
+    [Payreg1].[PMON] AS [PMON], 
+    [Payreg1].[Comp_Code] AS [Comp_Code], 
+    [Payreg1].[act_basic] AS [act_basic], 
+    [Payreg1].[act_da] AS [act_da], 
+    [Payreg1].[act_hra] AS [act_hra], 
+    [Payreg1].[act_conv] AS [act_conv], 
+    [Payreg1].[act_oallow] AS [act_oallow], 
+    [Payreg1].[act_ChdEduAll] AS [act_ChdEduAll], 
+    [Payreg1].[Fdate] AS [Fdate], 
+    [Payreg1].[Tdate] AS [Tdate], 
+    [Payreg1].[Status] AS [Status], 
+    [Payreg1].[BASIC] AS [BASIC], 
+    [Payreg1].[DA] AS [DA], 
+    [Payreg1].[Other_allow] AS [Other_allow], 
+    [Payreg1].[HRA] AS [HRA], 
+    [Payreg1].[CONV] AS [CONV], 
+    [Payreg1].[ChdEduAll] AS [ChdEduAll], 
+    [Payreg1].[Advance_Ded] AS [Advance_Ded], 
+    [Payreg1].[IT_ded] AS [IT_ded], 
+    [Payreg1].[PF_Ded] AS [PF_Ded], 
+    [Payreg1].[ESI_Ded] AS [ESI_Ded], 
+    [Payreg1].[PTax_Ded] AS [PTax_Ded], 
+    [Payreg1].[TDS_Ded] AS [TDS_Ded], 
+    [Payreg1].[Late_Ded] AS [Late_Ded], 
+    [Payreg1].[Lic_Amt] AS [Lic_Amt], 
+    [Payreg1].[OT_Amt] AS [OT_Amt], 
+    [Payreg1].[GrossSal] AS [GrossSal], 
+    [Payreg1].[NetSal] AS [NetSal], 
+    [Payreg1].[Actual_NetSal] AS [Actual_NetSal], 
+    [Payreg1].[Absent_Days] AS [Absent_Days], 
+    [Payreg1].[Present_Days] AS [Present_Days], 
+    [Payreg1].[Available_Days] AS [Available_Days], 
+    [Payreg1].[Tot_Ded] AS [Tot_Ded], 
+    [Payreg1].[Other_Earnings] AS [Other_Earnings], 
+    [Payreg1].[Other_Ded] AS [Other_Ded], 
+    [Payreg1].[Other_Remarks] AS [Other_Remarks], 
+    [Payreg1].[CL_Bal] AS [CL_Bal], 
+    [Payreg1].[EL_Bal] AS [EL_Bal], 
+    [Payreg1].[PrevMon_Ded] AS [PrevMon_Ded], 
+    [Payreg1].[Freeze] AS [Freeze]
+    FROM [dbo].[Payreg1] AS [Payreg1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PfYearContribution" EntityType="Self.PfYearContribution" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PfYearContribution].[Eno] AS [Eno], 
+    [PfYearContribution].[PMon] AS [PMon], 
+    [PfYearContribution].[PfSal] AS [PfSal], 
+    [PfYearContribution].[EPF] AS [EPF], 
+    [PfYearContribution].[EPF_Diff] AS [EPF_Diff], 
+    [PfYearContribution].[PensionFund] AS [PensionFund], 
+    [PfYearContribution].[Absent_Days] AS [Absent_Days]
+    FROM [dbo].[PfYearContribution] AS [PfYearContribution]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RPTATTEND" EntityType="Self.RPTATTEND" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RPTATTEND].[INTIME] AS [INTIME], 
+    [RPTATTEND].[OUTTIME] AS [OUTTIME], 
+    [RPTATTEND].[WDATE] AS [WDATE], 
+    [RPTATTEND].[ENO] AS [ENO], 
+    [RPTATTEND].[STAT] AS [STAT], 
+    [RPTATTEND].[ENAME] AS [ENAME]
+    FROM [dbo].[RPTATTEND] AS [RPTATTEND]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RPTESI" EntityType="Self.RPTESI" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RPTESI].[ENO] AS [ENO], 
+    [RPTESI].[ENAME] AS [ENAME], 
+    [RPTESI].[ESINO] AS [ESINO], 
+    [RPTESI].[TDAYS] AS [TDAYS], 
+    [RPTESI].[TWAGE] AS [TWAGE], 
+    [RPTESI].[TESI] AS [TESI], 
+    [RPTESI].[DWAGE] AS [DWAGE]
+    FROM [dbo].[RPTESI] AS [RPTESI]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RPTOT" EntityType="Self.RPTOT" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RPTOT].[ENO] AS [ENO], 
+    [RPTOT].[ENAME] AS [ENAME], 
+    [RPTOT].[OTIME] AS [OTIME], 
+    [RPTOT].[GROSS] AS [GROSS], 
+    [RPTOT].[NP] AS [NP], 
+    [RPTOT].[PAY] AS [PAY], 
+    [RPTOT].[LUNCH] AS [LUNCH], 
+    [RPTOT].[TOTPAY] AS [TOTPAY], 
+    [RPTOT].[SUNPAY] AS [SUNPAY]
+    FROM [dbo].[RPTOT] AS [RPTOT]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RULES" EntityType="Self.RULES" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RULES].[YEARCL] AS [YEARCL], 
+    [RULES].[MONTHCL] AS [MONTHCL], 
+    [RULES].[APD] AS [APD], 
+    [RULES].[ALLOWCL] AS [ALLOWCL], 
+    [RULES].[MINEL] AS [MINEL], 
+    [RULES].[DAYEL] AS [DAYEL], 
+    [RULES].[CONTEL] AS [CONTEL], 
+    [RULES].[MAXEL] AS [MAXEL], 
+    [RULES].[ALLOWEL] AS [ALLOWEL], 
+    [RULES].[YEARSL] AS [YEARSL], 
+    [RULES].[NOSL] AS [NOSL], 
+    [RULES].[ALLOWSL] AS [ALLOWSL], 
+    [RULES].[YEARML] AS [YEARML], 
+    [RULES].[NOML] AS [NOML], 
+    [RULES].[ALLOWML] AS [ALLOWML], 
+    [RULES].[HDCS] AS [HDCS], 
+    [RULES].[HDCE] AS [HDCE], 
+    [RULES].[NOHD] AS [NOHD], 
+    [RULES].[ALLOWHDC] AS [ALLOWHDC], 
+    [RULES].[FDCS] AS [FDCS], 
+    [RULES].[FDCE] AS [FDCE], 
+    [RULES].[NOFD] AS [NOFD], 
+    [RULES].[ALLOWFDC] AS [ALLOWFDC], 
+    [RULES].[GPUT] AS [GPUT], 
+    [RULES].[NOGD] AS [NOGD], 
+    [RULES].[ALLOWGT] AS [ALLOWGT], 
+    [RULES].[OSTAY] AS [OSTAY], 
+    [RULES].[ALLOWOS] AS [ALLOWOS], 
+    [RULES].[ALLOWCF] AS [ALLOWCF], 
+    [RULES].[ITIME] AS [ITIME], 
+    [RULES].[OTIME] AS [OTIME], 
+    [RULES].[PFP] AS [PFP], 
+    [RULES].[ESIP] AS [ESIP], 
+    [RULES].[LTS] AS [LTS], 
+    [RULES].[LTE] AS [LTE], 
+    [RULES].[HDCL] AS [HDCL], 
+    [RULES].[EGO] AS [EGO], 
+    [RULES].[COVER] AS [COVER], 
+    [RULES].[CONV] AS [CONV], 
+    [RULES].[HDPD] AS [HDPD]
+    FROM [dbo].[RULES] AS [RULES]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="rupayan" EntityType="Self.rupayan" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [rupayan].[ID1] AS [ID1], 
+    [rupayan].[Name] AS [Name], 
+    [rupayan].[ID] AS [ID], 
+    [rupayan].[Designation] AS [Designation], 
+    [rupayan].[Joining] AS [Joining], 
+    [rupayan].[Department] AS [Department], 
+    [rupayan].[Grade] AS [Grade], 
+    [rupayan].[Basic] AS [Basic], 
+    [rupayan].[HouseRent] AS [HouseRent], 
+    [rupayan].[Medical] AS [Medical], 
+    [rupayan].[Gross] AS [Gross]
+    FROM [dbo].[rupayan] AS [rupayan]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SHIFTB" EntityType="Self.SHIFTB" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SHIFTB].[ENO] AS [ENO], 
+    [SHIFTB].[WDATE] AS [WDATE], 
+    [SHIFTB].[SNO] AS [SNO], 
+    [SHIFTB].[Comp_Code] AS [Comp_Code], 
+    [SHIFTB].[STATUS] AS [STATUS], 
+    [SHIFTB].[LType] AS [LType], 
+    [SHIFTB].[Time_Out_Date] AS [Time_Out_Date], 
+    [SHIFTB].[TIME_IN] AS [TIME_IN], 
+    [SHIFTB].[TIME_OUT] AS [TIME_OUT], 
+    [SHIFTB].[PER] AS [PER], 
+    [SHIFTB].[LNodeduct] AS [LNodeduct], 
+    [SHIFTB].[ENodeduct] AS [ENodeduct], 
+    [SHIFTB].[LPer] AS [LPer], 
+    [SHIFTB].[EPer] AS [EPer], 
+    [SHIFTB].[AUTH] AS [AUTH], 
+    [SHIFTB].[shift] AS [shift], 
+    [SHIFTB].[Time_Worked] AS [Time_Worked], 
+    [SHIFTB].[Time_tobeCal] AS [Time_tobeCal], 
+    [SHIFTB].[Remarks] AS [Remarks], 
+    [SHIFTB].[TrType] AS [TrType], 
+    [SHIFTB].[UserId] AS [UserId], 
+    [SHIFTB].[LNo] AS [LNo], 
+    [SHIFTB].[Freeze] AS [Freeze]
+    FROM [dbo].[SHIFTB] AS [SHIFTB]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_sl" EntityType="Self.tbl_sl" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_sl].[SL] AS [SL]
+    FROM [dbo].[tbl_sl] AS [tbl_sl]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_style" EntityType="Self.tbl_style" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_style].[styleID] AS [styleID], 
+    [tbl_style].[StyleName] AS [StyleName], 
+    [tbl_style].[style_desc] AS [style_desc], 
+    [tbl_style].[buyer] AS [buyer], 
+    [tbl_style].[order_qty] AS [order_qty]
+    FROM [dbo].[tbl_style] AS [tbl_style]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblBonusRange" EntityType="Self.tblBonusRange" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblBonusRange].[rangemin] AS [rangemin], 
+    [tblBonusRange].[rangemax] AS [rangemax], 
+    [tblBonusRange].[bonusamount] AS [bonusamount]
+    FROM [dbo].[tblBonusRange] AS [tblBonusRange]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblextrapaycode" EntityType="Self.tblextrapaycode" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblextrapaycode].[uid] AS [uid], 
+    [tblextrapaycode].[year] AS [year], 
+    [tblextrapaycode].[month] AS [month], 
+    [tblextrapaycode].[empid] AS [empid], 
+    [tblextrapaycode].[paycode] AS [paycode], 
+    [tblextrapaycode].[payvalue] AS [payvalue], 
+    [tblextrapaycode].[payformula] AS [payformula], 
+    [tblextrapaycode].[adjtype] AS [adjtype]
+    FROM [dbo].[tblextrapaycode] AS [tblextrapaycode]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblStyleParts" EntityType="Self.tblStyleParts" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblStyleParts].[PartsID] AS [PartsID], 
+    [tblStyleParts].[PartsName] AS [PartsName], 
+    [tblStyleParts].[parts_desc] AS [parts_desc], 
+    [tblStyleParts].[PartsCategory] AS [PartsCategory]
+    FROM [dbo].[tblStyleParts] AS [tblStyleParts]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblStyleRate" EntityType="Self.tblStyleRate" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblStyleRate].[uid] AS [uid], 
+    [tblStyleRate].[OperationName] AS [OperationName], 
+    [tblStyleRate].[fk_styleID] AS [fk_styleID], 
+    [tblStyleRate].[Stylename] AS [Stylename], 
+    [tblStyleRate].[fk_partsID] AS [fk_partsID], 
+    [tblStyleRate].[partsCategory] AS [partsCategory], 
+    [tblStyleRate].[Partsname] AS [Partsname], 
+    [tblStyleRate].[Rate] AS [Rate], 
+    [tblStyleRate].[remarks] AS [remarks]
+    FROM [dbo].[tblStyleRate] AS [tblStyleRate]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="temppayreg" EntityType="Self.temppayreg" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [temppayreg].[comp_code] AS [comp_code], 
+    [temppayreg].[eno] AS [eno], 
+    [temppayreg].[pmon] AS [pmon], 
+    [temppayreg].[ename] AS [ename], 
+    [temppayreg].[grosssal] AS [grosssal], 
+    [temppayreg].[basic] AS [basic], 
+    [temppayreg].[da] AS [da], 
+    [temppayreg].[other_allow] AS [other_allow], 
+    [temppayreg].[hra] AS [hra], 
+    [temppayreg].[conv] AS [conv], 
+    [temppayreg].[advance_ded] AS [advance_ded], 
+    [temppayreg].[pf_ded] AS [pf_ded], 
+    [temppayreg].[esi_ded] AS [esi_ded], 
+    [temppayreg].[ptax_ded] AS [ptax_ded], 
+    [temppayreg].[tds_ded] AS [tds_ded], 
+    [temppayreg].[late_ded] AS [late_ded], 
+    [temppayreg].[lic_amt] AS [lic_amt], 
+    [temppayreg].[actual_netsal] AS [actual_netsal], 
+    [temppayreg].[other_ded] AS [other_ded]
+    FROM [dbo].[temppayreg] AS [temppayreg]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tempyrsal" EntityType="Self.tempyrsal" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tempyrsal].[COMP_CODE] AS [COMP_CODE], 
+    [tempyrsal].[ENO] AS [ENO], 
+    [tempyrsal].[PMON] AS [PMON], 
+    [tempyrsal].[ENAME] AS [ENAME], 
+    [tempyrsal].[GROSSSAL] AS [GROSSSAL], 
+    [tempyrsal].[BASIC] AS [BASIC], 
+    [tempyrsal].[DA] AS [DA], 
+    [tempyrsal].[OTHER_ALLOW] AS [OTHER_ALLOW], 
+    [tempyrsal].[HRA] AS [HRA], 
+    [tempyrsal].[CONV] AS [CONV], 
+    [tempyrsal].[ADVANCE_DED] AS [ADVANCE_DED], 
+    [tempyrsal].[PF_DED] AS [PF_DED], 
+    [tempyrsal].[ESI_DED] AS [ESI_DED], 
+    [tempyrsal].[PTAX_DED] AS [PTAX_DED], 
+    [tempyrsal].[TDS_DED] AS [TDS_DED], 
+    [tempyrsal].[LATE_DED] AS [LATE_DED], 
+    [tempyrsal].[LIC_AMT] AS [LIC_AMT], 
+    [tempyrsal].[ACTUAL_NETSAL] AS [ACTUAL_NETSAL], 
+    [tempyrsal].[OTHER_DED] AS [OTHER_DED]
+    FROM [dbo].[tempyrsal] AS [tempyrsal]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

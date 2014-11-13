@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="98f84c59a52248c1a71e7f0779bc015e" Name="Diagram1" ZoomLevel="108">
+        <EntityTypeShape EntityType="knithModel.Advance_Mast" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.ADVance_Trans" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.ATTENDANCE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.AttendIntegrity" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.AttendSummary" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Auth_Master" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.BiAnnualReport" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Bonu" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.BonusLtStmt" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Coff_Requests" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Coffs_Trans" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.CoffTemp" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Company" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.DailyAttend" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.DaysCount" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Department" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Designation" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.emp_multi_shift" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.EmpAttandance" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.ESIContribution" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.EsiHalfYrCntrbn" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.EVERYDAY" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.ExcessEL" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Form10" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Form2" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Form5" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.FormAR" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.FormF" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.FORMR12" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Grat_Payments" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.IncentivesStmt" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Increment" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.LEV_MAST" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.LEV_TRANS" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.LicStatu" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.PAYREG" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.PAYREGC" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.PERMISSION" Width="1.5" PointX="10.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.PERMISSION1" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.PFContribution" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.PFSummary" Width="1.5" PointX="2.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.ProvidentFund" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.PTaxReturn" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Qualification" Width="1.5" PointX="20.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.QuarterReport" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.RANx" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Reminder" Width="1.5" PointX="22.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.ReminderStatu" Width="1.5" PointX="4.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.RepAttend" Width="1.5" PointX="22.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.RepAttendance" Width="1.5" PointX="6.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.RepCoff" Width="1.5" PointX="22.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.RepGrat" Width="1.5" PointX="14.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.RepSecurity" Width="1.5" PointX="22.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.SecPunch" Width="1.5" PointX="22.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.SHIFT_MASTER" Width="1.5" PointX="22.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.tblbuyer" Width="1.5" PointX="8.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.tblpaycode" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.TempAttend" Width="1.5" PointX="24.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.TempDailyAttend" Width="1.5" PointX="24.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.TempEsiHalfYr" Width="1.5" PointX="10.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.user" Width="1.5" PointX="24.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.UType_Master" Width="1.5" PointX="24.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.attnupdate_log" Width="1.5" PointX="24.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.COFFREQMAY" Width="1.5" PointX="24.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.EMP" Width="1.5" PointX="0.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.empyrsalreport" Width="1.5" PointX="2.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.EsiHalfYrTemp" Width="1.5" PointX="24.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.FORMR1" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.FORMR11" Width="1.5" PointX="26.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.FURTIVE" Width="1.5" PointX="26.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.LEV_MAST1" Width="1.5" PointX="26.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.Payreg1" Width="1.5" PointX="12.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.PfYearContribution" Width="1.5" PointX="14.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.RPTATTEND" Width="1.5" PointX="26.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.RPTESI" Width="1.5" PointX="26.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.RPTOT" Width="1.5" PointX="20.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.RULE" Width="1.5" PointX="26.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.rupayan" Width="1.5" PointX="8.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.SHIFTB" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.tbl_sl" Width="1.5" PointX="28.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.tbl_style" Width="1.5" PointX="28.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.tblBonusRange" Width="1.5" PointX="28.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.tblextrapaycode" Width="1.5" PointX="28.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.tblStylePart" Width="1.5" PointX="16.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.tblStyleRate" Width="1.5" PointX="28.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.temppayreg" Width="1.5" PointX="28.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="knithModel.tempyrsal" Width="1.5" PointX="22.75" PointY="29.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="knithModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Advance_Mast">
+    <Key>
+      <PropertyRef Name="VNO" />
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="VNO" Type="Int32" Nullable="false" />
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AMT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BalAmt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="INST" Type="Int32" />
+    <Property Name="InstBal" Type="Int32" />
+    <Property Name="ADVON" Type="DateTime" Precision="3" />
+    <Property Name="acct_Vno" Type="Int32" />
+    <Property Name="Acct_Vdate" Type="DateTime" Precision="3" />
+    <Property Name="ChqNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ChqDate" Type="DateTime" Precision="3" />
+    <Property Name="Bank_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WEFrom" Type="DateTime" Precision="3" />
+    <Property Name="EffectedFrom" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ADVance_Trans">
+    <Key>
+      <PropertyRef Name="VNo" />
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Comp_Code" />
+      <PropertyRef Name="InstNo" />
+    </Key>
+    <Property Name="VNo" Type="Int32" Nullable="false" />
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InstNo" Type="Int32" Nullable="false" />
+    <Property Name="AdvTotAmt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdvDedAmt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ATTENDANCE">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="WDATE" />
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="WDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SNO" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Time_Out_Date" Type="DateTime" Precision="3" />
+    <Property Name="TIME_IN" Type="DateTime" Precision="3" />
+    <Property Name="TIME_OUT" Type="DateTime" Precision="3" />
+    <Property Name="PER" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LNodeduct" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ENodeduct" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LPer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EPer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AUTH" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="shift" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Time_Worked" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Time_tobeCal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="TrType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LNo" Type="Int32" />
+    <Property Name="Freeze" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="late" Type="Int32" />
+    <Property Name="lc" Type="Int32" />
+    <Property Name="eo" Type="Int32" />
+    <Property Name="ot" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AttendIntegrity">
+    <Key>
+      <PropertyRef Name="Eno" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="CheckFDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CheckTDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Checked" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AttendSummary">
+    <Key>
+      <PropertyRef Name="EmpNo" />
+      <PropertyRef Name="CurMonth" />
+      <PropertyRef Name="CurYear" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="EmpNo" Type="Int32" Nullable="false" />
+    <Property Name="CurMonth" Type="Int32" Nullable="false" />
+    <Property Name="CurYear" Type="Int32" Nullable="false" />
+    <Property Name="CL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COFF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LOP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Holidays" Type="Int32" />
+    <Property Name="PresentDays" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="UserId" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Auth_Master">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="Int16" Nullable="false" />
+    <Property Name="Auth_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BiAnnualReport">
+    <Key>
+      <PropertyRef Name="BiAnnualYear" />
+      <PropertyRef Name="BiAnnualMonth" />
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="FormType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BiAnnualYear" Type="Int32" Nullable="false" />
+    <Property Name="BiAnnualMonth" Type="Int32" Nullable="false" />
+    <Property Name="SNo" Type="Int32" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PrintAs" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Women" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Men" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bonu">
+    <Key>
+      <PropertyRef Name="Eno" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Ename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Doj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Incentive" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="BonusLtStmt">
+    <Key>
+      <PropertyRef Name="Eno" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="EName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Apr" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="May" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Jun" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Jul" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Aug" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Sep" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Oct" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Nov" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Dec" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Jan" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Feb" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Mar" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TotalSalary" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Bonus" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Coff_Requests">
+    <Key>
+      <PropertyRef Name="ReqNo" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="ReqNo" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReqDate" Type="DateTime" Precision="0" />
+    <Property Name="Eno" Type="Int32" />
+    <Property Name="Shift" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WDate" Type="DateTime" Precision="3" />
+    <Property Name="Stime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CDate" Type="DateTime" Precision="3" />
+    <Property Name="CTime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TotHrs" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="No_of_Coffs" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Purpose" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="StatusRem" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SysName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DayName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Coffs_Trans">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Comp_code" />
+      <PropertyRef Name="Wdate" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Comp_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Shift" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Wdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OutDate" Type="DateTime" Precision="3" />
+    <Property Name="Time_in" Type="DateTime" Precision="3" />
+    <Property Name="Time_out" Type="DateTime" Precision="3" />
+    <Property Name="Total_Wtime" Type="DateTime" Precision="3" />
+    <Property Name="No_of_Coffs" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CoffTemp">
+    <Key>
+      <PropertyRef Name="SlNo" />
+    </Key>
+    <Property Name="SlNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SNo" Type="Int32" />
+    <Property Name="Eno" Type="Int32" />
+    <Property Name="ExtraTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeIn_Date" Type="DateTime" Precision="3" />
+    <Property Name="TimeOut_Date" Type="DateTime" Precision="3" />
+    <Property Name="Time_In" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Time_Out" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DayName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STime" Type="DateTime" Precision="3" />
+    <Property Name="NoOfDays" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="YearName" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CompId" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comp_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comp_Descp" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_Addr" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Reports_Path" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DSN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Server_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Setup_Pass" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+    <Property Name="YearName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YearSDate" Type="DateTime" Precision="0" />
+    <Property Name="YearCDate" Type="DateTime" Precision="0" />
+    <Property Name="DbName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BackupDevice" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Estd_Year" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="DailyAttend">
+    <Key>
+      <PropertyRef Name="Wdate" />
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Ename" />
+    </Key>
+    <Property Name="Wdate" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Ename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TrType" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="TimeIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeOut_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeOut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Shit" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Lper" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LperNDed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EPer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EPerNDed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="User_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="worked" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DaysCount">
+    <Key>
+      <PropertyRef Name="SlNo" />
+    </Key>
+    <Property Name="SlNo" Type="Int32" Nullable="false" />
+    <Property Name="SWDays" Type="Int32" />
+    <Property Name="NoOfMDaysWkd" Type="Int32" />
+    <Property Name="NoOfMDaysAbsnt" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="SlNo" />
+      <PropertyRef Name="Department1" />
+    </Key>
+    <Property Name="SlNo" Type="Int32" Nullable="false" />
+    <Property Name="Department1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dept_Desc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="SlNo" />
+      <PropertyRef Name="Designation1" />
+    </Key>
+    <Property Name="SlNo" Type="Int32" Nullable="false" />
+    <Property Name="Designation1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Desg_Desc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="emp_multi_shift">
+    <Key>
+      <PropertyRef Name="TODAY" />
+      <PropertyRef Name="emp_Code" />
+    </Key>
+    <Property Name="TODAY" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="emp_Code" Type="Int32" Nullable="false" />
+    <Property Name="WORH" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Shift" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmpAttandance">
+    <Key>
+      <PropertyRef Name="Wdate" />
+    </Key>
+    <Property Name="EmpNo" Type="Int32" Nullable="false" />
+    <Property Name="Ename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Wdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TimeIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TOutDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeOut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotHrs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shift" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="LType" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Per" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Auth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ESIContribution">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="ESIMonth" />
+      <PropertyRef Name="ESIYear" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="CompCode" />
+    </Key>
+    <Property Name="SNo" Type="Int32" Nullable="false" />
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Ename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ESINo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Present_Days" Type="Int32" />
+    <Property Name="GrossSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeeShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ESIMonth" Type="Int32" Nullable="false" />
+    <Property Name="ESIYear" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EsiHalfYrCntrbn">
+    <Key>
+      <PropertyRef Name="Slno" />
+    </Key>
+    <Property Name="Slno" Type="Int32" Nullable="false" />
+    <Property Name="Eno" Type="Int32" />
+    <Property Name="Ename" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GrossSal" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EsiNo" Type="Int32" />
+    <Property Name="Present_Days" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EVERYDAY">
+    <Key>
+      <PropertyRef Name="TODAY" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="TODAY" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comp_Code" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WORH" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Shift" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ExcessEL">
+    <Key>
+      <PropertyRef Name="ENO" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="EName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TotELs" Type="Int32" />
+    <Property Name="ExsELs" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Form10">
+    <Key>
+      <PropertyRef Name="SlNo" />
+    </Key>
+    <Property Name="SlNo" Type="Int32" Nullable="false" />
+    <Property Name="PfNo" Type="Int32" />
+    <Property Name="EmpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nominee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Form2">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="NomName" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Ename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NomName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NomRelation" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="NomDob" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="NomAdd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GuardianName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GuardAdd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NomFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LocalOffice" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Dispensary" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PfShare" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Form5">
+    <Key>
+      <PropertyRef Name="SlNo" />
+    </Key>
+    <Property Name="SlNo" Type="Int32" Nullable="false" />
+    <Property Name="PfNo" Type="Int32" />
+    <Property Name="EmpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dob" Type="DateTime" Precision="3" />
+    <Property Name="Sex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DoF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FundService" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FormAR">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="RegNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompAddr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OccName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OccAddr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MgrName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MgrAddr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESICode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SSICode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nature" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WorkDays" Type="Int32" />
+    <Property Name="MManDays" Type="Int32" />
+    <Property Name="WMandays" Type="Int32" />
+    <Property Name="CManDays" Type="Int32" />
+    <Property Name="AvgMEmployed" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AvgWEmployed" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AvgCEmployed" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="OTMHrs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OTWHrs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OTCHrs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OTMAmt" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="OTWAmt" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="OTCAmt" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AvgNoWorkers" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BonusAmt" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BonusRate" Type="Int32" />
+    <Property Name="WelfareAmt" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CDWater" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Canteen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SafetyOfficers" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Shelters" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AmbulanceRoom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Creche" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MedicalOfficer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WelfareOfficer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FatalAcc" Type="Int32" />
+    <Property Name="NonFatalAcc" Type="Int32" />
+    <Property Name="DaysLost" Type="Int32" />
+    <Property Name="MaternityCases" Type="Int32" />
+    <Property Name="MedicalCases" Type="Int32" />
+    <Property Name="MisCarriageCases" Type="Int32" />
+    <Property Name="Illnessleave" Type="Int32" />
+    <Property Name="MaternityAmt" Type="Int32" />
+    <Property Name="EntitledWorkers" Type="Int32" />
+    <Property Name="AllowedWorkers" Type="Int32" />
+    <Property Name="AnnualAmt" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="FormF">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="EmployerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="WelfareAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CompName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CompAddr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Others" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NoofEmp" Type="Int32" />
+    <Property Name="NoofEmpContr" Type="Int32" />
+    <Property Name="EmployeeAmt" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EmployerAmt" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="FullPayment" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AmtPaid" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Reasons" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DDNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DDDate" Type="DateTime" Precision="3" />
+    <Property Name="BankName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FORMR12">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NO" Type="Int32" />
+    <Property Name="PFMon" Type="Int32" />
+    <Property Name="Wages" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="DOJ" Type="Int32" />
+    <Property Name="DOL" Type="Int32" />
+    <Property Name="EPF" Type="Decimal" Precision="16" Scale="6" />
+    <Property Name="EPFDiff" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="PensionFund" Type="Decimal" Precision="19" Scale="8" />
+    <Property Name="RFL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="NCP" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Grat_Payments">
+    <Key>
+      <PropertyRef Name="ENo" />
+      <PropertyRef Name="PaySno" />
+      <PropertyRef Name="CCode" />
+    </Key>
+    <Property Name="ENo" Type="Int32" Nullable="false" />
+    <Property Name="PaySno" Type="Int32" Nullable="false" />
+    <Property Name="CCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Bank_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PayAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PaidOn" Type="DateTime" Precision="3" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefDate" Type="DateTime" Precision="3" />
+    <Property Name="TotalAmt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PaidTillNow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IncentivesStmt">
+    <Key>
+      <PropertyRef Name="Eno" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="EName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Apr" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="May" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Jun" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Jul" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Aug" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Sep" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Oct" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Nov" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Dec" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Jan" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Feb" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Mar" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TotalSalary" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Increment">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Sno" />
+      <PropertyRef Name="Comp_code" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Sno" Type="Int32" Nullable="false" />
+    <Property Name="Comp_code" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DOJ" Type="DateTime" Precision="3" />
+    <Property Name="Start_Sal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Incr_Date" Type="DateTime" Precision="3" />
+    <Property Name="Incr_Sal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="last_incr_date" Type="DateTime" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="EffFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Grade" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LEV_MAST">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cl_Open" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EL_Open" Type="Int32" />
+    <Property Name="Coff_Open" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="CL" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EL" Type="Int32" />
+    <Property Name="SL" Type="Int32" />
+    <Property Name="ML" Type="Int32" />
+    <Property Name="COFF" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="CLBAL" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ELBAL" Type="Int32" />
+    <Property Name="SLBAL" Type="Int32" />
+    <Property Name="MLBAL" Type="Int32" />
+    <Property Name="COFFBAL" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="LEV_TRANS">
+    <Key>
+      <PropertyRef Name="LNo" />
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Comp_Code" />
+      <PropertyRef Name="LTYPE" />
+      <PropertyRef Name="LDATE" />
+    </Key>
+    <Property Name="LNo" Type="Int32" Nullable="false" />
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LTYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LDATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FDATE" Type="DateTime" Precision="0" />
+    <Property Name="TDATE" Type="DateTime" Precision="0" />
+    <Property Name="No_Of_Days" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Reason" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="RDate" Type="DateTime" Precision="0" />
+    <Property Name="EDate" Type="DateTime" Precision="0" />
+    <Property Name="Leave_Adate" Type="DateTime" Precision="0" />
+    <Property Name="Auth" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="sno" Type="Int32" />
+    <Property Name="clbal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="elbal" Type="Int32" />
+    <Property Name="coffbal" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="pldetails" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ClBalAfter" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ElBalAfter" Type="Int32" />
+    <Property Name="CoffBalAfter" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Freeze" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LicStatu">
+    <Key>
+      <PropertyRef Name="eno" />
+      <PropertyRef Name="lic_NO" />
+    </Key>
+    <Property Name="eno" Type="Int32" Nullable="false" />
+    <Property Name="ename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lic_sts" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="lic_NO" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="LicAmt" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PAYREG">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="PMON" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="PMON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comp_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="act_basic" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_da" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_hra" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_conv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_oallow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_ChdEduAll" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Fdate" Type="DateTime" Precision="3" />
+    <Property Name="Tdate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BASIC" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="DA" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Other_allow" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="HRA" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="CONV" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ChdEduAll" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Advance_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="IT_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="PF_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ESI_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="PTax_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="TDS_Ded" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Late_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Lic_Amt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OT_Amt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GrossSal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NetSal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Actual_NetSal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Absent_Days" Type="Int32" />
+    <Property Name="Present_Days" Type="Int32" />
+    <Property Name="Available_Days" Type="Int32" />
+    <Property Name="Tot_Ded" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Other_Earnings" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Other_Ded" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Other_Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CL_Bal" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="EL_Bal" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="PrevMon_Ded" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Freeze" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="prod_bonus" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="tiffin_bill" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="currency_rate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="net_pay_Tk" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FH" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="SH" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="ML" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="SL" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="ot_rate" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ot_hr" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="samplepay" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="finededuct" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="prodwages" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="otherpay" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="firststsamity" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="secondsamity" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="milk" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="advancepay" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="sampleday" Type="Int32" />
+    <Property Name="noworkpay" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PAYREGC">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="PMON" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="PMON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comp_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="act_basic" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_da" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_hra" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_conv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_oallow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_ChdEduAll" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Fdate" Type="DateTime" Precision="3" />
+    <Property Name="Tdate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BASIC" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="DA" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Other_allow" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="HRA" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="CONV" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ChdEduAll" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Advance_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="IT_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="PF_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ESI_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="PTax_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="TDS_Ded" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Late_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Lic_Amt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OT_Amt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GrossSal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NetSal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Actual_NetSal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Absent_Days" Type="Int32" />
+    <Property Name="Present_Days" Type="Int32" />
+    <Property Name="Available_Days" Type="Int32" />
+    <Property Name="Tot_Ded" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Other_Earnings" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Other_Ded" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Other_Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CL_Bal" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="EL_Bal" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="PrevMon_Ded" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Freeze" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="prod_bonus" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="tiffin_bill" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="currency_rate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="net_pay_Tk" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FH" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="SH" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="ML" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="SL" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="ot_rate" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ot_hr" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="samplepay" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="finededuct" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="prodwages" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="otherpay" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="firststsamity" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="secondsamity" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="milk" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="advancepay" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="sampleday" Type="Int32" />
+    <Property Name="noworkpay" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PERMISSION">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Per_No" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="Per_No" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SHIFT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ADATE" Type="DateTime" Precision="3" />
+    <Property Name="REASON" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TIME_OUT" Type="DateTime" Precision="3" />
+    <Property Name="TIME_IN" Type="DateTime" Precision="3" />
+    <Property Name="EXPECTED_TIME" Type="DateTime" Precision="3" />
+    <Property Name="AUTHORITY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PERMISSION1">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UNAME" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="menu_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="menuCtrl_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Permitted" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Operation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PFContribution">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="PFMonth" />
+      <PropertyRef Name="PFYear" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="CompCode" />
+    </Key>
+    <Property Name="SNo" Type="Int32" Nullable="false" />
+    <Property Name="ENo" Type="Int32" />
+    <Property Name="AccountNo" Type="Int32" />
+    <Property Name="EName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MonSalary" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MonDa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PFSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EPF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EPF1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FPF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EDLI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PFMonth" Type="Int32" Nullable="false" />
+    <Property Name="PFYear" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PFSummary">
+    <Key>
+      <PropertyRef Name="HeadId" />
+      <PropertyRef Name="PFMonth" />
+      <PropertyRef Name="PFYear" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="CompCode" />
+    </Key>
+    <Property Name="HeadId" Type="Int32" Nullable="false" />
+    <Property Name="Head" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PFSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeePer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="EmployerPer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="EmployeeShare" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmployerShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PFMonth" Type="Int32" Nullable="false" />
+    <Property Name="PFYear" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProvidentFund">
+    <Key>
+      <PropertyRef Name="PFMonth" />
+      <PropertyRef Name="PFYear" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="PFMonth" Type="Int32" Nullable="false" />
+    <Property Name="PFYear" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Subscribers" Type="Int32" />
+    <Property Name="WagesDue" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Ac1_EmployerShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac2_EmployerShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac10_EmployerShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac21_EmployerShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac22_EmployerShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac1_EmployeeShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac2_EmployeeShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac10_EmployeeShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac21_EmployeeShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac22_EmployeeShare" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac1_AdmnCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac2_AdmnCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac10_AdmnCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac21_AdmnCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac22_AdmnCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac1_InspCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac2_InspCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac10_InspCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac21_InspCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac22_InspCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac1_PenalDamages14" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac2_PenalDamages14" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac10_PenalDamages14" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac21_PenalDamages14" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac22_PenalDamages14" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac1_PenalDamages7" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac2_PenalDamages7" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac10_PenalDamages7" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac21_PenalDamages7" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac22_PenalDamages7" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac1_MiscPayment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac2_MiscPayment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac10_MiscPayment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac21_MiscPayment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ac22_MiscPayment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ModeOfPayment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChequeNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChequeDate" Type="DateTime" Precision="3" />
+    <Property Name="DepositorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepBankCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DepBankName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PTaxReturn">
+    <Key>
+      <PropertyRef Name="SNo" />
+      <PropertyRef Name="PTaxMonth" />
+      <PropertyRef Name="PTaxYear" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="SNo" Type="Int32" Nullable="false" />
+    <Property Name="PTaxMonth" Type="Int32" Nullable="false" />
+    <Property Name="PTaxYear" Type="Int32" Nullable="false" />
+    <Property Name="SalRange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NoOfEmp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PTax_Ded" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalTax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Amount_Paid" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Qualification">
+    <Key>
+      <PropertyRef Name="SlNo" />
+      <PropertyRef Name="Qualification1" />
+    </Key>
+    <Property Name="SlNo" Type="Int32" Nullable="false" />
+    <Property Name="Qualification1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Qual_Desc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuarterReport">
+    <Key>
+      <PropertyRef Name="QuarterYear" />
+      <PropertyRef Name="QuarterMonth" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="FormType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="QuarterYear" Type="Int32" Nullable="false" />
+    <Property Name="QuarterMonth" Type="Int32" Nullable="false" />
+    <Property Name="PQuarterMen" Type="Int32" />
+    <Property Name="PQuarterWomen" Type="Int32" />
+    <Property Name="CQuarterMen" Type="Int32" />
+    <Property Name="CQuarterWomen" Type="Int32" />
+    <Property Name="Reason1b" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NOOccurred" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LEE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CEE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Filled" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Reason2b" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Manpower" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RANx">
+    <Key>
+      <PropertyRef Name="Col_Name" />
+      <PropertyRef Name="Range_From" />
+    </Key>
+    <Property Name="Col_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Range_From" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Range_To" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Range_amt" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reminder">
+    <Key>
+      <PropertyRef Name="Rep_Type" />
+      <PropertyRef Name="Duration" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="Rep_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Duration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="From_Date" Type="DateTime" Precision="3" />
+    <Property Name="To_Date" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Comp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReminderStatu">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="QuarterStatus" Type="Int32" Nullable="false" />
+    <Property Name="AnnualStatus" Type="Int32" Nullable="false" />
+    <Property Name="PTaxStatus" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RepAttend">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="eno" Type="Int32" Nullable="false" />
+    <Property Name="wdate" Type="DateTime" Precision="3" />
+    <Property Name="time_In" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeOut_Date" Type="DateTime" Precision="3" />
+    <Property Name="Time_Out" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotHrs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Shift" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Per" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Auth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sts" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LType" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RepAttendance">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="User_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Day1TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day1TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day2TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day2TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day3TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day3TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day4TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day4TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day5TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day5TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day6TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day6TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day7TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day7TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day8TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day8TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day9TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day9TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day10TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day10TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day11TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day11TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day12TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day12TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day13TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day13TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day14TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day14TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day15TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day15TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day16TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day16TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day17TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day17TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day18TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day18TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day19TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day19TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day20TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day20TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day21TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day21TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day22TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day22TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day23TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day23TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day24TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day24TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day25TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day25TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day26TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day26TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day27TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day27TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day28TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day28TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day29TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day29TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day30TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day30TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day31TIn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Day31TOut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Comp_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RepCoff">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Ename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WDate" Type="DateTime" Precision="3" />
+    <Property Name="DayName" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Time_in" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TOut_Date" Type="DateTime" Precision="3" />
+    <Property Name="Time_Out" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TotalHrs" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Coffs" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Authority" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RepGrat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Eno" Type="Int32" />
+    <Property Name="DOL" Type="DateTime" Precision="3" />
+    <Property Name="Grat_Amt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Till_Paid" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Bank_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PayAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PaidOn" Type="DateTime" Precision="3" />
+    <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefDate" Type="DateTime" Precision="3" />
+    <Property Name="TotYears" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RepSecurity">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Pdate" />
+      <PropertyRef Name="Ptime" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Pdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Ptime" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SecPunch">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="PDate" />
+      <PropertyRef Name="Sno" />
+      <PropertyRef Name="PTime" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="PDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sno" Type="Int32" Nullable="false" />
+    <Property Name="PTime" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHIFT_MASTER">
+    <Key>
+      <PropertyRef Name="SHIFT_NAME" />
+    </Key>
+    <Property Name="SHIFT_NAME" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SHIFT_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SHIFT_IN" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SHIFT_OUT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LUNCH_START" Type="DateTime" Precision="3" />
+    <Property Name="LUNCH_END" Type="DateTime" Precision="3" />
+    <Property Name="NEXTDAY_FLAG" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblbuyer">
+    <Key>
+      <PropertyRef Name="buyerid" />
+    </Key>
+    <Property Name="buyerid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="buyername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblpaycode">
+    <Key>
+      <PropertyRef Name="payid" />
+    </Key>
+    <Property Name="payid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="paycode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="payformula" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="adjtype" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TempAttend">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="WDate" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Ename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TimeIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeOut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OutDate" Type="DateTime" Precision="3" />
+    <Property Name="Comp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Time_Worked" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TempDailyAttend">
+    <Key>
+      <PropertyRef Name="Wdate" />
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="Ename" />
+    </Key>
+    <Property Name="Wdate" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="Ename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TimeIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeOut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Shit" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TempEsiHalfYr">
+    <Key>
+      <PropertyRef Name="ENO" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="ENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GrossSal" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ESINO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Present_Days" Type="Int32" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UType_Master">
+    <Key>
+      <PropertyRef Name="User_Type" />
+    </Key>
+    <Property Name="SlNo" Type="Int32" Nullable="false" />
+    <Property Name="User_Type" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Type_Desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="attnupdate_log">
+    <Key>
+      <PropertyRef Name="attndate" />
+    </Key>
+    <Property Name="attndate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="COFFREQMAY">
+    <Key>
+      <PropertyRef Name="ReqNo" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="ReqNo" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReqDate" Type="DateTime" Precision="0" />
+    <Property Name="Eno" Type="Int32" />
+    <Property Name="Shift" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WDate" Type="DateTime" Precision="3" />
+    <Property Name="Stime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CDate" Type="DateTime" Precision="3" />
+    <Property Name="CTime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TotHrs" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="No_of_Coffs" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Purpose" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Authority" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="StatusRem" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SysName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DayName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EMP">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Comp_Code" />
+      <PropertyRef Name="ENAME" />
+      <PropertyRef Name="BASIC" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FHGName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="AReg_Sno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SEX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Qualification" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DESIGNATION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_Type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="DOJ" Type="DateTime" Precision="3" />
+    <Property Name="ADDR1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ADDR2" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ADDR3" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="BASIC" Type="Decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="DA" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="OALL" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="HRA" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="CONV" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ChdEduAll" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Incentives" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OTST" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ITST" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ESIST" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PFST" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ottype" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="shift" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OSTAY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MOP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PFNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESINO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PROFTAX" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="WEFROM" Type="DateTime" Precision="0" />
+    <Property Name="EMPSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DOL" Type="DateTime" Precision="3" />
+    <Property Name="Reason" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="compensate" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TDS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TDS_Amt" Type="Double" />
+    <Property Name="PTSts" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Bank_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bank_Ac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bank_Sts" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LIC_Sts" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LIC_No" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="LicAmt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Dept" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="3" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CoffStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Grade" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="RFL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SSN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="act_gross" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="comp_gross" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="empyrsalreport">
+    <Key>
+      <PropertyRef Name="comp_code" />
+      <PropertyRef Name="eno" />
+      <PropertyRef Name="pmon" />
+      <PropertyRef Name="ename" />
+    </Key>
+    <Property Name="comp_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="eno" Type="Int32" Nullable="false" />
+    <Property Name="pmon" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GrossSal" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="basic" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="da" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Other_Allow" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="hra" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Conv" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="advance_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Pf_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Esi_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ptax_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Tds_ded" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="late_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Lic_amt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Actual_Netsal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="other_ded" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="tot_ded" Type="Decimal" Precision="12" Scale="2" />
+  </EntityType>
+  <EntityType Name="EsiHalfYrTemp">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="ENAME" />
+      <PropertyRef Name="PMON" />
+      <PropertyRef Name="Comp_code" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="ENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PMON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GrossSal" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ESINO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Present_Days" Type="Int32" />
+    <Property Name="Comp_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FORMR1">
+    <Key>
+      <PropertyRef Name="ENAME" />
+    </Key>
+    <Property Name="ENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NO" Type="Int32" />
+    <Property Name="PFMon" Type="Int32" />
+    <Property Name="Wages" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="DOJ" Type="Int32" />
+    <Property Name="DOL" Type="Int32" />
+    <Property Name="EPF" Type="Decimal" Precision="16" Scale="6" />
+    <Property Name="EPFDiff" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="PensionFund" Type="Decimal" Precision="19" Scale="8" />
+    <Property Name="RFL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="NCP" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FORMR11">
+    <Key>
+      <PropertyRef Name="ENAME" />
+    </Key>
+    <Property Name="ENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NO" Type="Int32" />
+    <Property Name="PFMon" Type="Int32" />
+    <Property Name="Wages" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="DOJ" Type="Int32" />
+    <Property Name="DOL" Type="Int32" />
+    <Property Name="EPF" Type="Decimal" Precision="16" Scale="6" />
+    <Property Name="EPFDiff" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="PensionFund" Type="Decimal" Precision="19" Scale="8" />
+    <Property Name="RFL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="NCP" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FURTIVE">
+    <Key>
+      <PropertyRef Name="FORM" />
+    </Key>
+    <Property Name="FORM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OCCULT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LEV_MAST1">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="Comp_Code" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cl_Open" Type="Int32" />
+    <Property Name="EL_Open" Type="Int32" />
+    <Property Name="Coff_Open" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="CL" Type="Decimal" Precision="4" Scale="1" />
+    <Property Name="EL" Type="Int32" />
+    <Property Name="SL" Type="Int32" />
+    <Property Name="ML" Type="Int32" />
+    <Property Name="COFF" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="CLBAL" Type="Decimal" Precision="4" Scale="1" />
+    <Property Name="ELBAL" Type="Int32" />
+    <Property Name="SLBAL" Type="Int32" />
+    <Property Name="MLBAL" Type="Int32" />
+    <Property Name="COFFBAL" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Payreg1">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="PMON" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="PMON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comp_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="act_basic" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_da" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_hra" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="act_conv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="act_oallow" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="act_ChdEduAll" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Fdate" Type="DateTime" Precision="3" />
+    <Property Name="Tdate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BASIC" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="DA" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Other_allow" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="HRA" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="CONV" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ChdEduAll" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Advance_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="IT_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="PF_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ESI_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="PTax_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="TDS_Ded" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Late_Ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Lic_Amt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OT_Amt" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="GrossSal" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NetSal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Actual_NetSal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Absent_Days" Type="Int32" />
+    <Property Name="Present_Days" Type="Int32" />
+    <Property Name="Available_Days" Type="Int32" />
+    <Property Name="Tot_Ded" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Other_Earnings" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Other_Ded" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Other_Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CL_Bal" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="EL_Bal" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="PrevMon_Ded" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Freeze" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PfYearContribution">
+    <Key>
+      <PropertyRef Name="Eno" />
+      <PropertyRef Name="PMon" />
+    </Key>
+    <Property Name="Eno" Type="Int32" Nullable="false" />
+    <Property Name="PMon" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PfSal" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="EPF" Type="Decimal" Precision="15" Scale="6" />
+    <Property Name="EPF_Diff" Type="Decimal" Precision="16" Scale="8" />
+    <Property Name="PensionFund" Type="Decimal" Precision="16" Scale="8" />
+    <Property Name="Absent_Days" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RPTATTEND">
+    <Key>
+      <PropertyRef Name="INTIME" />
+      <PropertyRef Name="WDATE" />
+      <PropertyRef Name="ENO" />
+    </Key>
+    <Property Name="INTIME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OUTTIME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="WDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="STAT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ENAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RPTESI">
+    <Key>
+      <PropertyRef Name="ENO" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="ENAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ESINO" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="TDAYS" Type="Int32" />
+    <Property Name="TWAGE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TESI" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="DWAGE" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="RPTOT">
+    <Key>
+      <PropertyRef Name="ENO" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="ENAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="OTIME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GROSS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NP" Type="Int32" />
+    <Property Name="PAY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LUNCH" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="TOTPAY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SUNPAY" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="RULE">
+    <Key>
+      <PropertyRef Name="APD" />
+      <PropertyRef Name="ALLOWCL" />
+      <PropertyRef Name="ALLOWEL" />
+      <PropertyRef Name="ALLOWSL" />
+      <PropertyRef Name="ALLOWML" />
+      <PropertyRef Name="ALLOWHDC" />
+      <PropertyRef Name="ALLOWFDC" />
+      <PropertyRef Name="ALLOWGT" />
+      <PropertyRef Name="ALLOWOS" />
+      <PropertyRef Name="ALLOWCF" />
+      <PropertyRef Name="ITIME" />
+      <PropertyRef Name="OTIME" />
+      <PropertyRef Name="PFP" />
+      <PropertyRef Name="ESIP" />
+    </Key>
+    <Property Name="YEARCL" Type="Int32" />
+    <Property Name="MONTHCL" Type="Int32" />
+    <Property Name="APD" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ALLOWCL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MINEL" Type="Int32" />
+    <Property Name="DAYEL" Type="Int32" />
+    <Property Name="CONTEL" Type="Int32" />
+    <Property Name="MAXEL" Type="Int32" />
+    <Property Name="ALLOWEL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YEARSL" Type="Int32" />
+    <Property Name="NOSL" Type="Int32" />
+    <Property Name="ALLOWSL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YEARML" Type="Int32" />
+    <Property Name="NOML" Type="Int32" />
+    <Property Name="ALLOWML" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HDCS" Type="DateTime" Precision="3" />
+    <Property Name="HDCE" Type="DateTime" Precision="3" />
+    <Property Name="NOHD" Type="Int32" />
+    <Property Name="ALLOWHDC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FDCS" Type="DateTime" Precision="3" />
+    <Property Name="FDCE" Type="DateTime" Precision="3" />
+    <Property Name="NOFD" Type="Int32" />
+    <Property Name="ALLOWFDC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GPUT" Type="DateTime" Precision="3" />
+    <Property Name="NOGD" Type="Int32" />
+    <Property Name="ALLOWGT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OSTAY" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ALLOWOS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ALLOWCF" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ITIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OTIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PFP" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ESIP" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="LTS" Type="DateTime" Precision="3" />
+    <Property Name="LTE" Type="DateTime" Precision="3" />
+    <Property Name="HDCL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="EGO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="COVER" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CONV" Type="Int32" />
+    <Property Name="HDPD" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="rupayan">
+    <Key>
+      <PropertyRef Name="ID1" />
+    </Key>
+    <Property Name="ID1" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int16" />
+    <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Joining" Type="DateTime" Precision="3" />
+    <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Grade" Type="Int16" />
+    <Property Name="Basic" Type="Double" />
+    <Property Name="HouseRent" Type="Double" />
+    <Property Name="Medical" Type="Double" />
+    <Property Name="Gross" Type="Double" />
+  </EntityType>
+  <EntityType Name="SHIFTB">
+    <Key>
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="WDATE" />
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="WDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SNO" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Time_Out_Date" Type="DateTime" Precision="3" />
+    <Property Name="TIME_IN" Type="DateTime" Precision="3" />
+    <Property Name="TIME_OUT" Type="DateTime" Precision="3" />
+    <Property Name="PER" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LNodeduct" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ENodeduct" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LPer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EPer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AUTH" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="shift" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Time_Worked" Type="DateTime" Precision="3" />
+    <Property Name="Time_tobeCal" Type="DateTime" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="TrType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LNo" Type="Int32" />
+    <Property Name="Freeze" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_sl">
+    <Key>
+      <PropertyRef Name="SL" />
+    </Key>
+    <Property Name="SL" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_style">
+    <Key>
+      <PropertyRef Name="styleID" />
+      <PropertyRef Name="StyleName" />
+      <PropertyRef Name="style_desc" />
+    </Key>
+    <Property Name="styleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StyleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="style_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="buyer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="order_qty" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tblBonusRange">
+    <Key>
+      <PropertyRef Name="rangemin" />
+      <PropertyRef Name="rangemax" />
+      <PropertyRef Name="bonusamount" />
+    </Key>
+    <Property Name="rangemin" Type="Int32" Nullable="false" />
+    <Property Name="rangemax" Type="Int32" Nullable="false" />
+    <Property Name="bonusamount" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblextrapaycode">
+    <Key>
+      <PropertyRef Name="uid" />
+      <PropertyRef Name="year" />
+      <PropertyRef Name="month" />
+      <PropertyRef Name="empid" />
+      <PropertyRef Name="paycode" />
+      <PropertyRef Name="payvalue" />
+      <PropertyRef Name="adjtype" />
+    </Key>
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="year" Type="Int32" Nullable="false" />
+    <Property Name="month" Type="Int32" Nullable="false" />
+    <Property Name="empid" Type="Int32" Nullable="false" />
+    <Property Name="paycode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="payvalue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="payformula" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="adjtype" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblStylePart">
+    <Key>
+      <PropertyRef Name="PartsID" />
+      <PropertyRef Name="PartsName" />
+      <PropertyRef Name="parts_desc" />
+    </Key>
+    <Property Name="PartsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PartsName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parts_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PartsCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblStyleRate">
+    <Key>
+      <PropertyRef Name="uid" />
+    </Key>
+    <Property Name="uid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OperationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fk_styleID" Type="Int32" />
+    <Property Name="Stylename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fk_partsID" Type="Int32" />
+    <Property Name="partsCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Partsname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="temppayreg">
+    <Key>
+      <PropertyRef Name="comp_code" />
+      <PropertyRef Name="eno" />
+      <PropertyRef Name="pmon" />
+      <PropertyRef Name="ename" />
+    </Key>
+    <Property Name="comp_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="eno" Type="Int32" Nullable="false" />
+    <Property Name="pmon" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="grosssal" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="basic" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="da" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="other_allow" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="hra" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="conv" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="advance_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="pf_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="esi_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ptax_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="tds_ded" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="late_ded" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="lic_amt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="actual_netsal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="other_ded" Type="Decimal" Precision="12" Scale="2" />
+  </EntityType>
+  <EntityType Name="tempyrsal">
+    <Key>
+      <PropertyRef Name="COMP_CODE" />
+      <PropertyRef Name="ENO" />
+      <PropertyRef Name="PMON" />
+      <PropertyRef Name="ENAME" />
+    </Key>
+    <Property Name="COMP_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ENO" Type="Int32" Nullable="false" />
+    <Property Name="PMON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GROSSSAL" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BASIC" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="DA" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="OTHER_ALLOW" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="HRA" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="CONV" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ADVANCE_DED" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="PF_DED" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="ESI_DED" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="PTAX_DED" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="TDS_DED" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LATE_DED" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="LIC_AMT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ACTUAL_NETSAL" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OTHER_DED" Type="Decimal" Precision="12" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="knithEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Advance_Mast" EntityType="Self.Advance_Mast" />
+    <EntitySet Name="ADVance_Trans" EntityType="Self.ADVance_Trans" />
+    <EntitySet Name="ATTENDANCEs" EntityType="Self.ATTENDANCE" />
+    <EntitySet Name="AttendIntegrities" EntityType="Self.AttendIntegrity" />
+    <EntitySet Name="AttendSummaries" EntityType="Self.AttendSummary" />
+    <EntitySet Name="Auth_Master" EntityType="Self.Auth_Master" />
+    <EntitySet Name="BiAnnualReports" EntityType="Self.BiAnnualReport" />
+    <EntitySet Name="Bonus" EntityType="Self.Bonu" />
+    <EntitySet Name="BonusLtStmts" EntityType="Self.BonusLtStmt" />
+    <EntitySet Name="Coff_Requests" EntityType="Self.Coff_Requests" />
+    <EntitySet Name="Coffs_Trans" EntityType="Self.Coffs_Trans" />
+    <EntitySet Name="CoffTemps" EntityType="Self.CoffTemp" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="DailyAttends" EntityType="Self.DailyAttend" />
+    <EntitySet Name="DaysCounts" EntityType="Self.DaysCount" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Designations" EntityType="Self.Designation" />
+    <EntitySet Name="emp_multi_shift" EntityType="Self.emp_multi_shift" />
+    <EntitySet Name="EmpAttandances" EntityType="Self.EmpAttandance" />
+    <EntitySet Name="ESIContributions" EntityType="Self.ESIContribution" />
+    <EntitySet Name="EsiHalfYrCntrbns" EntityType="Self.EsiHalfYrCntrbn" />
+    <EntitySet Name="EVERYDAYs" EntityType="Self.EVERYDAY" />
+    <EntitySet Name="ExcessELs" EntityType="Self.ExcessEL" />
+    <EntitySet Name="Form10" EntityType="Self.Form10" />
+    <EntitySet Name="Form2" EntityType="Self.Form2" />
+    <EntitySet Name="Form5" EntityType="Self.Form5" />
+    <EntitySet Name="FormARs" EntityType="Self.FormAR" />
+    <EntitySet Name="FormFs" EntityType="Self.FormF" />
+    <EntitySet Name="FORMR12" EntityType="Self.FORMR12" />
+    <EntitySet Name="Grat_Payments" EntityType="Self.Grat_Payments" />
+    <EntitySet Name="IncentivesStmts" EntityType="Self.IncentivesStmt" />
+    <EntitySet Name="Increments" EntityType="Self.Increment" />
+    <EntitySet Name="LEV_MAST" EntityType="Self.LEV_MAST" />
+    <EntitySet Name="LEV_TRANS" EntityType="Self.LEV_TRANS" />
+    <EntitySet Name="LicStatus" EntityType="Self.LicStatu" />
+    <EntitySet Name="PAYREGs" EntityType="Self.PAYREG" />
+    <EntitySet Name="PAYREGCs" EntityType="Self.PAYREGC" />
+    <EntitySet Name="PERMISSIONs" EntityType="Self.PERMISSION" />
+    <EntitySet Name="PERMISSIONS1" EntityType="Self.PERMISSION1" />
+    <EntitySet Name="PFContributions" EntityType="Self.PFContribution" />
+    <EntitySet Name="PFSummaries" EntityType="Self.PFSummary" />
+    <EntitySet Name="ProvidentFunds" EntityType="Self.ProvidentFund" />
+    <EntitySet Name="PTaxReturns" EntityType="Self.PTaxReturn" />
+    <EntitySet Name="Qualifications" EntityType="Self.Qualification" />
+    <EntitySet Name="QuarterReports" EntityType="Self.QuarterReport" />
+    <EntitySet Name="RANGES" EntityType="Self.RANx" />
+    <EntitySet Name="Reminders" EntityType="Self.Reminder" />
+    <EntitySet Name="ReminderStatus" EntityType="Self.ReminderStatu" />
+    <EntitySet Name="RepAttends" EntityType="Self.RepAttend" />
+    <EntitySet Name="RepAttendances" EntityType="Self.RepAttendance" />
+    <EntitySet Name="RepCoffs" EntityType="Self.RepCoff" />
+    <EntitySet Name="RepGrats" EntityType="Self.RepGrat" />
+    <EntitySet Name="RepSecurities" EntityType="Self.RepSecurity" />
+    <EntitySet Name="SecPunches" EntityType="Self.SecPunch" />
+    <EntitySet Name="SHIFT_MASTER" EntityType="Self.SHIFT_MASTER" />
+    <EntitySet Name="tblbuyers" EntityType="Self.tblbuyer" />
+    <EntitySet Name="tblpaycodes" EntityType="Self.tblpaycode" />
+    <EntitySet Name="TempAttends" EntityType="Self.TempAttend" />
+    <EntitySet Name="TempDailyAttends" EntityType="Self.TempDailyAttend" />
+    <EntitySet Name="TempEsiHalfYrs" EntityType="Self.TempEsiHalfYr" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="UType_Master" EntityType="Self.UType_Master" />
+    <EntitySet Name="attnupdate_log" EntityType="Self.attnupdate_log" />
+    <EntitySet Name="COFFREQMAYs" EntityType="Self.COFFREQMAY" />
+    <EntitySet Name="EMPs" EntityType="Self.EMP" />
+    <EntitySet Name="empyrsalreports" EntityType="Self.empyrsalreport" />
+    <EntitySet Name="EsiHalfYrTemps" EntityType="Self.EsiHalfYrTemp" />
+    <EntitySet Name="FORMR1" EntityType="Self.FORMR1" />
+    <EntitySet Name="FORMR11" EntityType="Self.FORMR11" />
+    <EntitySet Name="FURTIVEs" EntityType="Self.FURTIVE" />
+    <EntitySet Name="LEV_MAST1" EntityType="Self.LEV_MAST1" />
+    <EntitySet Name="Payreg1" EntityType="Self.Payreg1" />
+    <EntitySet Name="PfYearContributions" EntityType="Self.PfYearContribution" />
+    <EntitySet Name="RPTATTENDs" EntityType="Self.RPTATTEND" />
+    <EntitySet Name="RPTESIs" EntityType="Self.RPTESI" />
+    <EntitySet Name="RPTOTs" EntityType="Self.RPTOT" />
+    <EntitySet Name="RULES" EntityType="Self.RULE" />
+    <EntitySet Name="rupayans" EntityType="Self.rupayan" />
+    <EntitySet Name="SHIFTBs" EntityType="Self.SHIFTB" />
+    <EntitySet Name="tbl_sl" EntityType="Self.tbl_sl" />
+    <EntitySet Name="tbl_style" EntityType="Self.tbl_style" />
+    <EntitySet Name="tblBonusRanges" EntityType="Self.tblBonusRange" />
+    <EntitySet Name="tblextrapaycodes" EntityType="Self.tblextrapaycode" />
+    <EntitySet Name="tblStyleParts" EntityType="Self.tblStylePart" />
+    <EntitySet Name="tblStyleRates" EntityType="Self.tblStyleRate" />
+    <EntitySet Name="temppayregs" EntityType="Self.temppayreg" />
+    <EntitySet Name="tempyrsals" EntityType="Self.tempyrsal" />
+  </EntityContainer>
+</Schema>

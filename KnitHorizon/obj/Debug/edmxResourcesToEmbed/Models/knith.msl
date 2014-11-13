@@ -1,0 +1,1708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="knithModelStoreContainer" CdmEntityContainer="knithEntities">
+    <EntitySetMapping Name="Advance_Mast">
+      <EntityTypeMapping TypeName="knithModel.Advance_Mast">
+        <MappingFragment StoreEntitySet="Advance_Mast">
+          <ScalarProperty Name="VNO" ColumnName="VNO" />
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="AMT" ColumnName="AMT" />
+          <ScalarProperty Name="BalAmt" ColumnName="BalAmt" />
+          <ScalarProperty Name="INST" ColumnName="INST" />
+          <ScalarProperty Name="InstBal" ColumnName="InstBal" />
+          <ScalarProperty Name="ADVON" ColumnName="ADVON" />
+          <ScalarProperty Name="acct_Vno" ColumnName="acct_Vno" />
+          <ScalarProperty Name="Acct_Vdate" ColumnName="Acct_Vdate" />
+          <ScalarProperty Name="ChqNo" ColumnName="ChqNo" />
+          <ScalarProperty Name="ChqDate" ColumnName="ChqDate" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="WEFrom" ColumnName="WEFrom" />
+          <ScalarProperty Name="EffectedFrom" ColumnName="EffectedFrom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADVance_Trans">
+      <EntityTypeMapping TypeName="knithModel.ADVance_Trans">
+        <MappingFragment StoreEntitySet="ADVance_Trans">
+          <ScalarProperty Name="VNo" ColumnName="VNo" />
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="InstNo" ColumnName="InstNo" />
+          <ScalarProperty Name="AdvTotAmt" ColumnName="AdvTotAmt" />
+          <ScalarProperty Name="AdvDedAmt" ColumnName="AdvDedAmt" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ATTENDANCEs">
+      <EntityTypeMapping TypeName="knithModel.ATTENDANCE">
+        <MappingFragment StoreEntitySet="ATTENDANCE">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="WDATE" ColumnName="WDATE" />
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="LType" ColumnName="LType" />
+          <ScalarProperty Name="Time_Out_Date" ColumnName="Time_Out_Date" />
+          <ScalarProperty Name="TIME_IN" ColumnName="TIME_IN" />
+          <ScalarProperty Name="TIME_OUT" ColumnName="TIME_OUT" />
+          <ScalarProperty Name="PER" ColumnName="PER" />
+          <ScalarProperty Name="LNodeduct" ColumnName="LNodeduct" />
+          <ScalarProperty Name="ENodeduct" ColumnName="ENodeduct" />
+          <ScalarProperty Name="LPer" ColumnName="LPer" />
+          <ScalarProperty Name="EPer" ColumnName="EPer" />
+          <ScalarProperty Name="AUTH" ColumnName="AUTH" />
+          <ScalarProperty Name="shift" ColumnName="shift" />
+          <ScalarProperty Name="Time_Worked" ColumnName="Time_Worked" />
+          <ScalarProperty Name="Time_tobeCal" ColumnName="Time_tobeCal" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TrType" ColumnName="TrType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LNo" ColumnName="LNo" />
+          <ScalarProperty Name="Freeze" ColumnName="Freeze" />
+          <ScalarProperty Name="late" ColumnName="late" />
+          <ScalarProperty Name="lc" ColumnName="lc" />
+          <ScalarProperty Name="eo" ColumnName="eo" />
+          <ScalarProperty Name="ot" ColumnName="ot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttendIntegrities">
+      <EntityTypeMapping TypeName="knithModel.AttendIntegrity">
+        <MappingFragment StoreEntitySet="AttendIntegrity">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="CheckFDate" ColumnName="CheckFDate" />
+          <ScalarProperty Name="CheckTDate" ColumnName="CheckTDate" />
+          <ScalarProperty Name="Checked" ColumnName="Checked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttendSummaries">
+      <EntityTypeMapping TypeName="knithModel.AttendSummary">
+        <MappingFragment StoreEntitySet="AttendSummary">
+          <ScalarProperty Name="EmpNo" ColumnName="EmpNo" />
+          <ScalarProperty Name="CurMonth" ColumnName="CurMonth" />
+          <ScalarProperty Name="CurYear" ColumnName="CurYear" />
+          <ScalarProperty Name="CL" ColumnName="CL" />
+          <ScalarProperty Name="EL" ColumnName="EL" />
+          <ScalarProperty Name="COFF" ColumnName="COFF" />
+          <ScalarProperty Name="LOP" ColumnName="LOP" />
+          <ScalarProperty Name="Holidays" ColumnName="Holidays" />
+          <ScalarProperty Name="PresentDays" ColumnName="PresentDays" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Auth_Master">
+      <EntityTypeMapping TypeName="knithModel.Auth_Master">
+        <MappingFragment StoreEntitySet="Auth_Master">
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="Auth_Name" ColumnName="Auth_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BiAnnualReports">
+      <EntityTypeMapping TypeName="knithModel.BiAnnualReport">
+        <MappingFragment StoreEntitySet="BiAnnualReport">
+          <ScalarProperty Name="FormType" ColumnName="FormType" />
+          <ScalarProperty Name="BiAnnualYear" ColumnName="BiAnnualYear" />
+          <ScalarProperty Name="BiAnnualMonth" ColumnName="BiAnnualMonth" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="PrintAs" ColumnName="PrintAs" />
+          <ScalarProperty Name="Women" ColumnName="Women" />
+          <ScalarProperty Name="Men" ColumnName="Men" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bonus">
+      <EntityTypeMapping TypeName="knithModel.Bonu">
+        <MappingFragment StoreEntitySet="Bonus">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="Doj" ColumnName="Doj" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Incentive" ColumnName="Incentive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BonusLtStmts">
+      <EntityTypeMapping TypeName="knithModel.BonusLtStmt">
+        <MappingFragment StoreEntitySet="BonusLtStmt">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="EName" ColumnName="EName" />
+          <ScalarProperty Name="Apr" ColumnName="Apr" />
+          <ScalarProperty Name="May" ColumnName="May" />
+          <ScalarProperty Name="Jun" ColumnName="Jun" />
+          <ScalarProperty Name="Jul" ColumnName="Jul" />
+          <ScalarProperty Name="Aug" ColumnName="Aug" />
+          <ScalarProperty Name="Sep" ColumnName="Sep" />
+          <ScalarProperty Name="Oct" ColumnName="Oct" />
+          <ScalarProperty Name="Nov" ColumnName="Nov" />
+          <ScalarProperty Name="Dec" ColumnName="Dec" />
+          <ScalarProperty Name="Jan" ColumnName="Jan" />
+          <ScalarProperty Name="Feb" ColumnName="Feb" />
+          <ScalarProperty Name="Mar" ColumnName="Mar" />
+          <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+          <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coff_Requests">
+      <EntityTypeMapping TypeName="knithModel.Coff_Requests">
+        <MappingFragment StoreEntitySet="Coff_Requests">
+          <ScalarProperty Name="ReqNo" ColumnName="ReqNo" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="ReqDate" ColumnName="ReqDate" />
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="WDate" ColumnName="WDate" />
+          <ScalarProperty Name="Stime" ColumnName="Stime" />
+          <ScalarProperty Name="CDate" ColumnName="CDate" />
+          <ScalarProperty Name="CTime" ColumnName="CTime" />
+          <ScalarProperty Name="TotHrs" ColumnName="TotHrs" />
+          <ScalarProperty Name="No_of_Coffs" ColumnName="No_of_Coffs" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="StatusRem" ColumnName="StatusRem" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SysName" ColumnName="SysName" />
+          <ScalarProperty Name="DayName" ColumnName="DayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coffs_Trans">
+      <EntityTypeMapping TypeName="knithModel.Coffs_Trans">
+        <MappingFragment StoreEntitySet="Coffs_Trans">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Comp_code" ColumnName="Comp_code" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="Wdate" ColumnName="Wdate" />
+          <ScalarProperty Name="OutDate" ColumnName="OutDate" />
+          <ScalarProperty Name="Time_in" ColumnName="Time_in" />
+          <ScalarProperty Name="Time_out" ColumnName="Time_out" />
+          <ScalarProperty Name="Total_Wtime" ColumnName="Total_Wtime" />
+          <ScalarProperty Name="No_of_Coffs" ColumnName="No_of_Coffs" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoffTemps">
+      <EntityTypeMapping TypeName="knithModel.CoffTemp">
+        <MappingFragment StoreEntitySet="CoffTemp">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="ExtraTime" ColumnName="ExtraTime" />
+          <ScalarProperty Name="TimeIn_Date" ColumnName="TimeIn_Date" />
+          <ScalarProperty Name="TimeOut_Date" ColumnName="TimeOut_Date" />
+          <ScalarProperty Name="Time_In" ColumnName="Time_In" />
+          <ScalarProperty Name="Time_Out" ColumnName="Time_Out" />
+          <ScalarProperty Name="DayName" ColumnName="DayName" />
+          <ScalarProperty Name="STime" ColumnName="STime" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="knithModel.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CompId" ColumnName="CompId" />
+          <ScalarProperty Name="Comp_Name" ColumnName="Comp_Name" />
+          <ScalarProperty Name="Comp_Descp" ColumnName="Comp_Descp" />
+          <ScalarProperty Name="Comp_Addr" ColumnName="Comp_Addr" />
+          <ScalarProperty Name="Reports_Path" ColumnName="Reports_Path" />
+          <ScalarProperty Name="DSN" ColumnName="DSN" />
+          <ScalarProperty Name="Server_Name" ColumnName="Server_Name" />
+          <ScalarProperty Name="Setup_Pass" ColumnName="Setup_Pass" />
+          <ScalarProperty Name="YearName" ColumnName="YearName" />
+          <ScalarProperty Name="YearSDate" ColumnName="YearSDate" />
+          <ScalarProperty Name="YearCDate" ColumnName="YearCDate" />
+          <ScalarProperty Name="DbName" ColumnName="DbName" />
+          <ScalarProperty Name="BackupDevice" ColumnName="BackupDevice" />
+          <ScalarProperty Name="Estd_Year" ColumnName="Estd_Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyAttends">
+      <EntityTypeMapping TypeName="knithModel.DailyAttend">
+        <MappingFragment StoreEntitySet="DailyAttend">
+          <ScalarProperty Name="Wdate" ColumnName="Wdate" />
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="TrType" ColumnName="TrType" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="TimeOut_Date" ColumnName="TimeOut_Date" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="Shit" ColumnName="Shit" />
+          <ScalarProperty Name="Lper" ColumnName="Lper" />
+          <ScalarProperty Name="LperNDed" ColumnName="LperNDed" />
+          <ScalarProperty Name="EPer" ColumnName="EPer" />
+          <ScalarProperty Name="EPerNDed" ColumnName="EPerNDed" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="worked" ColumnName="worked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DaysCounts">
+      <EntityTypeMapping TypeName="knithModel.DaysCount">
+        <MappingFragment StoreEntitySet="DaysCount">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="SWDays" ColumnName="SWDays" />
+          <ScalarProperty Name="NoOfMDaysWkd" ColumnName="NoOfMDaysWkd" />
+          <ScalarProperty Name="NoOfMDaysAbsnt" ColumnName="NoOfMDaysAbsnt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="knithModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="Department1" ColumnName="Department" />
+          <ScalarProperty Name="Dept_Desc" ColumnName="Dept_Desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designations">
+      <EntityTypeMapping TypeName="knithModel.Designation">
+        <MappingFragment StoreEntitySet="Designation">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="Designation1" ColumnName="Designation" />
+          <ScalarProperty Name="Desg_Desc" ColumnName="Desg_Desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emp_multi_shift">
+      <EntityTypeMapping TypeName="knithModel.emp_multi_shift">
+        <MappingFragment StoreEntitySet="emp_multi_shift">
+          <ScalarProperty Name="TODAY" ColumnName="TODAY" />
+          <ScalarProperty Name="emp_Code" ColumnName="emp_Code" />
+          <ScalarProperty Name="WORH" ColumnName="WORH" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpAttandances">
+      <EntityTypeMapping TypeName="knithModel.EmpAttandance">
+        <MappingFragment StoreEntitySet="EmpAttandance">
+          <ScalarProperty Name="EmpNo" ColumnName="EmpNo" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Wdate" ColumnName="Wdate" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="TOutDate" ColumnName="TOutDate" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="TotHrs" ColumnName="TotHrs" />
+          <ScalarProperty Name="shift" ColumnName="shift" />
+          <ScalarProperty Name="LType" ColumnName="LType" />
+          <ScalarProperty Name="Per" ColumnName="Per" />
+          <ScalarProperty Name="Auth" ColumnName="Auth" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESIContributions">
+      <EntityTypeMapping TypeName="knithModel.ESIContribution">
+        <MappingFragment StoreEntitySet="ESIContribution">
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="ESINo" ColumnName="ESINo" />
+          <ScalarProperty Name="Present_Days" ColumnName="Present_Days" />
+          <ScalarProperty Name="GrossSalary" ColumnName="GrossSalary" />
+          <ScalarProperty Name="EmployeeShare" ColumnName="EmployeeShare" />
+          <ScalarProperty Name="EmployerShare" ColumnName="EmployerShare" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="ESIMonth" ColumnName="ESIMonth" />
+          <ScalarProperty Name="ESIYear" ColumnName="ESIYear" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompCode" ColumnName="CompCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EsiHalfYrCntrbns">
+      <EntityTypeMapping TypeName="knithModel.EsiHalfYrCntrbn">
+        <MappingFragment StoreEntitySet="EsiHalfYrCntrbn">
+          <ScalarProperty Name="Slno" ColumnName="Slno" />
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="GrossSal" ColumnName="GrossSal" />
+          <ScalarProperty Name="EsiNo" ColumnName="EsiNo" />
+          <ScalarProperty Name="Present_Days" ColumnName="Present_Days" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EVERYDAYs">
+      <EntityTypeMapping TypeName="knithModel.EVERYDAY">
+        <MappingFragment StoreEntitySet="EVERYDAY">
+          <ScalarProperty Name="TODAY" ColumnName="TODAY" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="WORH" ColumnName="WORH" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExcessELs">
+      <EntityTypeMapping TypeName="knithModel.ExcessEL">
+        <MappingFragment StoreEntitySet="ExcessELs">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="EName" ColumnName="EName" />
+          <ScalarProperty Name="TotELs" ColumnName="TotELs" />
+          <ScalarProperty Name="ExsELs" ColumnName="ExsELs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Form10">
+      <EntityTypeMapping TypeName="knithModel.Form10">
+        <MappingFragment StoreEntitySet="Form10">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="PfNo" ColumnName="PfNo" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="Nominee" ColumnName="Nominee" />
+          <ScalarProperty Name="Dol" ColumnName="Dol" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Form2">
+      <EntityTypeMapping TypeName="knithModel.Form2">
+        <MappingFragment StoreEntitySet="Form2">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="NomName" ColumnName="NomName" />
+          <ScalarProperty Name="NomRelation" ColumnName="NomRelation" />
+          <ScalarProperty Name="NomDob" ColumnName="NomDob" />
+          <ScalarProperty Name="NomAdd" ColumnName="NomAdd" />
+          <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
+          <ScalarProperty Name="GuardAdd" ColumnName="GuardAdd" />
+          <ScalarProperty Name="NomFName" ColumnName="NomFName" />
+          <ScalarProperty Name="LocalOffice" ColumnName="LocalOffice" />
+          <ScalarProperty Name="Dispensary" ColumnName="Dispensary" />
+          <ScalarProperty Name="PfShare" ColumnName="PfShare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Form5">
+      <EntityTypeMapping TypeName="knithModel.Form5">
+        <MappingFragment StoreEntitySet="Form5">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="PfNo" ColumnName="PfNo" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="DoF" ColumnName="DoF" />
+          <ScalarProperty Name="FundService" ColumnName="FundService" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormARs">
+      <EntityTypeMapping TypeName="knithModel.FormAR">
+        <MappingFragment StoreEntitySet="FormAR">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="CompAddr" ColumnName="CompAddr" />
+          <ScalarProperty Name="OccName" ColumnName="OccName" />
+          <ScalarProperty Name="OccAddr" ColumnName="OccAddr" />
+          <ScalarProperty Name="MgrName" ColumnName="MgrName" />
+          <ScalarProperty Name="MgrAddr" ColumnName="MgrAddr" />
+          <ScalarProperty Name="ESICode" ColumnName="ESICode" />
+          <ScalarProperty Name="SSICode" ColumnName="SSICode" />
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+          <ScalarProperty Name="WorkDays" ColumnName="WorkDays" />
+          <ScalarProperty Name="MManDays" ColumnName="MManDays" />
+          <ScalarProperty Name="WMandays" ColumnName="WMandays" />
+          <ScalarProperty Name="CManDays" ColumnName="CManDays" />
+          <ScalarProperty Name="AvgMEmployed" ColumnName="AvgMEmployed" />
+          <ScalarProperty Name="AvgWEmployed" ColumnName="AvgWEmployed" />
+          <ScalarProperty Name="AvgCEmployed" ColumnName="AvgCEmployed" />
+          <ScalarProperty Name="OTMHrs" ColumnName="OTMHrs" />
+          <ScalarProperty Name="OTWHrs" ColumnName="OTWHrs" />
+          <ScalarProperty Name="OTCHrs" ColumnName="OTCHrs" />
+          <ScalarProperty Name="OTMAmt" ColumnName="OTMAmt" />
+          <ScalarProperty Name="OTWAmt" ColumnName="OTWAmt" />
+          <ScalarProperty Name="OTCAmt" ColumnName="OTCAmt" />
+          <ScalarProperty Name="AvgNoWorkers" ColumnName="AvgNoWorkers" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="BonusAmt" ColumnName="BonusAmt" />
+          <ScalarProperty Name="BonusRate" ColumnName="BonusRate" />
+          <ScalarProperty Name="WelfareAmt" ColumnName="WelfareAmt" />
+          <ScalarProperty Name="CDWater" ColumnName="CDWater" />
+          <ScalarProperty Name="Canteen" ColumnName="Canteen" />
+          <ScalarProperty Name="SafetyOfficers" ColumnName="SafetyOfficers" />
+          <ScalarProperty Name="Shelters" ColumnName="Shelters" />
+          <ScalarProperty Name="AmbulanceRoom" ColumnName="AmbulanceRoom" />
+          <ScalarProperty Name="Creche" ColumnName="Creche" />
+          <ScalarProperty Name="MedicalOfficer" ColumnName="MedicalOfficer" />
+          <ScalarProperty Name="WelfareOfficer" ColumnName="WelfareOfficer" />
+          <ScalarProperty Name="FatalAcc" ColumnName="FatalAcc" />
+          <ScalarProperty Name="NonFatalAcc" ColumnName="NonFatalAcc" />
+          <ScalarProperty Name="DaysLost" ColumnName="DaysLost" />
+          <ScalarProperty Name="MaternityCases" ColumnName="MaternityCases" />
+          <ScalarProperty Name="MedicalCases" ColumnName="MedicalCases" />
+          <ScalarProperty Name="MisCarriageCases" ColumnName="MisCarriageCases" />
+          <ScalarProperty Name="Illnessleave" ColumnName="Illnessleave" />
+          <ScalarProperty Name="MaternityAmt" ColumnName="MaternityAmt" />
+          <ScalarProperty Name="EntitledWorkers" ColumnName="EntitledWorkers" />
+          <ScalarProperty Name="AllowedWorkers" ColumnName="AllowedWorkers" />
+          <ScalarProperty Name="AnnualAmt" ColumnName="AnnualAmt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormFs">
+      <EntityTypeMapping TypeName="knithModel.FormF">
+        <MappingFragment StoreEntitySet="FormF">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="EmployerName" ColumnName="EmployerName" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="WelfareAddress" ColumnName="WelfareAddress" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="CompAddr" ColumnName="CompAddr" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Others" ColumnName="Others" />
+          <ScalarProperty Name="NoofEmp" ColumnName="NoofEmp" />
+          <ScalarProperty Name="NoofEmpContr" ColumnName="NoofEmpContr" />
+          <ScalarProperty Name="EmployeeAmt" ColumnName="EmployeeAmt" />
+          <ScalarProperty Name="EmployerAmt" ColumnName="EmployerAmt" />
+          <ScalarProperty Name="FullPayment" ColumnName="FullPayment" />
+          <ScalarProperty Name="AmtPaid" ColumnName="AmtPaid" />
+          <ScalarProperty Name="Reasons" ColumnName="Reasons" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="DDNo" ColumnName="DDNo" />
+          <ScalarProperty Name="DDDate" ColumnName="DDDate" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FORMR12">
+      <EntityTypeMapping TypeName="knithModel.FORMR12">
+        <MappingFragment StoreEntitySet="FORMR12">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="PFMon" ColumnName="PFMon" />
+          <ScalarProperty Name="Wages" ColumnName="Wages" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="DOL" ColumnName="DOL" />
+          <ScalarProperty Name="EPF" ColumnName="EPF" />
+          <ScalarProperty Name="EPFDiff" ColumnName="EPFDiff" />
+          <ScalarProperty Name="PensionFund" ColumnName="PensionFund" />
+          <ScalarProperty Name="RFL" ColumnName="RFL" />
+          <ScalarProperty Name="NCP" ColumnName="NCP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grat_Payments">
+      <EntityTypeMapping TypeName="knithModel.Grat_Payments">
+        <MappingFragment StoreEntitySet="Grat_Payments">
+          <ScalarProperty Name="ENo" ColumnName="ENo" />
+          <ScalarProperty Name="PaySno" ColumnName="PaySno" />
+          <ScalarProperty Name="CCode" ColumnName="CCode" />
+          <ScalarProperty Name="Bank_name" ColumnName="Bank_name" />
+          <ScalarProperty Name="PayAmount" ColumnName="PayAmount" />
+          <ScalarProperty Name="PaidOn" ColumnName="PaidOn" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="RefDate" ColumnName="RefDate" />
+          <ScalarProperty Name="TotalAmt" ColumnName="TotalAmt" />
+          <ScalarProperty Name="PaidTillNow" ColumnName="PaidTillNow" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncentivesStmts">
+      <EntityTypeMapping TypeName="knithModel.IncentivesStmt">
+        <MappingFragment StoreEntitySet="IncentivesStmt">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="EName" ColumnName="EName" />
+          <ScalarProperty Name="Apr" ColumnName="Apr" />
+          <ScalarProperty Name="May" ColumnName="May" />
+          <ScalarProperty Name="Jun" ColumnName="Jun" />
+          <ScalarProperty Name="Jul" ColumnName="Jul" />
+          <ScalarProperty Name="Aug" ColumnName="Aug" />
+          <ScalarProperty Name="Sep" ColumnName="Sep" />
+          <ScalarProperty Name="Oct" ColumnName="Oct" />
+          <ScalarProperty Name="Nov" ColumnName="Nov" />
+          <ScalarProperty Name="Dec" ColumnName="Dec" />
+          <ScalarProperty Name="Jan" ColumnName="Jan" />
+          <ScalarProperty Name="Feb" ColumnName="Feb" />
+          <ScalarProperty Name="Mar" ColumnName="Mar" />
+          <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Increments">
+      <EntityTypeMapping TypeName="knithModel.Increment">
+        <MappingFragment StoreEntitySet="Increment">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="Comp_code" ColumnName="Comp_code" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="Start_Sal" ColumnName="Start_Sal" />
+          <ScalarProperty Name="Incr_Date" ColumnName="Incr_Date" />
+          <ScalarProperty Name="Incr_Sal" ColumnName="Incr_Sal" />
+          <ScalarProperty Name="last_incr_date" ColumnName="last_incr_date" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="EffFrom" ColumnName="EffFrom" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEV_MAST">
+      <EntityTypeMapping TypeName="knithModel.LEV_MAST">
+        <MappingFragment StoreEntitySet="LEV_MAST">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="Cl_Open" ColumnName="Cl_Open" />
+          <ScalarProperty Name="EL_Open" ColumnName="EL_Open" />
+          <ScalarProperty Name="Coff_Open" ColumnName="Coff_Open" />
+          <ScalarProperty Name="CL" ColumnName="CL" />
+          <ScalarProperty Name="EL" ColumnName="EL" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="ML" ColumnName="ML" />
+          <ScalarProperty Name="COFF" ColumnName="COFF" />
+          <ScalarProperty Name="CLBAL" ColumnName="CLBAL" />
+          <ScalarProperty Name="ELBAL" ColumnName="ELBAL" />
+          <ScalarProperty Name="SLBAL" ColumnName="SLBAL" />
+          <ScalarProperty Name="MLBAL" ColumnName="MLBAL" />
+          <ScalarProperty Name="COFFBAL" ColumnName="COFFBAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEV_TRANS">
+      <EntityTypeMapping TypeName="knithModel.LEV_TRANS">
+        <MappingFragment StoreEntitySet="LEV_TRANS">
+          <ScalarProperty Name="LNo" ColumnName="LNo" />
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="LTYPE" ColumnName="LTYPE" />
+          <ScalarProperty Name="LDATE" ColumnName="LDATE" />
+          <ScalarProperty Name="FDATE" ColumnName="FDATE" />
+          <ScalarProperty Name="TDATE" ColumnName="TDATE" />
+          <ScalarProperty Name="No_Of_Days" ColumnName="No_Of_Days" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="RDate" ColumnName="RDate" />
+          <ScalarProperty Name="EDate" ColumnName="EDate" />
+          <ScalarProperty Name="Leave_Adate" ColumnName="Leave_Adate" />
+          <ScalarProperty Name="Auth" ColumnName="Auth" />
+          <ScalarProperty Name="sno" ColumnName="sno" />
+          <ScalarProperty Name="clbal" ColumnName="clbal" />
+          <ScalarProperty Name="elbal" ColumnName="elbal" />
+          <ScalarProperty Name="coffbal" ColumnName="coffbal" />
+          <ScalarProperty Name="pldetails" ColumnName="pldetails" />
+          <ScalarProperty Name="ClBalAfter" ColumnName="ClBalAfter" />
+          <ScalarProperty Name="ElBalAfter" ColumnName="ElBalAfter" />
+          <ScalarProperty Name="CoffBalAfter" ColumnName="CoffBalAfter" />
+          <ScalarProperty Name="Freeze" ColumnName="Freeze" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicStatus">
+      <EntityTypeMapping TypeName="knithModel.LicStatu">
+        <MappingFragment StoreEntitySet="LicStatus">
+          <ScalarProperty Name="eno" ColumnName="eno" />
+          <ScalarProperty Name="ename" ColumnName="ename" />
+          <ScalarProperty Name="lic_sts" ColumnName="lic_sts" />
+          <ScalarProperty Name="lic_NO" ColumnName="lic_NO" />
+          <ScalarProperty Name="LicAmt" ColumnName="LicAmt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYREGs">
+      <EntityTypeMapping TypeName="knithModel.PAYREG">
+        <MappingFragment StoreEntitySet="PAYREG">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="PMON" ColumnName="PMON" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="act_basic" ColumnName="act_basic" />
+          <ScalarProperty Name="act_da" ColumnName="act_da" />
+          <ScalarProperty Name="act_hra" ColumnName="act_hra" />
+          <ScalarProperty Name="act_conv" ColumnName="act_conv" />
+          <ScalarProperty Name="act_oallow" ColumnName="act_oallow" />
+          <ScalarProperty Name="act_ChdEduAll" ColumnName="act_ChdEduAll" />
+          <ScalarProperty Name="Fdate" ColumnName="Fdate" />
+          <ScalarProperty Name="Tdate" ColumnName="Tdate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="BASIC" ColumnName="BASIC" />
+          <ScalarProperty Name="DA" ColumnName="DA" />
+          <ScalarProperty Name="Other_allow" ColumnName="Other_allow" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="CONV" ColumnName="CONV" />
+          <ScalarProperty Name="ChdEduAll" ColumnName="ChdEduAll" />
+          <ScalarProperty Name="Advance_Ded" ColumnName="Advance_Ded" />
+          <ScalarProperty Name="IT_ded" ColumnName="IT_ded" />
+          <ScalarProperty Name="PF_Ded" ColumnName="PF_Ded" />
+          <ScalarProperty Name="ESI_Ded" ColumnName="ESI_Ded" />
+          <ScalarProperty Name="PTax_Ded" ColumnName="PTax_Ded" />
+          <ScalarProperty Name="TDS_Ded" ColumnName="TDS_Ded" />
+          <ScalarProperty Name="Late_Ded" ColumnName="Late_Ded" />
+          <ScalarProperty Name="Lic_Amt" ColumnName="Lic_Amt" />
+          <ScalarProperty Name="OT_Amt" ColumnName="OT_Amt" />
+          <ScalarProperty Name="GrossSal" ColumnName="GrossSal" />
+          <ScalarProperty Name="NetSal" ColumnName="NetSal" />
+          <ScalarProperty Name="Actual_NetSal" ColumnName="Actual_NetSal" />
+          <ScalarProperty Name="Absent_Days" ColumnName="Absent_Days" />
+          <ScalarProperty Name="Present_Days" ColumnName="Present_Days" />
+          <ScalarProperty Name="Available_Days" ColumnName="Available_Days" />
+          <ScalarProperty Name="Tot_Ded" ColumnName="Tot_Ded" />
+          <ScalarProperty Name="Other_Earnings" ColumnName="Other_Earnings" />
+          <ScalarProperty Name="Other_Ded" ColumnName="Other_Ded" />
+          <ScalarProperty Name="Other_Remarks" ColumnName="Other_Remarks" />
+          <ScalarProperty Name="CL_Bal" ColumnName="CL_Bal" />
+          <ScalarProperty Name="EL_Bal" ColumnName="EL_Bal" />
+          <ScalarProperty Name="PrevMon_Ded" ColumnName="PrevMon_Ded" />
+          <ScalarProperty Name="Freeze" ColumnName="Freeze" />
+          <ScalarProperty Name="prod_bonus" ColumnName="prod_bonus" />
+          <ScalarProperty Name="tiffin_bill" ColumnName="tiffin_bill" />
+          <ScalarProperty Name="currency_rate" ColumnName="currency_rate" />
+          <ScalarProperty Name="net_pay_Tk" ColumnName="net_pay_Tk" />
+          <ScalarProperty Name="FH" ColumnName="FH" />
+          <ScalarProperty Name="SH" ColumnName="SH" />
+          <ScalarProperty Name="ML" ColumnName="ML" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="ot_rate" ColumnName="ot_rate" />
+          <ScalarProperty Name="ot_hr" ColumnName="ot_hr" />
+          <ScalarProperty Name="samplepay" ColumnName="samplepay" />
+          <ScalarProperty Name="finededuct" ColumnName="finededuct" />
+          <ScalarProperty Name="prodwages" ColumnName="prodwages" />
+          <ScalarProperty Name="otherpay" ColumnName="otherpay" />
+          <ScalarProperty Name="firststsamity" ColumnName="firststsamity" />
+          <ScalarProperty Name="secondsamity" ColumnName="secondsamity" />
+          <ScalarProperty Name="milk" ColumnName="milk" />
+          <ScalarProperty Name="advancepay" ColumnName="advancepay" />
+          <ScalarProperty Name="sampleday" ColumnName="sampleday" />
+          <ScalarProperty Name="noworkpay" ColumnName="noworkpay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYREGCs">
+      <EntityTypeMapping TypeName="knithModel.PAYREGC">
+        <MappingFragment StoreEntitySet="PAYREGC">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="PMON" ColumnName="PMON" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="act_basic" ColumnName="act_basic" />
+          <ScalarProperty Name="act_da" ColumnName="act_da" />
+          <ScalarProperty Name="act_hra" ColumnName="act_hra" />
+          <ScalarProperty Name="act_conv" ColumnName="act_conv" />
+          <ScalarProperty Name="act_oallow" ColumnName="act_oallow" />
+          <ScalarProperty Name="act_ChdEduAll" ColumnName="act_ChdEduAll" />
+          <ScalarProperty Name="Fdate" ColumnName="Fdate" />
+          <ScalarProperty Name="Tdate" ColumnName="Tdate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="BASIC" ColumnName="BASIC" />
+          <ScalarProperty Name="DA" ColumnName="DA" />
+          <ScalarProperty Name="Other_allow" ColumnName="Other_allow" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="CONV" ColumnName="CONV" />
+          <ScalarProperty Name="ChdEduAll" ColumnName="ChdEduAll" />
+          <ScalarProperty Name="Advance_Ded" ColumnName="Advance_Ded" />
+          <ScalarProperty Name="IT_ded" ColumnName="IT_ded" />
+          <ScalarProperty Name="PF_Ded" ColumnName="PF_Ded" />
+          <ScalarProperty Name="ESI_Ded" ColumnName="ESI_Ded" />
+          <ScalarProperty Name="PTax_Ded" ColumnName="PTax_Ded" />
+          <ScalarProperty Name="TDS_Ded" ColumnName="TDS_Ded" />
+          <ScalarProperty Name="Late_Ded" ColumnName="Late_Ded" />
+          <ScalarProperty Name="Lic_Amt" ColumnName="Lic_Amt" />
+          <ScalarProperty Name="OT_Amt" ColumnName="OT_Amt" />
+          <ScalarProperty Name="GrossSal" ColumnName="GrossSal" />
+          <ScalarProperty Name="NetSal" ColumnName="NetSal" />
+          <ScalarProperty Name="Actual_NetSal" ColumnName="Actual_NetSal" />
+          <ScalarProperty Name="Absent_Days" ColumnName="Absent_Days" />
+          <ScalarProperty Name="Present_Days" ColumnName="Present_Days" />
+          <ScalarProperty Name="Available_Days" ColumnName="Available_Days" />
+          <ScalarProperty Name="Tot_Ded" ColumnName="Tot_Ded" />
+          <ScalarProperty Name="Other_Earnings" ColumnName="Other_Earnings" />
+          <ScalarProperty Name="Other_Ded" ColumnName="Other_Ded" />
+          <ScalarProperty Name="Other_Remarks" ColumnName="Other_Remarks" />
+          <ScalarProperty Name="CL_Bal" ColumnName="CL_Bal" />
+          <ScalarProperty Name="EL_Bal" ColumnName="EL_Bal" />
+          <ScalarProperty Name="PrevMon_Ded" ColumnName="PrevMon_Ded" />
+          <ScalarProperty Name="Freeze" ColumnName="Freeze" />
+          <ScalarProperty Name="prod_bonus" ColumnName="prod_bonus" />
+          <ScalarProperty Name="tiffin_bill" ColumnName="tiffin_bill" />
+          <ScalarProperty Name="currency_rate" ColumnName="currency_rate" />
+          <ScalarProperty Name="net_pay_Tk" ColumnName="net_pay_Tk" />
+          <ScalarProperty Name="FH" ColumnName="FH" />
+          <ScalarProperty Name="SH" ColumnName="SH" />
+          <ScalarProperty Name="ML" ColumnName="ML" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="ot_rate" ColumnName="ot_rate" />
+          <ScalarProperty Name="ot_hr" ColumnName="ot_hr" />
+          <ScalarProperty Name="samplepay" ColumnName="samplepay" />
+          <ScalarProperty Name="finededuct" ColumnName="finededuct" />
+          <ScalarProperty Name="prodwages" ColumnName="prodwages" />
+          <ScalarProperty Name="otherpay" ColumnName="otherpay" />
+          <ScalarProperty Name="firststsamity" ColumnName="firststsamity" />
+          <ScalarProperty Name="secondsamity" ColumnName="secondsamity" />
+          <ScalarProperty Name="milk" ColumnName="milk" />
+          <ScalarProperty Name="advancepay" ColumnName="advancepay" />
+          <ScalarProperty Name="sampleday" ColumnName="sampleday" />
+          <ScalarProperty Name="noworkpay" ColumnName="noworkpay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERMISSIONs">
+      <EntityTypeMapping TypeName="knithModel.PERMISSION">
+        <MappingFragment StoreEntitySet="PERMISSION">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="Per_No" ColumnName="Per_No" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+          <ScalarProperty Name="ADATE" ColumnName="ADATE" />
+          <ScalarProperty Name="REASON" ColumnName="REASON" />
+          <ScalarProperty Name="TIME_OUT" ColumnName="TIME_OUT" />
+          <ScalarProperty Name="TIME_IN" ColumnName="TIME_IN" />
+          <ScalarProperty Name="EXPECTED_TIME" ColumnName="EXPECTED_TIME" />
+          <ScalarProperty Name="AUTHORITY" ColumnName="AUTHORITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERMISSIONS1">
+      <EntityTypeMapping TypeName="knithModel.PERMISSION1">
+        <MappingFragment StoreEntitySet="PERMISSIONS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UNAME" ColumnName="UNAME" />
+          <ScalarProperty Name="menu_name" ColumnName="menu_name" />
+          <ScalarProperty Name="menuCtrl_Name" ColumnName="menuCtrl_Name" />
+          <ScalarProperty Name="Permitted" ColumnName="Permitted" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PFContributions">
+      <EntityTypeMapping TypeName="knithModel.PFContribution">
+        <MappingFragment StoreEntitySet="PFContribution">
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="ENo" ColumnName="ENo" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="EName" ColumnName="EName" />
+          <ScalarProperty Name="MonSalary" ColumnName="MonSalary" />
+          <ScalarProperty Name="MonDa" ColumnName="MonDa" />
+          <ScalarProperty Name="PFSalary" ColumnName="PFSalary" />
+          <ScalarProperty Name="EPF" ColumnName="EPF" />
+          <ScalarProperty Name="EPF1" ColumnName="EPF1" />
+          <ScalarProperty Name="FPF" ColumnName="FPF" />
+          <ScalarProperty Name="EDLI" ColumnName="EDLI" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="PFMonth" ColumnName="PFMonth" />
+          <ScalarProperty Name="PFYear" ColumnName="PFYear" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CompCode" ColumnName="CompCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PFSummaries">
+      <EntityTypeMapping TypeName="knithModel.PFSummary">
+        <MappingFragment StoreEntitySet="PFSummary">
+          <ScalarProperty Name="HeadId" ColumnName="HeadId" />
+          <ScalarProperty Name="Head" ColumnName="Head" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="PFSalary" ColumnName="PFSalary" />
+          <ScalarProperty Name="EmployeePer" ColumnName="EmployeePer" />
+          <ScalarProperty Name="EmployerPer" ColumnName="EmployerPer" />
+          <ScalarProperty Name="EmployeeShare" ColumnName="EmployeeShare" />
+          <ScalarProperty Name="EmployerShare" ColumnName="EmployerShare" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="PFMonth" ColumnName="PFMonth" />
+          <ScalarProperty Name="PFYear" ColumnName="PFYear" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompCode" ColumnName="CompCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProvidentFunds">
+      <EntityTypeMapping TypeName="knithModel.ProvidentFund">
+        <MappingFragment StoreEntitySet="ProvidentFund">
+          <ScalarProperty Name="PFMonth" ColumnName="PFMonth" />
+          <ScalarProperty Name="PFYear" ColumnName="PFYear" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompCode" ColumnName="CompCode" />
+          <ScalarProperty Name="Subscribers" ColumnName="Subscribers" />
+          <ScalarProperty Name="WagesDue" ColumnName="WagesDue" />
+          <ScalarProperty Name="Ac1_EmployerShare" ColumnName="Ac1_EmployerShare" />
+          <ScalarProperty Name="Ac2_EmployerShare" ColumnName="Ac2_EmployerShare" />
+          <ScalarProperty Name="Ac10_EmployerShare" ColumnName="Ac10_EmployerShare" />
+          <ScalarProperty Name="Ac21_EmployerShare" ColumnName="Ac21_EmployerShare" />
+          <ScalarProperty Name="Ac22_EmployerShare" ColumnName="Ac22_EmployerShare" />
+          <ScalarProperty Name="Ac1_EmployeeShare" ColumnName="Ac1_EmployeeShare" />
+          <ScalarProperty Name="Ac2_EmployeeShare" ColumnName="Ac2_EmployeeShare" />
+          <ScalarProperty Name="Ac10_EmployeeShare" ColumnName="Ac10_EmployeeShare" />
+          <ScalarProperty Name="Ac21_EmployeeShare" ColumnName="Ac21_EmployeeShare" />
+          <ScalarProperty Name="Ac22_EmployeeShare" ColumnName="Ac22_EmployeeShare" />
+          <ScalarProperty Name="Ac1_AdmnCharges" ColumnName="Ac1_AdmnCharges" />
+          <ScalarProperty Name="Ac2_AdmnCharges" ColumnName="Ac2_AdmnCharges" />
+          <ScalarProperty Name="Ac10_AdmnCharges" ColumnName="Ac10_AdmnCharges" />
+          <ScalarProperty Name="Ac21_AdmnCharges" ColumnName="Ac21_AdmnCharges" />
+          <ScalarProperty Name="Ac22_AdmnCharges" ColumnName="Ac22_AdmnCharges" />
+          <ScalarProperty Name="Ac1_InspCharges" ColumnName="Ac1_InspCharges" />
+          <ScalarProperty Name="Ac2_InspCharges" ColumnName="Ac2_InspCharges" />
+          <ScalarProperty Name="Ac10_InspCharges" ColumnName="Ac10_InspCharges" />
+          <ScalarProperty Name="Ac21_InspCharges" ColumnName="Ac21_InspCharges" />
+          <ScalarProperty Name="Ac22_InspCharges" ColumnName="Ac22_InspCharges" />
+          <ScalarProperty Name="Ac1_PenalDamages14" ColumnName="Ac1_PenalDamages14" />
+          <ScalarProperty Name="Ac2_PenalDamages14" ColumnName="Ac2_PenalDamages14" />
+          <ScalarProperty Name="Ac10_PenalDamages14" ColumnName="Ac10_PenalDamages14" />
+          <ScalarProperty Name="Ac21_PenalDamages14" ColumnName="Ac21_PenalDamages14" />
+          <ScalarProperty Name="Ac22_PenalDamages14" ColumnName="Ac22_PenalDamages14" />
+          <ScalarProperty Name="Ac1_PenalDamages7" ColumnName="Ac1_PenalDamages7" />
+          <ScalarProperty Name="Ac2_PenalDamages7" ColumnName="Ac2_PenalDamages7" />
+          <ScalarProperty Name="Ac10_PenalDamages7" ColumnName="Ac10_PenalDamages7" />
+          <ScalarProperty Name="Ac21_PenalDamages7" ColumnName="Ac21_PenalDamages7" />
+          <ScalarProperty Name="Ac22_PenalDamages7" ColumnName="Ac22_PenalDamages7" />
+          <ScalarProperty Name="Ac1_MiscPayment" ColumnName="Ac1_MiscPayment" />
+          <ScalarProperty Name="Ac2_MiscPayment" ColumnName="Ac2_MiscPayment" />
+          <ScalarProperty Name="Ac10_MiscPayment" ColumnName="Ac10_MiscPayment" />
+          <ScalarProperty Name="Ac21_MiscPayment" ColumnName="Ac21_MiscPayment" />
+          <ScalarProperty Name="Ac22_MiscPayment" ColumnName="Ac22_MiscPayment" />
+          <ScalarProperty Name="ModeOfPayment" ColumnName="ModeOfPayment" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+          <ScalarProperty Name="DepositorName" ColumnName="DepositorName" />
+          <ScalarProperty Name="DepBankCode" ColumnName="DepBankCode" />
+          <ScalarProperty Name="DepBankName" ColumnName="DepBankName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PTaxReturns">
+      <EntityTypeMapping TypeName="knithModel.PTaxReturn">
+        <MappingFragment StoreEntitySet="PTaxReturns">
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="PTaxMonth" ColumnName="PTaxMonth" />
+          <ScalarProperty Name="PTaxYear" ColumnName="PTaxYear" />
+          <ScalarProperty Name="SalRange" ColumnName="SalRange" />
+          <ScalarProperty Name="NoOfEmp" ColumnName="NoOfEmp" />
+          <ScalarProperty Name="PTax_Ded" ColumnName="PTax_Ded" />
+          <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
+          <ScalarProperty Name="Amount_Paid" ColumnName="Amount_Paid" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Qualifications">
+      <EntityTypeMapping TypeName="knithModel.Qualification">
+        <MappingFragment StoreEntitySet="Qualification">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="Qualification1" ColumnName="Qualification" />
+          <ScalarProperty Name="Qual_Desc" ColumnName="Qual_Desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuarterReports">
+      <EntityTypeMapping TypeName="knithModel.QuarterReport">
+        <MappingFragment StoreEntitySet="QuarterReport">
+          <ScalarProperty Name="FormType" ColumnName="FormType" />
+          <ScalarProperty Name="QuarterYear" ColumnName="QuarterYear" />
+          <ScalarProperty Name="QuarterMonth" ColumnName="QuarterMonth" />
+          <ScalarProperty Name="PQuarterMen" ColumnName="PQuarterMen" />
+          <ScalarProperty Name="PQuarterWomen" ColumnName="PQuarterWomen" />
+          <ScalarProperty Name="CQuarterMen" ColumnName="CQuarterMen" />
+          <ScalarProperty Name="CQuarterWomen" ColumnName="CQuarterWomen" />
+          <ScalarProperty Name="Reason1b" ColumnName="Reason1b" />
+          <ScalarProperty Name="NOOccurred" ColumnName="NOOccurred" />
+          <ScalarProperty Name="LEE" ColumnName="LEE" />
+          <ScalarProperty Name="CEE" ColumnName="CEE" />
+          <ScalarProperty Name="Filled" ColumnName="Filled" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Reason2b" ColumnName="Reason2b" />
+          <ScalarProperty Name="Manpower" ColumnName="Manpower" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RANGES">
+      <EntityTypeMapping TypeName="knithModel.RANx">
+        <MappingFragment StoreEntitySet="RANGES">
+          <ScalarProperty Name="Col_Name" ColumnName="Col_Name" />
+          <ScalarProperty Name="Range_From" ColumnName="Range_From" />
+          <ScalarProperty Name="Range_To" ColumnName="Range_To" />
+          <ScalarProperty Name="Range_amt" ColumnName="Range_amt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reminders">
+      <EntityTypeMapping TypeName="knithModel.Reminder">
+        <MappingFragment StoreEntitySet="Reminders">
+          <ScalarProperty Name="Rep_Type" ColumnName="Rep_Type" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+          <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReminderStatus">
+      <EntityTypeMapping TypeName="knithModel.ReminderStatu">
+        <MappingFragment StoreEntitySet="ReminderStatus">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="QuarterStatus" ColumnName="QuarterStatus" />
+          <ScalarProperty Name="AnnualStatus" ColumnName="AnnualStatus" />
+          <ScalarProperty Name="PTaxStatus" ColumnName="PTaxStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RepAttends">
+      <EntityTypeMapping TypeName="knithModel.RepAttend">
+        <MappingFragment StoreEntitySet="RepAttend">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="eno" ColumnName="eno" />
+          <ScalarProperty Name="wdate" ColumnName="wdate" />
+          <ScalarProperty Name="time_In" ColumnName="time_In" />
+          <ScalarProperty Name="TimeOut_Date" ColumnName="TimeOut_Date" />
+          <ScalarProperty Name="Time_Out" ColumnName="Time_Out" />
+          <ScalarProperty Name="TotHrs" ColumnName="TotHrs" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="Per" ColumnName="Per" />
+          <ScalarProperty Name="Auth" ColumnName="Auth" />
+          <ScalarProperty Name="Sts" ColumnName="Sts" />
+          <ScalarProperty Name="LType" ColumnName="LType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RepAttendances">
+      <EntityTypeMapping TypeName="knithModel.RepAttendance">
+        <MappingFragment StoreEntitySet="RepAttendance">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Day1TIn" ColumnName="Day1TIn" />
+          <ScalarProperty Name="Day1TOut" ColumnName="Day1TOut" />
+          <ScalarProperty Name="Day2TIn" ColumnName="Day2TIn" />
+          <ScalarProperty Name="Day2TOut" ColumnName="Day2TOut" />
+          <ScalarProperty Name="Day3TIn" ColumnName="Day3TIn" />
+          <ScalarProperty Name="Day3TOut" ColumnName="Day3TOut" />
+          <ScalarProperty Name="Day4TIn" ColumnName="Day4TIn" />
+          <ScalarProperty Name="Day4TOut" ColumnName="Day4TOut" />
+          <ScalarProperty Name="Day5TIn" ColumnName="Day5TIn" />
+          <ScalarProperty Name="Day5TOut" ColumnName="Day5TOut" />
+          <ScalarProperty Name="Day6TIn" ColumnName="Day6TIn" />
+          <ScalarProperty Name="Day6TOut" ColumnName="Day6TOut" />
+          <ScalarProperty Name="Day7TIn" ColumnName="Day7TIn" />
+          <ScalarProperty Name="Day7TOut" ColumnName="Day7TOut" />
+          <ScalarProperty Name="Day8TIn" ColumnName="Day8TIn" />
+          <ScalarProperty Name="Day8TOut" ColumnName="Day8TOut" />
+          <ScalarProperty Name="Day9TIn" ColumnName="Day9TIn" />
+          <ScalarProperty Name="Day9TOut" ColumnName="Day9TOut" />
+          <ScalarProperty Name="Day10TIn" ColumnName="Day10TIn" />
+          <ScalarProperty Name="Day10TOut" ColumnName="Day10TOut" />
+          <ScalarProperty Name="Day11TIn" ColumnName="Day11TIn" />
+          <ScalarProperty Name="Day11TOut" ColumnName="Day11TOut" />
+          <ScalarProperty Name="Day12TIn" ColumnName="Day12TIn" />
+          <ScalarProperty Name="Day12TOut" ColumnName="Day12TOut" />
+          <ScalarProperty Name="Day13TIn" ColumnName="Day13TIn" />
+          <ScalarProperty Name="Day13TOut" ColumnName="Day13TOut" />
+          <ScalarProperty Name="Day14TIn" ColumnName="Day14TIn" />
+          <ScalarProperty Name="Day14TOut" ColumnName="Day14TOut" />
+          <ScalarProperty Name="Day15TIn" ColumnName="Day15TIn" />
+          <ScalarProperty Name="Day15TOut" ColumnName="Day15TOut" />
+          <ScalarProperty Name="Day16TIn" ColumnName="Day16TIn" />
+          <ScalarProperty Name="Day16TOut" ColumnName="Day16TOut" />
+          <ScalarProperty Name="Day17TIn" ColumnName="Day17TIn" />
+          <ScalarProperty Name="Day17TOut" ColumnName="Day17TOut" />
+          <ScalarProperty Name="Day18TIn" ColumnName="Day18TIn" />
+          <ScalarProperty Name="Day18TOut" ColumnName="Day18TOut" />
+          <ScalarProperty Name="Day19TIn" ColumnName="Day19TIn" />
+          <ScalarProperty Name="Day19TOut" ColumnName="Day19TOut" />
+          <ScalarProperty Name="Day20TIn" ColumnName="Day20TIn" />
+          <ScalarProperty Name="Day20TOut" ColumnName="Day20TOut" />
+          <ScalarProperty Name="Day21TIn" ColumnName="Day21TIn" />
+          <ScalarProperty Name="Day21TOut" ColumnName="Day21TOut" />
+          <ScalarProperty Name="Day22TIn" ColumnName="Day22TIn" />
+          <ScalarProperty Name="Day22TOut" ColumnName="Day22TOut" />
+          <ScalarProperty Name="Day23TIn" ColumnName="Day23TIn" />
+          <ScalarProperty Name="Day23TOut" ColumnName="Day23TOut" />
+          <ScalarProperty Name="Day24TIn" ColumnName="Day24TIn" />
+          <ScalarProperty Name="Day24TOut" ColumnName="Day24TOut" />
+          <ScalarProperty Name="Day25TIn" ColumnName="Day25TIn" />
+          <ScalarProperty Name="Day25TOut" ColumnName="Day25TOut" />
+          <ScalarProperty Name="Day26TIn" ColumnName="Day26TIn" />
+          <ScalarProperty Name="Day26TOut" ColumnName="Day26TOut" />
+          <ScalarProperty Name="Day27TIn" ColumnName="Day27TIn" />
+          <ScalarProperty Name="Day27TOut" ColumnName="Day27TOut" />
+          <ScalarProperty Name="Day28TIn" ColumnName="Day28TIn" />
+          <ScalarProperty Name="Day28TOut" ColumnName="Day28TOut" />
+          <ScalarProperty Name="Day29TIn" ColumnName="Day29TIn" />
+          <ScalarProperty Name="Day29TOut" ColumnName="Day29TOut" />
+          <ScalarProperty Name="Day30TIn" ColumnName="Day30TIn" />
+          <ScalarProperty Name="Day30TOut" ColumnName="Day30TOut" />
+          <ScalarProperty Name="Day31TIn" ColumnName="Day31TIn" />
+          <ScalarProperty Name="Day31TOut" ColumnName="Day31TOut" />
+          <ScalarProperty Name="Comp_code" ColumnName="Comp_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RepCoffs">
+      <EntityTypeMapping TypeName="knithModel.RepCoff">
+        <MappingFragment StoreEntitySet="RepCoff">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="WDate" ColumnName="WDate" />
+          <ScalarProperty Name="DayName" ColumnName="DayName" />
+          <ScalarProperty Name="Time_in" ColumnName="Time_in" />
+          <ScalarProperty Name="TOut_Date" ColumnName="TOut_Date" />
+          <ScalarProperty Name="Time_Out" ColumnName="Time_Out" />
+          <ScalarProperty Name="TotalHrs" ColumnName="TotalHrs" />
+          <ScalarProperty Name="Coffs" ColumnName="Coffs" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RepGrats">
+      <EntityTypeMapping TypeName="knithModel.RepGrat">
+        <MappingFragment StoreEntitySet="RepGrat">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="DOL" ColumnName="DOL" />
+          <ScalarProperty Name="Grat_Amt" ColumnName="Grat_Amt" />
+          <ScalarProperty Name="Till_Paid" ColumnName="Till_Paid" />
+          <ScalarProperty Name="Bank_name" ColumnName="Bank_name" />
+          <ScalarProperty Name="PayAmount" ColumnName="PayAmount" />
+          <ScalarProperty Name="PaidOn" ColumnName="PaidOn" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="RefDate" ColumnName="RefDate" />
+          <ScalarProperty Name="TotYears" ColumnName="TotYears" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RepSecurities">
+      <EntityTypeMapping TypeName="knithModel.RepSecurity">
+        <MappingFragment StoreEntitySet="RepSecurity">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Pdate" ColumnName="Pdate" />
+          <ScalarProperty Name="Ptime" ColumnName="Ptime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecPunches">
+      <EntityTypeMapping TypeName="knithModel.SecPunch">
+        <MappingFragment StoreEntitySet="SecPunches">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="PTime" ColumnName="PTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHIFT_MASTER">
+      <EntityTypeMapping TypeName="knithModel.SHIFT_MASTER">
+        <MappingFragment StoreEntitySet="SHIFT_MASTER">
+          <ScalarProperty Name="SHIFT_NAME" ColumnName="SHIFT_NAME" />
+          <ScalarProperty Name="SHIFT_DESC" ColumnName="SHIFT_DESC" />
+          <ScalarProperty Name="SHIFT_IN" ColumnName="SHIFT_IN" />
+          <ScalarProperty Name="SHIFT_OUT" ColumnName="SHIFT_OUT" />
+          <ScalarProperty Name="LUNCH_START" ColumnName="LUNCH_START" />
+          <ScalarProperty Name="LUNCH_END" ColumnName="LUNCH_END" />
+          <ScalarProperty Name="NEXTDAY_FLAG" ColumnName="NEXTDAY_FLAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblbuyers">
+      <EntityTypeMapping TypeName="knithModel.tblbuyer">
+        <MappingFragment StoreEntitySet="tblbuyer">
+          <ScalarProperty Name="buyerid" ColumnName="buyerid" />
+          <ScalarProperty Name="buyername" ColumnName="buyername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblpaycodes">
+      <EntityTypeMapping TypeName="knithModel.tblpaycode">
+        <MappingFragment StoreEntitySet="tblpaycode">
+          <ScalarProperty Name="payid" ColumnName="payid" />
+          <ScalarProperty Name="paycode" ColumnName="paycode" />
+          <ScalarProperty Name="payformula" ColumnName="payformula" />
+          <ScalarProperty Name="adjtype" ColumnName="adjtype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempAttends">
+      <EntityTypeMapping TypeName="knithModel.TempAttend">
+        <MappingFragment StoreEntitySet="TempAttend">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="WDate" ColumnName="WDate" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="OutDate" ColumnName="OutDate" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Time_Worked" ColumnName="Time_Worked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempDailyAttends">
+      <EntityTypeMapping TypeName="knithModel.TempDailyAttend">
+        <MappingFragment StoreEntitySet="TempDailyAttend">
+          <ScalarProperty Name="Wdate" ColumnName="Wdate" />
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="Shit" ColumnName="Shit" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempEsiHalfYrs">
+      <EntityTypeMapping TypeName="knithModel.TempEsiHalfYr">
+        <MappingFragment StoreEntitySet="TempEsiHalfYr">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="GrossSal" ColumnName="GrossSal" />
+          <ScalarProperty Name="ESINO" ColumnName="ESINO" />
+          <ScalarProperty Name="Present_Days" ColumnName="Present_Days" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="knithModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UType_Master">
+      <EntityTypeMapping TypeName="knithModel.UType_Master">
+        <MappingFragment StoreEntitySet="UType_Master">
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="User_Type" ColumnName="User_Type" />
+          <ScalarProperty Name="Type_Desc" ColumnName="Type_Desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="attnupdate_log">
+      <EntityTypeMapping TypeName="knithModel.attnupdate_log">
+        <MappingFragment StoreEntitySet="attnupdate_log">
+          <ScalarProperty Name="attndate" ColumnName="attndate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COFFREQMAYs">
+      <EntityTypeMapping TypeName="knithModel.COFFREQMAY">
+        <MappingFragment StoreEntitySet="COFFREQMAY">
+          <ScalarProperty Name="ReqNo" ColumnName="ReqNo" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="ReqDate" ColumnName="ReqDate" />
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="WDate" ColumnName="WDate" />
+          <ScalarProperty Name="Stime" ColumnName="Stime" />
+          <ScalarProperty Name="CDate" ColumnName="CDate" />
+          <ScalarProperty Name="CTime" ColumnName="CTime" />
+          <ScalarProperty Name="TotHrs" ColumnName="TotHrs" />
+          <ScalarProperty Name="No_of_Coffs" ColumnName="No_of_Coffs" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="StatusRem" ColumnName="StatusRem" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SysName" ColumnName="SysName" />
+          <ScalarProperty Name="DayName" ColumnName="DayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPs">
+      <EntityTypeMapping TypeName="knithModel.EMP">
+        <MappingFragment StoreEntitySet="EMP">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="FHGName" ColumnName="FHGName" />
+          <ScalarProperty Name="AReg_Sno" ColumnName="AReg_Sno" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="Emp_Type" ColumnName="Emp_Type" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="ADDR1" ColumnName="ADDR1" />
+          <ScalarProperty Name="ADDR2" ColumnName="ADDR2" />
+          <ScalarProperty Name="ADDR3" ColumnName="ADDR3" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="BASIC" ColumnName="BASIC" />
+          <ScalarProperty Name="DA" ColumnName="DA" />
+          <ScalarProperty Name="OALL" ColumnName="OALL" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="CONV" ColumnName="CONV" />
+          <ScalarProperty Name="ChdEduAll" ColumnName="ChdEduAll" />
+          <ScalarProperty Name="Incentives" ColumnName="Incentives" />
+          <ScalarProperty Name="OTST" ColumnName="OTST" />
+          <ScalarProperty Name="ITST" ColumnName="ITST" />
+          <ScalarProperty Name="ESIST" ColumnName="ESIST" />
+          <ScalarProperty Name="PFST" ColumnName="PFST" />
+          <ScalarProperty Name="ottype" ColumnName="ottype" />
+          <ScalarProperty Name="shift" ColumnName="shift" />
+          <ScalarProperty Name="OSTAY" ColumnName="OSTAY" />
+          <ScalarProperty Name="MOP" ColumnName="MOP" />
+          <ScalarProperty Name="PFNO" ColumnName="PFNO" />
+          <ScalarProperty Name="ESINO" ColumnName="ESINO" />
+          <ScalarProperty Name="PROFTAX" ColumnName="PROFTAX" />
+          <ScalarProperty Name="WEFROM" ColumnName="WEFROM" />
+          <ScalarProperty Name="EMPSTATUS" ColumnName="EMPSTATUS" />
+          <ScalarProperty Name="DOL" ColumnName="DOL" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="compensate" ColumnName="compensate" />
+          <ScalarProperty Name="TDS" ColumnName="TDS" />
+          <ScalarProperty Name="TDS_Amt" ColumnName="TDS_Amt" />
+          <ScalarProperty Name="PTSts" ColumnName="PTSts" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Bank_Ac" ColumnName="Bank_Ac" />
+          <ScalarProperty Name="Bank_Sts" ColumnName="Bank_Sts" />
+          <ScalarProperty Name="LIC_Sts" ColumnName="LIC_Sts" />
+          <ScalarProperty Name="LIC_No" ColumnName="LIC_No" />
+          <ScalarProperty Name="LicAmt" ColumnName="LicAmt" />
+          <ScalarProperty Name="Dept" ColumnName="Dept" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="CoffStatus" ColumnName="CoffStatus" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="RFL" ColumnName="RFL" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="act_gross" ColumnName="act_gross" />
+          <ScalarProperty Name="comp_gross" ColumnName="comp_gross" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empyrsalreports">
+      <EntityTypeMapping TypeName="knithModel.empyrsalreport">
+        <MappingFragment StoreEntitySet="empyrsalreport">
+          <ScalarProperty Name="comp_code" ColumnName="comp_code" />
+          <ScalarProperty Name="eno" ColumnName="eno" />
+          <ScalarProperty Name="pmon" ColumnName="pmon" />
+          <ScalarProperty Name="ename" ColumnName="ename" />
+          <ScalarProperty Name="GrossSal" ColumnName="GrossSal" />
+          <ScalarProperty Name="basic" ColumnName="basic" />
+          <ScalarProperty Name="da" ColumnName="da" />
+          <ScalarProperty Name="Other_Allow" ColumnName="Other_Allow" />
+          <ScalarProperty Name="hra" ColumnName="hra" />
+          <ScalarProperty Name="Conv" ColumnName="Conv" />
+          <ScalarProperty Name="advance_ded" ColumnName="advance_ded" />
+          <ScalarProperty Name="Pf_Ded" ColumnName="Pf_Ded" />
+          <ScalarProperty Name="Esi_Ded" ColumnName="Esi_Ded" />
+          <ScalarProperty Name="ptax_ded" ColumnName="ptax_ded" />
+          <ScalarProperty Name="Tds_ded" ColumnName="Tds_ded" />
+          <ScalarProperty Name="late_ded" ColumnName="late_ded" />
+          <ScalarProperty Name="Lic_amt" ColumnName="Lic_amt" />
+          <ScalarProperty Name="Actual_Netsal" ColumnName="Actual_Netsal" />
+          <ScalarProperty Name="other_ded" ColumnName="other_ded" />
+          <ScalarProperty Name="tot_ded" ColumnName="tot_ded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EsiHalfYrTemps">
+      <EntityTypeMapping TypeName="knithModel.EsiHalfYrTemp">
+        <MappingFragment StoreEntitySet="EsiHalfYrTemp">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="PMON" ColumnName="PMON" />
+          <ScalarProperty Name="GrossSal" ColumnName="GrossSal" />
+          <ScalarProperty Name="ESINO" ColumnName="ESINO" />
+          <ScalarProperty Name="Present_Days" ColumnName="Present_Days" />
+          <ScalarProperty Name="Comp_code" ColumnName="Comp_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FORMR1">
+      <EntityTypeMapping TypeName="knithModel.FORMR1">
+        <MappingFragment StoreEntitySet="FORMR1">
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="PFMon" ColumnName="PFMon" />
+          <ScalarProperty Name="Wages" ColumnName="Wages" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="DOL" ColumnName="DOL" />
+          <ScalarProperty Name="EPF" ColumnName="EPF" />
+          <ScalarProperty Name="EPFDiff" ColumnName="EPFDiff" />
+          <ScalarProperty Name="PensionFund" ColumnName="PensionFund" />
+          <ScalarProperty Name="RFL" ColumnName="RFL" />
+          <ScalarProperty Name="NCP" ColumnName="NCP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FORMR11">
+      <EntityTypeMapping TypeName="knithModel.FORMR11">
+        <MappingFragment StoreEntitySet="FORMR11">
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="PFMon" ColumnName="PFMon" />
+          <ScalarProperty Name="Wages" ColumnName="Wages" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="DOL" ColumnName="DOL" />
+          <ScalarProperty Name="EPF" ColumnName="EPF" />
+          <ScalarProperty Name="EPFDiff" ColumnName="EPFDiff" />
+          <ScalarProperty Name="PensionFund" ColumnName="PensionFund" />
+          <ScalarProperty Name="RFL" ColumnName="RFL" />
+          <ScalarProperty Name="NCP" ColumnName="NCP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FURTIVEs">
+      <EntityTypeMapping TypeName="knithModel.FURTIVE">
+        <MappingFragment StoreEntitySet="FURTIVE">
+          <ScalarProperty Name="FORM" ColumnName="FORM" />
+          <ScalarProperty Name="OCCULT" ColumnName="OCCULT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEV_MAST1">
+      <EntityTypeMapping TypeName="knithModel.LEV_MAST1">
+        <MappingFragment StoreEntitySet="LEV_MAST1">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="Cl_Open" ColumnName="Cl_Open" />
+          <ScalarProperty Name="EL_Open" ColumnName="EL_Open" />
+          <ScalarProperty Name="Coff_Open" ColumnName="Coff_Open" />
+          <ScalarProperty Name="CL" ColumnName="CL" />
+          <ScalarProperty Name="EL" ColumnName="EL" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="ML" ColumnName="ML" />
+          <ScalarProperty Name="COFF" ColumnName="COFF" />
+          <ScalarProperty Name="CLBAL" ColumnName="CLBAL" />
+          <ScalarProperty Name="ELBAL" ColumnName="ELBAL" />
+          <ScalarProperty Name="SLBAL" ColumnName="SLBAL" />
+          <ScalarProperty Name="MLBAL" ColumnName="MLBAL" />
+          <ScalarProperty Name="COFFBAL" ColumnName="COFFBAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payreg1">
+      <EntityTypeMapping TypeName="knithModel.Payreg1">
+        <MappingFragment StoreEntitySet="Payreg1">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="PMON" ColumnName="PMON" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="act_basic" ColumnName="act_basic" />
+          <ScalarProperty Name="act_da" ColumnName="act_da" />
+          <ScalarProperty Name="act_hra" ColumnName="act_hra" />
+          <ScalarProperty Name="act_conv" ColumnName="act_conv" />
+          <ScalarProperty Name="act_oallow" ColumnName="act_oallow" />
+          <ScalarProperty Name="act_ChdEduAll" ColumnName="act_ChdEduAll" />
+          <ScalarProperty Name="Fdate" ColumnName="Fdate" />
+          <ScalarProperty Name="Tdate" ColumnName="Tdate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="BASIC" ColumnName="BASIC" />
+          <ScalarProperty Name="DA" ColumnName="DA" />
+          <ScalarProperty Name="Other_allow" ColumnName="Other_allow" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="CONV" ColumnName="CONV" />
+          <ScalarProperty Name="ChdEduAll" ColumnName="ChdEduAll" />
+          <ScalarProperty Name="Advance_Ded" ColumnName="Advance_Ded" />
+          <ScalarProperty Name="IT_ded" ColumnName="IT_ded" />
+          <ScalarProperty Name="PF_Ded" ColumnName="PF_Ded" />
+          <ScalarProperty Name="ESI_Ded" ColumnName="ESI_Ded" />
+          <ScalarProperty Name="PTax_Ded" ColumnName="PTax_Ded" />
+          <ScalarProperty Name="TDS_Ded" ColumnName="TDS_Ded" />
+          <ScalarProperty Name="Late_Ded" ColumnName="Late_Ded" />
+          <ScalarProperty Name="Lic_Amt" ColumnName="Lic_Amt" />
+          <ScalarProperty Name="OT_Amt" ColumnName="OT_Amt" />
+          <ScalarProperty Name="GrossSal" ColumnName="GrossSal" />
+          <ScalarProperty Name="NetSal" ColumnName="NetSal" />
+          <ScalarProperty Name="Actual_NetSal" ColumnName="Actual_NetSal" />
+          <ScalarProperty Name="Absent_Days" ColumnName="Absent_Days" />
+          <ScalarProperty Name="Present_Days" ColumnName="Present_Days" />
+          <ScalarProperty Name="Available_Days" ColumnName="Available_Days" />
+          <ScalarProperty Name="Tot_Ded" ColumnName="Tot_Ded" />
+          <ScalarProperty Name="Other_Earnings" ColumnName="Other_Earnings" />
+          <ScalarProperty Name="Other_Ded" ColumnName="Other_Ded" />
+          <ScalarProperty Name="Other_Remarks" ColumnName="Other_Remarks" />
+          <ScalarProperty Name="CL_Bal" ColumnName="CL_Bal" />
+          <ScalarProperty Name="EL_Bal" ColumnName="EL_Bal" />
+          <ScalarProperty Name="PrevMon_Ded" ColumnName="PrevMon_Ded" />
+          <ScalarProperty Name="Freeze" ColumnName="Freeze" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PfYearContributions">
+      <EntityTypeMapping TypeName="knithModel.PfYearContribution">
+        <MappingFragment StoreEntitySet="PfYearContribution">
+          <ScalarProperty Name="Eno" ColumnName="Eno" />
+          <ScalarProperty Name="PMon" ColumnName="PMon" />
+          <ScalarProperty Name="PfSal" ColumnName="PfSal" />
+          <ScalarProperty Name="EPF" ColumnName="EPF" />
+          <ScalarProperty Name="EPF_Diff" ColumnName="EPF_Diff" />
+          <ScalarProperty Name="PensionFund" ColumnName="PensionFund" />
+          <ScalarProperty Name="Absent_Days" ColumnName="Absent_Days" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RPTATTENDs">
+      <EntityTypeMapping TypeName="knithModel.RPTATTEND">
+        <MappingFragment StoreEntitySet="RPTATTEND">
+          <ScalarProperty Name="INTIME" ColumnName="INTIME" />
+          <ScalarProperty Name="OUTTIME" ColumnName="OUTTIME" />
+          <ScalarProperty Name="WDATE" ColumnName="WDATE" />
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RPTESIs">
+      <EntityTypeMapping TypeName="knithModel.RPTESI">
+        <MappingFragment StoreEntitySet="RPTESI">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="ESINO" ColumnName="ESINO" />
+          <ScalarProperty Name="TDAYS" ColumnName="TDAYS" />
+          <ScalarProperty Name="TWAGE" ColumnName="TWAGE" />
+          <ScalarProperty Name="TESI" ColumnName="TESI" />
+          <ScalarProperty Name="DWAGE" ColumnName="DWAGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RPTOTs">
+      <EntityTypeMapping TypeName="knithModel.RPTOT">
+        <MappingFragment StoreEntitySet="RPTOT">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="OTIME" ColumnName="OTIME" />
+          <ScalarProperty Name="GROSS" ColumnName="GROSS" />
+          <ScalarProperty Name="NP" ColumnName="NP" />
+          <ScalarProperty Name="PAY" ColumnName="PAY" />
+          <ScalarProperty Name="LUNCH" ColumnName="LUNCH" />
+          <ScalarProperty Name="TOTPAY" ColumnName="TOTPAY" />
+          <ScalarProperty Name="SUNPAY" ColumnName="SUNPAY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RULES">
+      <EntityTypeMapping TypeName="knithModel.RULE">
+        <MappingFragment StoreEntitySet="RULES">
+          <ScalarProperty Name="YEARCL" ColumnName="YEARCL" />
+          <ScalarProperty Name="MONTHCL" ColumnName="MONTHCL" />
+          <ScalarProperty Name="APD" ColumnName="APD" />
+          <ScalarProperty Name="ALLOWCL" ColumnName="ALLOWCL" />
+          <ScalarProperty Name="MINEL" ColumnName="MINEL" />
+          <ScalarProperty Name="DAYEL" ColumnName="DAYEL" />
+          <ScalarProperty Name="CONTEL" ColumnName="CONTEL" />
+          <ScalarProperty Name="MAXEL" ColumnName="MAXEL" />
+          <ScalarProperty Name="ALLOWEL" ColumnName="ALLOWEL" />
+          <ScalarProperty Name="YEARSL" ColumnName="YEARSL" />
+          <ScalarProperty Name="NOSL" ColumnName="NOSL" />
+          <ScalarProperty Name="ALLOWSL" ColumnName="ALLOWSL" />
+          <ScalarProperty Name="YEARML" ColumnName="YEARML" />
+          <ScalarProperty Name="NOML" ColumnName="NOML" />
+          <ScalarProperty Name="ALLOWML" ColumnName="ALLOWML" />
+          <ScalarProperty Name="HDCS" ColumnName="HDCS" />
+          <ScalarProperty Name="HDCE" ColumnName="HDCE" />
+          <ScalarProperty Name="NOHD" ColumnName="NOHD" />
+          <ScalarProperty Name="ALLOWHDC" ColumnName="ALLOWHDC" />
+          <ScalarProperty Name="FDCS" ColumnName="FDCS" />
+          <ScalarProperty Name="FDCE" ColumnName="FDCE" />
+          <ScalarProperty Name="NOFD" ColumnName="NOFD" />
+          <ScalarProperty Name="ALLOWFDC" ColumnName="ALLOWFDC" />
+          <ScalarProperty Name="GPUT" ColumnName="GPUT" />
+          <ScalarProperty Name="NOGD" ColumnName="NOGD" />
+          <ScalarProperty Name="ALLOWGT" ColumnName="ALLOWGT" />
+          <ScalarProperty Name="OSTAY" ColumnName="OSTAY" />
+          <ScalarProperty Name="ALLOWOS" ColumnName="ALLOWOS" />
+          <ScalarProperty Name="ALLOWCF" ColumnName="ALLOWCF" />
+          <ScalarProperty Name="ITIME" ColumnName="ITIME" />
+          <ScalarProperty Name="OTIME" ColumnName="OTIME" />
+          <ScalarProperty Name="PFP" ColumnName="PFP" />
+          <ScalarProperty Name="ESIP" ColumnName="ESIP" />
+          <ScalarProperty Name="LTS" ColumnName="LTS" />
+          <ScalarProperty Name="LTE" ColumnName="LTE" />
+          <ScalarProperty Name="HDCL" ColumnName="HDCL" />
+          <ScalarProperty Name="EGO" ColumnName="EGO" />
+          <ScalarProperty Name="COVER" ColumnName="COVER" />
+          <ScalarProperty Name="CONV" ColumnName="CONV" />
+          <ScalarProperty Name="HDPD" ColumnName="HDPD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rupayans">
+      <EntityTypeMapping TypeName="knithModel.rupayan">
+        <MappingFragment StoreEntitySet="rupayan">
+          <ScalarProperty Name="ID1" ColumnName="ID1" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Joining" ColumnName="Joining" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Basic" ColumnName="Basic" />
+          <ScalarProperty Name="HouseRent" ColumnName="HouseRent" />
+          <ScalarProperty Name="Medical" ColumnName="Medical" />
+          <ScalarProperty Name="Gross" ColumnName="Gross" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHIFTBs">
+      <EntityTypeMapping TypeName="knithModel.SHIFTB">
+        <MappingFragment StoreEntitySet="SHIFTB">
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="WDATE" ColumnName="WDATE" />
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="Comp_Code" ColumnName="Comp_Code" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="LType" ColumnName="LType" />
+          <ScalarProperty Name="Time_Out_Date" ColumnName="Time_Out_Date" />
+          <ScalarProperty Name="TIME_IN" ColumnName="TIME_IN" />
+          <ScalarProperty Name="TIME_OUT" ColumnName="TIME_OUT" />
+          <ScalarProperty Name="PER" ColumnName="PER" />
+          <ScalarProperty Name="LNodeduct" ColumnName="LNodeduct" />
+          <ScalarProperty Name="ENodeduct" ColumnName="ENodeduct" />
+          <ScalarProperty Name="LPer" ColumnName="LPer" />
+          <ScalarProperty Name="EPer" ColumnName="EPer" />
+          <ScalarProperty Name="AUTH" ColumnName="AUTH" />
+          <ScalarProperty Name="shift" ColumnName="shift" />
+          <ScalarProperty Name="Time_Worked" ColumnName="Time_Worked" />
+          <ScalarProperty Name="Time_tobeCal" ColumnName="Time_tobeCal" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TrType" ColumnName="TrType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LNo" ColumnName="LNo" />
+          <ScalarProperty Name="Freeze" ColumnName="Freeze" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_sl">
+      <EntityTypeMapping TypeName="knithModel.tbl_sl">
+        <MappingFragment StoreEntitySet="tbl_sl">
+          <ScalarProperty Name="SL" ColumnName="SL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_style">
+      <EntityTypeMapping TypeName="knithModel.tbl_style">
+        <MappingFragment StoreEntitySet="tbl_style">
+          <ScalarProperty Name="styleID" ColumnName="styleID" />
+          <ScalarProperty Name="StyleName" ColumnName="StyleName" />
+          <ScalarProperty Name="style_desc" ColumnName="style_desc" />
+          <ScalarProperty Name="buyer" ColumnName="buyer" />
+          <ScalarProperty Name="order_qty" ColumnName="order_qty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBonusRanges">
+      <EntityTypeMapping TypeName="knithModel.tblBonusRange">
+        <MappingFragment StoreEntitySet="tblBonusRange">
+          <ScalarProperty Name="rangemin" ColumnName="rangemin" />
+          <ScalarProperty Name="rangemax" ColumnName="rangemax" />
+          <ScalarProperty Name="bonusamount" ColumnName="bonusamount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblextrapaycodes">
+      <EntityTypeMapping TypeName="knithModel.tblextrapaycode">
+        <MappingFragment StoreEntitySet="tblextrapaycode">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="empid" ColumnName="empid" />
+          <ScalarProperty Name="paycode" ColumnName="paycode" />
+          <ScalarProperty Name="payvalue" ColumnName="payvalue" />
+          <ScalarProperty Name="payformula" ColumnName="payformula" />
+          <ScalarProperty Name="adjtype" ColumnName="adjtype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStyleParts">
+      <EntityTypeMapping TypeName="knithModel.tblStylePart">
+        <MappingFragment StoreEntitySet="tblStyleParts">
+          <ScalarProperty Name="PartsID" ColumnName="PartsID" />
+          <ScalarProperty Name="PartsName" ColumnName="PartsName" />
+          <ScalarProperty Name="parts_desc" ColumnName="parts_desc" />
+          <ScalarProperty Name="PartsCategory" ColumnName="PartsCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStyleRates">
+      <EntityTypeMapping TypeName="knithModel.tblStyleRate">
+        <MappingFragment StoreEntitySet="tblStyleRate">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="OperationName" ColumnName="OperationName" />
+          <ScalarProperty Name="fk_styleID" ColumnName="fk_styleID" />
+          <ScalarProperty Name="Stylename" ColumnName="Stylename" />
+          <ScalarProperty Name="fk_partsID" ColumnName="fk_partsID" />
+          <ScalarProperty Name="partsCategory" ColumnName="partsCategory" />
+          <ScalarProperty Name="Partsname" ColumnName="Partsname" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temppayregs">
+      <EntityTypeMapping TypeName="knithModel.temppayreg">
+        <MappingFragment StoreEntitySet="temppayreg">
+          <ScalarProperty Name="comp_code" ColumnName="comp_code" />
+          <ScalarProperty Name="eno" ColumnName="eno" />
+          <ScalarProperty Name="pmon" ColumnName="pmon" />
+          <ScalarProperty Name="ename" ColumnName="ename" />
+          <ScalarProperty Name="grosssal" ColumnName="grosssal" />
+          <ScalarProperty Name="basic" ColumnName="basic" />
+          <ScalarProperty Name="da" ColumnName="da" />
+          <ScalarProperty Name="other_allow" ColumnName="other_allow" />
+          <ScalarProperty Name="hra" ColumnName="hra" />
+          <ScalarProperty Name="conv" ColumnName="conv" />
+          <ScalarProperty Name="advance_ded" ColumnName="advance_ded" />
+          <ScalarProperty Name="pf_ded" ColumnName="pf_ded" />
+          <ScalarProperty Name="esi_ded" ColumnName="esi_ded" />
+          <ScalarProperty Name="ptax_ded" ColumnName="ptax_ded" />
+          <ScalarProperty Name="tds_ded" ColumnName="tds_ded" />
+          <ScalarProperty Name="late_ded" ColumnName="late_ded" />
+          <ScalarProperty Name="lic_amt" ColumnName="lic_amt" />
+          <ScalarProperty Name="actual_netsal" ColumnName="actual_netsal" />
+          <ScalarProperty Name="other_ded" ColumnName="other_ded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tempyrsals">
+      <EntityTypeMapping TypeName="knithModel.tempyrsal">
+        <MappingFragment StoreEntitySet="tempyrsal">
+          <ScalarProperty Name="COMP_CODE" ColumnName="COMP_CODE" />
+          <ScalarProperty Name="ENO" ColumnName="ENO" />
+          <ScalarProperty Name="PMON" ColumnName="PMON" />
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="GROSSSAL" ColumnName="GROSSSAL" />
+          <ScalarProperty Name="BASIC" ColumnName="BASIC" />
+          <ScalarProperty Name="DA" ColumnName="DA" />
+          <ScalarProperty Name="OTHER_ALLOW" ColumnName="OTHER_ALLOW" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="CONV" ColumnName="CONV" />
+          <ScalarProperty Name="ADVANCE_DED" ColumnName="ADVANCE_DED" />
+          <ScalarProperty Name="PF_DED" ColumnName="PF_DED" />
+          <ScalarProperty Name="ESI_DED" ColumnName="ESI_DED" />
+          <ScalarProperty Name="PTAX_DED" ColumnName="PTAX_DED" />
+          <ScalarProperty Name="TDS_DED" ColumnName="TDS_DED" />
+          <ScalarProperty Name="LATE_DED" ColumnName="LATE_DED" />
+          <ScalarProperty Name="LIC_AMT" ColumnName="LIC_AMT" />
+          <ScalarProperty Name="ACTUAL_NETSAL" ColumnName="ACTUAL_NETSAL" />
+          <ScalarProperty Name="OTHER_DED" ColumnName="OTHER_DED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
