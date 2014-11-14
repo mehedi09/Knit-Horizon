@@ -28,6 +28,7 @@ namespace KnitHorizon.Models
         public string Qualification { get; set; }
         [Display(Name = "Designation")]
         public string DESIGNATION { get; set; }
+         [Display(Name = "Emp Type")]
         public string Emp_Type { get; set; }
         [Display(Name = "Date of Birth")]
         public Nullable<System.DateTime> DOB { get; set; }
@@ -51,6 +52,7 @@ namespace KnitHorizon.Models
         public string OTST { get; set; }
         public string ITST { get; set; }
         public string ESIST { get; set; }
+        [Display(Name = "PF Status")]
         public string PFST { get; set; }
         public string ottype { get; set; }
         public string shift { get; set; }

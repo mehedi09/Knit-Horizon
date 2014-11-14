@@ -163,3 +163,4 @@ E:\GitHub\Knit-Horizon\KnitHorizon\bin\Microsoft.Owin.Security.MicrosoftAccount.
 E:\GitHub\Knit-Horizon\KnitHorizon\obj\Debug\KnitHorizon.csprojResolveAssemblyReference.cache
 E:\GitHub\Knit-Horizon\KnitHorizon\obj\Debug\KnitHorizon.dll
 E:\GitHub\Knit-Horizon\KnitHorizon\obj\Debug\KnitHorizon.pdb
+E:\GitHub\Knit-Horizon\KnitHorizon\bin\MvcCheckBoxList.dll

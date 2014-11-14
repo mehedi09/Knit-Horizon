@@ -1,7 +1,7 @@
 ﻿@model KnitHorizon.Models.EMP
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Registration";
 }
 <section class="container col-lg-12 col-md-12">
     @using (Html.BeginForm())
@@ -167,14 +167,12 @@
 
                     </div>
                     <div class="form-group">
-
-                        @Html.LabelFor(model => model.SSN, new { @class = "control-label col-md-4 col-lg-4" })
-
+                        @Html.LabelFor(model => model.Emp_Type, new { @class = "control-label col-md-4 col-lg-4" })
                         <div class="col-md-6 col-lg-6">
                             @Html.TextBoxFor(model => model.SSN, new { @class = "form-control", placeholder = "(No--" })
                         </div>
-
                     </div>
+
                     <div class="form-group">
 
                         @Html.LabelFor(model => model.SSN, new { @class = "control-label col-md-4 col-lg-4" })
@@ -223,23 +221,27 @@
 
             <section class="col-md-4">
                 <div class="form-group">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <label for="inputEmail" class="control-label">Gloss Salary</label>
                     </div>
                     <div class="col-md-7 col-lg-7">
                         <input type="text" class="form-control" id="inputID" placeholder="Gloss Salary">
                     </div>
                 </div>
+             
+
+                <div class="hr">&nbsp;</div>
+                @*<div style="width:150px;height:2px;background-color:#000000;">&nbsp;</div>*@
             </section>
 
 
 
 
-            <section class="col-md-4">
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-3 control-label">ATTN Bonus</label>
-                    <div class=" col-md-7 col-lg-7">
-                        @{
+                <section class="col-md-4">
+                    <div class=" form-group">
+                        <label for="inputEmail" class="col-lg-4 control-label">ATTN Bonus</label>
+                        <div class=" col-md-7 col-lg-7">
+                            @{
         List<SelectListItem> listItem3 = new List<SelectListItem>();
         listItem3.Add(new SelectListItem
      {
@@ -251,14 +253,14 @@
            Text = "Married",
            Value = "MARRIED"
        });
-                        }
-                        @Html.DropDownListFor(model => model.MaritalStatus, listItem3, "-Select-", new { @class = "form-control" })
+                            }
+                            @Html.DropDownListFor(model => model.MaritalStatus, listItem3, "-Select-", new { @class = "form-control" })
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-3 control-label">Holiday</label>
-                    <div class=" col-md-7 col-lg-7">
-                        @{
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-4 control-label">Holiday</label>
+                        <div class=" col-md-7 col-lg-7">
+                            @{
         List<SelectListItem> listItem4 = new List<SelectListItem>();
         listItem4.Add(new SelectListItem
      {
@@ -270,14 +272,14 @@
            Text = "Married",
            Value = "MARRIED"
        });
-                        }
-                        @Html.DropDownListFor(model => model.MaritalStatus, listItem4, "-Select-", new { @class = "form-control" })
+                            }
+                            @Html.DropDownListFor(model => model.MaritalStatus, listItem4, "-Select-", new { @class = "form-control" })
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-3 control-label">Emp Status</label>
-                    <div class="col-md-7 col-lg-7">
-                        @{
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 col-lg-4 control-label">Emp Status</label>
+                        <div class="col-md-7 col-lg-7">
+                            @{
         List<SelectListItem> listItem5 = new List<SelectListItem>();
         listItem5.Add(new SelectListItem
      {
@@ -289,15 +291,15 @@
            Text = "Married",
            Value = "MARRIED"
        });
-                        }
-                        @Html.DropDownListFor(model => model.MaritalStatus, listItem5, "-Select-", new { @class = "form-control" })
+                            }
+                            @Html.DropDownListFor(model => model.MaritalStatus, listItem5, "-Select-", new { @class = "form-control" })
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-3 control-label">Shift</label>
-                    <div class="col-md-7 col-lg-7">
-                        @{
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 col-lg-4 control-label">Shift</label>
+                        <div class="col-md-7 col-lg-7">
+                            @{
         List<SelectListItem> listItem6 = new List<SelectListItem>();
         listItem6.Add(new SelectListItem
      {
@@ -309,15 +311,32 @@
            Text = "Married",
            Value = "MARRIED"
        });
-                        }
-                        @Html.DropDownListFor(model => model.MaritalStatus, listItem6, "-Select-", new { @class = "form-control" })
+                            }
+                            @Html.DropDownListFor(model => model.MaritalStatus, listItem6, "-Select-", new { @class = "form-control" })
+                        </div>
                     </div>
-                </div>
+
+                    <div class="form-group">
+
+                        @Html.LabelFor(model => model.PFST, new { @class = "control-label col-md-4 col-lg-4 col-lg-3" })
+
+                        <div class="col-md-7 col-lg-7">
+                            <input id="Checkbox1" type="checkbox" />
+
+                            @*@Html.CheckBoxFor(m => m.SomeBooleanProperty, new { @checked = "checked" });*@
+
+                            @*@Html.CheckBoxFor(model => model.PFST, new { @class = "form-control", @checked = "checked" })*@
+                        </div>
+
+                    </div>
+
+                    <div class="hr-1">&nbsp;</div>
 
 
 
-            </section>
 
+                </section>
+            
 
 
 
@@ -366,12 +385,37 @@
             <hr id="hr-one" style="clear:both" />
 
             <section class="col-md-4">
-                asas
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label for="inputEmail" class="control-label">Gloss Salary</label>
+                    </div>
+                    <div class="col-md-7 col-lg-7">
+                        <input type="text" class="form-control" id="inputID" placeholder="Gloss Salary">
+                    </div>
+                </div>
             </section>
 
-            <section class="col-md-4">asasa</section>
+            <section class="col-md-4">
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label for="inputEmail" class="control-label">Gloss Salary</label>
+                    </div>
+                    <div class="col-md-7 col-lg-7">
+                        <input type="text" class="form-control" id="inputID" placeholder="Gloss Salary">
+                    </div>
+                </div>
+            </section>
 
-            <section class="col-md-4">asas</section>
+            <section class="col-md-4">
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label for="inputEmail" class="control-label">Gloss Salary</label>
+                    </div>
+                    <div class="col-md-7 col-lg-7">
+                        <input type="text" class="form-control" id="inputID" placeholder="Gloss Salary">
+                    </div>
+                </div>
+            </section>
 
 
             <hr id="hr-one" style="clear:both" />
