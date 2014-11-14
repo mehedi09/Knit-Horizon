@@ -23,19 +23,22 @@ namespace KnitHorizon.Models
         [Display(Name = "F/H/G Name")]
         public string FHGName { get; set; }
         public string AReg_Sno { get; set; }
-         [Display(Name = "Gender")]
+        [Display(Name = "Gender")]
         public string SEX { get; set; }
         public string Qualification { get; set; }
+        [Display(Name = "Designation")]
         public string DESIGNATION { get; set; }
         public string Emp_Type { get; set; }
-         [Display(Name = "Date of Birth")]
+        [Display(Name = "Date of Birth")]
         public Nullable<System.DateTime> DOB { get; set; }
         public Nullable<System.DateTime> DOJ { get; set; }
         [Display(Name = "Address")]
         public string ADDR1 { get; set; }
         public string ADDR2 { get; set; }
         public string ADDR3 { get; set; }
+        [Display(Name = "Phone No")]
         public string phone { get; set; }
+        [Display(Name = "Email")]
         public string email { get; set; }
         public byte[] Photo { get; set; }
         public decimal BASIC { get; set; }
@@ -74,8 +77,10 @@ namespace KnitHorizon.Models
         [Display(Name = "Department ")]
         public string Dept { get; set; }
         public Nullable<System.DateTime> RegDate { get; set; }
+        [Display(Name = "Marital Status")]
         public string MaritalStatus { get; set; }
         public string CoffStatus { get; set; }
+        [Display(Name = "Grade")]
         public string Grade { get; set; }
         public string RFL { get; set; }
         [Display(Name = "ID Number")]

@@ -41,6 +41,8 @@ namespace KnitHorizon.Controllers
             // Finf the depertment in and name
             var query = db.Departments.ToList();
             ViewData["Department"] = new SelectList(query, "SlNo", "Department1").ToList();
+            var query1 = db.Designations.ToList();
+            ViewData["Designations"] = new SelectList(query1, "SlNo", "Designation1 ").ToList();
 
             return View();
         }
