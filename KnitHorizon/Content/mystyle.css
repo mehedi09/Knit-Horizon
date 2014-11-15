@@ -42,3 +42,13 @@ label {
     z-index:10;
 
 } 
+.my-div {
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px; 
+    background: #dddddd;
+    width: 300px;
+    border-radius: 25px;
+    height: 100px;
+    background-color: yellow;
+    box-shadow: 10px 10px 5px #888888;
+}
