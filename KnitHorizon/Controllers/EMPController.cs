@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using KnitHorizon.Models;
+using KnitHorizon.View_Model;
 
 namespace KnitHorizon.Controllers
 {
@@ -43,6 +44,11 @@ namespace KnitHorizon.Controllers
             ViewData["Department"] = new SelectList(query, "SlNo", "Department1").ToList();
             var query1 = db.Designations.ToList();
             ViewData["Designations"] = new SelectList(query1, "SlNo", "Designation1 ").ToList();
+            //two table  task can be done in here by using this code....
+            Emp_Dept recentobject = new Emp_Dept();
+            recentobject.Employee_tbl = db.EMPs.FirstOrDefault();
+            recentobject.Employee_Department = db.Departments.FirstOrDefault();
+            ViewData["aaa"] = recentobject;
 
             return View();
         }

@@ -1,54 +1,70 @@
 ﻿body {
 }
+
 footer {
-    clear:both;
+    clear: both;
 }
-#form{
-   margin: 25px 50px;
+
+#form {
+    margin: 25px 50px;
 }
+
 legend {
-  display: block;
-  margin-left: 3px;
-  padding-top: 2px;
-  text-shadow: 2px 2px 3px rgba(150, 150, 150, 0.75);
-  font-family:Verdana, Geneva, sans-serif;
-  font-size:.9em;
+    display: block;
+    margin-left: 3px;
+    padding-top: 2px;
+    text-shadow: 2px 2px 3px rgba(150, 150, 150, 0.75);
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: .9em;
 }
+
 .inline {
-  display:inline-block;
+    display: inline-block;
 }
+
 label {
-  display: inline-block;
-  margin-bottom: 5px;
-  font-weight: 500;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 500;
 }
+
 .hr {
-    width:2px;
-    height:200px;
-    background-color:#000000;
-    position:absolute;
-    top:10px;
-    left:360px;
-    z-index:10;
+    width: 2px;
+    height: 200px;
+    background-color: #000000;
+    position: absolute;
+    top: 10px;
+    left: 360px;
+    z-index: 10;
+}
 
-} 
 .hr-1 {
-    width:2px;
-    height:200px;
-    background-color:#000000;
-    position:absolute;
-    top:10px;
-    left:370px;
-    z-index:10;
+    width: 2px;
+    height: 200px;
+    background-color: #000000;
+    position: absolute;
+    top: 10px;
+    left: 370px;
+    z-index: 10;
+}
 
-} 
 .my-div {
     border: 2px solid #a1a1a1;
-    padding: 10px 40px; 
-    background: #dddddd;
-    width: 300px;
+    padding: 10px 40px;
+    background: #ebe8f5;
+    width: 700px;
     border-radius: 25px;
-    height: 100px;
-    background-color: yellow;
+    height: 300px;
+    background-color: #ebe8f5;
     box-shadow: 10px 10px 5px #888888;
+    margin-bottom:20px;
+}
+
+ab-bank {
+    font-family: 'lucida sans unicode', 'lucida grande', sans-serif;
+    color: #786E6E;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 0.8pt;
+    line-height: 1.5;
 }

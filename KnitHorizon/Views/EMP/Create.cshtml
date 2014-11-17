@@ -1,5 +1,6 @@
-﻿@model KnitHorizon.Models.EMP
+﻿@using KnitHorizon.Models;
 
+@model KnitHorizon.View_Model.Emp_Dept
 @{
     ViewBag.Title = "Registration";
 }
@@ -19,43 +20,43 @@
 
                     <div class="form-group">
                         <div>
-                            @Html.LabelFor(model => model.Dept, new { @class = "control-label col-md-2 col-lg-2" })
+                            @Html.LabelFor(model => model.Employee_tbl.Dept, new { @class = "control-label col-md-2 col-lg-2" })
                         </div>
                         <div class="col-lg-4 col-md-4">
                             @Html.DropDownList("SlNo", (IEnumerable<SelectListItem>)ViewData["Department"], "-Select-", new { @class = "form-control col-lg-4 col-md-4" })
                         </div>
-                        @Html.LabelFor(model => model.SSN, new { @class = "control-label col-md-3 col-lg-3" })
+                        @Html.LabelFor(model => model.Employee_tbl.SSN, new { @class = "control-label col-md-3 col-lg-3" })
 
                         <div class="col-md-3 col-lg-3">
-                            @Html.TextBoxFor(model => model.SSN, new { @class = "form-control", placeholder = "(No--" })
+                            @Html.TextBoxFor(model => model.Employee_tbl.SSN, new { @class = "form-control", placeholder = "(No--" })
                         </div>
                     </div>
 
 
                     <div class="form-group">
                         <div>
-                            @Html.LabelFor(model => model.ENAME, new { @class = "control-label col-md-2 col-lg-2" })
+                            @Html.LabelFor(model => model.Employee_tbl.ENAME, new { @class = "control-label col-md-2 col-lg-2" })
                         </div>
                         <div class="col-md-4 col-lg-4">
-                            @Html.TextBoxFor(model => model.ENAME, new { @class = "form-control col-lg-4 col-md-4" })
+                            @Html.TextBoxFor(model => model.Employee_tbl.ENAME, new { @class = "form-control col-lg-4 col-md-4" })
                         </div>
                         <div>
-                            @Html.LabelFor(model => model.ENO, new { @class = "control-label col-md-3 col-lg-3" })
+                            @Html.LabelFor(model => model.Employee_tbl.ENO, new { @class = "control-label col-md-3 col-lg-3" })
                         </div>
                         <div class=" col-md-3 col-lg-3">
-                            @Html.TextBoxFor(model => model.ENO, new { @class = "form-control", placeholder = "ID" })
+                            @Html.TextBoxFor(model => model.Employee_tbl.ENO, new { @class = "form-control", placeholder = "ID" })
                         </div>
                     </div>
                     <div class="form-group">
-                        @Html.LabelFor(model => model.FHGName, new { @class = "control-label col-md-2 col-lg-2" })
+                        @Html.LabelFor(model => model.Employee_tbl.FHGName, new { @class = "control-label col-md-2 col-lg-2" })
                         <div class="col-md-7 col-lg-7">
-                            @Html.TextBoxFor(model => model.FHGName, new { @class = "form-control", placeholder = "F/H/G Name" })
+                            @Html.TextBoxFor(model => model.Employee_tbl.FHGName, new { @class = "form-control", placeholder = "F/H/G Name" })
                         </div>
                     </div>
 
                     <div class="form-group">
                         @*<label for="inputName" class="col-lg-2 control-label">*@
-                        @Html.LabelFor(model => model.SEX, new { @class = "control-label col-md-2 col-lg-2" })
+                        @Html.LabelFor(model => model.Employee_tbl.SEX, new { @class = "control-label col-md-2 col-lg-2" })
                         <div class="col-lg-4 col-md-4">
                             @{
         List<SelectListItem> listItems = new List<SelectListItem>();
@@ -70,11 +71,11 @@
            Value = "F"
        });
                             }
-                            @Html.DropDownListFor(model => model.SEX, listItems, "-Select-", new { @class = "form-control col-lg-4 col-md-4" })
+                            @Html.DropDownListFor(model => model.Employee_tbl.SEX, listItems, "-Select-", new { @class = "form-control col-lg-4 col-md-4" })
                         </div>
-                        @Html.LabelFor(model => model.ADDR1, new { @class = "col-lg-3 control-label" })
+                        @Html.LabelFor(model => model.Employee_tbl.ADDR1, new { @class = "col-lg-3 control-label" })
                         <div class="col-md-3 col-lg-3">
-                            @Html.TextAreaFor(model => model.ADDR1, new { @class = "form-control", @rows = 2 })
+                            @Html.TextAreaFor(model => model.Employee_tbl.ADDR1, new { @class = "form-control", @rows = 2 })
                         </div>
                     </div>
 
@@ -83,7 +84,7 @@
 
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.DOB, new { @class = "control-label col-md-2 col-lg-2" })
+                        @Html.LabelFor(model => model.Employee_tbl.DOB, new { @class = "control-label col-md-2 col-lg-2" })
                         <div class="col-lg-4 col-md-4 input-group date" id="datetimepicker1">
                             @*@Html.TextBoxFor(model => model.DOB, new { @class = "form-control col-lg-4 col-md-4", data-date-format="YYYY/MM/DD" })*@
 
@@ -97,7 +98,7 @@
 
 
                         </div>
-                        @Html.LabelFor(Model => Model.MaritalStatus, new { @class = "control-label col-md-3 col-lg-3" })
+                        @Html.LabelFor(Model => Model.Employee_tbl.MaritalStatus, new { @class = "control-label col-md-3 col-lg-3" })
                         <div class="col-md-3 col-lg-3">
                             @{
         List<SelectListItem> listItem2 = new List<SelectListItem>();
@@ -112,37 +113,37 @@
            Value = "MARRIED"
        });
                             }
-                            @Html.DropDownListFor(model => model.MaritalStatus, listItem2, "-Select-", new { @class = "form-control" })
+                            @Html.DropDownListFor(model => model.Employee_tbl.MaritalStatus, listItem2, "-Select-", new { @class = "form-control" })
                         </div>
                     </div>
 
 
                     <div class="form-group">
                         <div>
-                            @Html.LabelFor(model => model.DESIGNATION, new { @class = "control-label col-md-2 col-lg-2" })
+                            @Html.LabelFor(model => model.Employee_tbl.DESIGNATION, new { @class = "control-label col-md-2 col-lg-2" })
                         </div>
                         <div class="col-lg-4 col-md-4">
                             @Html.DropDownList("SlNo", (IEnumerable<SelectListItem>)ViewData["Designations"], "-Select-", new { @class = "form-control col-lg-4 col-md-4" })
                         </div>
-                        @Html.LabelFor(model => model.phone, new { @class = "control-label col-md-3 col-lg-3" })
+                        @Html.LabelFor(model => model.Employee_tbl.phone, new { @class = "control-label col-md-3 col-lg-3" })
 
                         <div class="col-md-3 col-lg-3">
-                            @Html.TextBoxFor(model => model.phone, new { @class = "form-control", placeholder = "Phone No" })
+                            @Html.TextBoxFor(model => model.Employee_tbl.phone, new { @class = "form-control", placeholder = "Phone No" })
                         </div>
                     </div>
 
 
                     <div class="form-group">
                         <div>
-                            @Html.LabelFor(model => model.Qualification, new { @class = "control-label col-md-2 col-lg-2" })
+                            @Html.LabelFor(model => model.Employee_tbl.Qualification, new { @class = "control-label col-md-2 col-lg-2" })
                         </div>
                         <div class="col-lg-4 col-md-4">
                             @Html.DropDownList("SlNo", (IEnumerable<SelectListItem>)ViewData["Department"], "-Select-", new { @class = "form-control col-lg-4 col-md-4" })
                         </div>
-                        @Html.LabelFor(model => model.email, new { @class = "control-label col-md-3 col-lg-3" })
+                        @Html.LabelFor(model => model.Employee_tbl.email, new { @class = "control-label col-md-3 col-lg-3" })
 
                         <div class="col-md-3 col-lg-3">
-                            @Html.TextBoxFor(model => model.email, new { @class = "form-control", placeholder = "Email" })
+                            @Html.TextBoxFor(model => model.Employee_tbl.email, new { @class = "form-control", placeholder = "Email" })
                         </div>
                     </div>
 
@@ -159,36 +160,36 @@
                     <legend>Login Details Testing...........</legend>
                     <div class="form-group">
 
-                        @Html.LabelFor(model => model.SSN, new { @class = "control-label col-md-4 col-lg-4" })
+                        @Html.LabelFor(model => model.Employee_tbl.SSN, new { @class = "control-label col-md-4 col-lg-4" })
 
                         <div class="col-md-6 col-lg-6">
-                            @Html.TextBoxFor(model => model.SSN, new { @class = "form-control", placeholder = "(No--" })
+                            @Html.TextBoxFor(model => model.Employee_tbl.SSN, new { @class = "form-control", placeholder = "(No--" })
                         </div>
 
                     </div>
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Emp_Type, new { @class = "control-label col-md-4 col-lg-4" })
+                        @Html.LabelFor(model => model.Employee_tbl.Emp_Type, new { @class = "control-label col-md-4 col-lg-4" })
                         <div class="col-md-6 col-lg-6">
-                            @Html.TextBoxFor(model => model.SSN, new { @class = "form-control", placeholder = "(No--" })
+                            @Html.TextBoxFor(model => model.Employee_tbl.SSN, new { @class = "form-control", placeholder = "(No--" })
                         </div>
                     </div>
 
                     <div class="form-group">
 
-                        @Html.LabelFor(model => model.SSN, new { @class = "control-label col-md-4 col-lg-4" })
+                        @Html.LabelFor(model => model.Employee_tbl.SSN, new { @class = "control-label col-md-4 col-lg-4" })
 
                         <div class="col-md-6 col-lg-6">
-                            @Html.TextBoxFor(model => model.SSN, new { @class = "form-control", placeholder = "(No--" })
+                            @Html.TextBoxFor(model => model.Employee_tbl.SSN, new { @class = "form-control", placeholder = "(No--" })
                         </div>
 
                     </div>
 
                     <div class="form-group">
 
-                        @Html.LabelFor(model => model.SSN, new { @class = "control-label col-md-4 col-lg-4" })
+                        @Html.LabelFor(model => model.Employee_tbl.SSN, new { @class = "control-label col-md-4 col-lg-4" })
 
                         <div class="col-md-6 col-lg-6">
-                            @Html.TextBoxFor(model => model.SSN, new { @class = "form-control", placeholder = "(No--" })
+                            @Html.TextBoxFor(model => model.Employee_tbl.SSN, new { @class = "form-control", placeholder = "(No--" })
                         </div>
 
                     </div>
@@ -228,7 +229,7 @@
                         <input type="text" class="form-control" id="inputID" placeholder="Gloss Salary">
                     </div>
                 </div>
-             
+
 
                 <div class="hr">&nbsp;</div>
                 @*<div style="width:150px;height:2px;background-color:#000000;">&nbsp;</div>*@
@@ -237,11 +238,11 @@
 
 
 
-                <section class="col-md-4">
-                    <div class=" form-group">
-                        <label for="inputEmail" class="col-lg-4 control-label">ATTN Bonus</label>
-                        <div class=" col-md-7 col-lg-7">
-                            @{
+            <section class="col-md-4">
+                <div class=" form-group">
+                    <label for="inputEmail" class="col-lg-4 control-label">ATTN Bonus</label>
+                    <div class=" col-md-7 col-lg-7">
+                        @{
         List<SelectListItem> listItem3 = new List<SelectListItem>();
         listItem3.Add(new SelectListItem
      {
@@ -253,14 +254,14 @@
            Text = "Married",
            Value = "MARRIED"
        });
-                            }
-                            @Html.DropDownListFor(model => model.MaritalStatus, listItem3, "-Select-", new { @class = "form-control" })
-                        </div>
+                        }
+                        @Html.DropDownListFor(model => model.Employee_tbl.MaritalStatus, listItem3, "-Select-", new { @class = "form-control" })
                     </div>
-                    <div class="form-group">
-                        <label for="inputEmail" class="col-lg-4 control-label">Holiday</label>
-                        <div class=" col-md-7 col-lg-7">
-                            @{
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-4 control-label">Holiday</label>
+                    <div class=" col-md-7 col-lg-7">
+                        @{
         List<SelectListItem> listItem4 = new List<SelectListItem>();
         listItem4.Add(new SelectListItem
      {
@@ -272,14 +273,14 @@
            Text = "Married",
            Value = "MARRIED"
        });
-                            }
-                            @Html.DropDownListFor(model => model.MaritalStatus, listItem4, "-Select-", new { @class = "form-control" })
-                        </div>
+                        }
+                        @Html.DropDownListFor(model => model.Employee_tbl.MaritalStatus, listItem4, "-Select-", new { @class = "form-control" })
                     </div>
-                    <div class="form-group">
-                        <label for="inputEmail" class="col-md-4 col-lg-4 control-label">Emp Status</label>
-                        <div class="col-md-7 col-lg-7">
-                            @{
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-md-4 col-lg-4 control-label">Emp Status</label>
+                    <div class="col-md-7 col-lg-7">
+                        @{
         List<SelectListItem> listItem5 = new List<SelectListItem>();
         listItem5.Add(new SelectListItem
      {
@@ -291,15 +292,15 @@
            Text = "Married",
            Value = "MARRIED"
        });
-                            }
-                            @Html.DropDownListFor(model => model.MaritalStatus, listItem5, "-Select-", new { @class = "form-control" })
-                        </div>
+                        }
+                        @Html.DropDownListFor(model => model.Employee_tbl.MaritalStatus, listItem5, "-Select-", new { @class = "form-control" })
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="inputEmail" class="col-md-4 col-lg-4 control-label">Shift</label>
-                        <div class="col-md-7 col-lg-7">
-                            @{
+                <div class="form-group">
+                    <label for="inputEmail" class="col-md-4 col-lg-4 control-label">Shift</label>
+                    <div class="col-md-7 col-lg-7">
+                        @{
         List<SelectListItem> listItem6 = new List<SelectListItem>();
         listItem6.Add(new SelectListItem
      {
@@ -311,32 +312,32 @@
            Text = "Married",
            Value = "MARRIED"
        });
-                            }
-                            @Html.DropDownListFor(model => model.MaritalStatus, listItem6, "-Select-", new { @class = "form-control" })
-                        </div>
+                        }
+                        @Html.DropDownListFor(model => model.Employee_tbl.MaritalStatus, listItem6, "-Select-", new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    @Html.LabelFor(model => model.Employee_tbl.PFST, new { @class = "control-label col-md-4 col-lg-4 col-lg-3" })
+
+                    <div class="col-md-7 col-lg-7">
+                        <input id="Checkbox1" type="checkbox" />
+
+                        @*@Html.CheckBoxFor(m => m.SomeBooleanProperty, new { @checked = "checked" });*@
+
+                        @*@Html.CheckBoxFor(model => model.PFST, new { @class = "form-control", @checked = "checked" })*@
                     </div>
 
-                    <div class="form-group">
+                </div>
 
-                        @Html.LabelFor(model => model.PFST, new { @class = "control-label col-md-4 col-lg-4 col-lg-3" })
-
-                        <div class="col-md-7 col-lg-7">
-                            <input id="Checkbox1" type="checkbox" />
-
-                            @*@Html.CheckBoxFor(m => m.SomeBooleanProperty, new { @checked = "checked" });*@
-
-                            @*@Html.CheckBoxFor(model => model.PFST, new { @class = "form-control", @checked = "checked" })*@
-                        </div>
-
-                    </div>
-
-                    <div class="hr-1">&nbsp;</div>
+                <div class="hr-1">&nbsp;</div>
 
 
 
 
-                </section>
-            
+            </section>
+
 
 
 
@@ -345,37 +346,37 @@
 
                 <div class="form-group">
 
-                    @Html.LabelFor(model => model.SSN, new { @class = "control-label col-md-4 col-lg-4" })
+                    @Html.LabelFor(model => model.Employee_tbl.SSN, new { @class = "control-label col-md-4 col-lg-4" })
 
                     <div class="col-md-8 col-lg-8">
-                        @Html.TextBoxFor(model => model.SSN, new { @class = "form-control", placeholder = "(No--" })
+                        @Html.TextBoxFor(model => model.Employee_tbl.SSN, new { @class = "form-control", placeholder = "(No--" })
                     </div>
 
                 </div>
                 <div class="form-group">
 
-                    @Html.LabelFor(model => model.SSN, new { @class = "control-label col-md-4 col-lg-4" })
+                    @Html.LabelFor(model => model.Employee_tbl.SSN, new { @class = "control-label col-md-4 col-lg-4" })
 
                     <div class="col-md-8 col-lg-8">
-                        @Html.TextBoxFor(model => model.SSN, new { @class = "form-control", placeholder = "(No--" })
+                        @Html.TextBoxFor(model => model.Employee_tbl.SSN, new { @class = "form-control", placeholder = "(No--" })
                     </div>
 
                 </div>
                 <div class="form-group">
 
-                    @Html.LabelFor(model => model.SSN, new { @class = "control-label col-md-4 col-lg-4" })
+                    @Html.LabelFor(model => model.Employee_tbl.SSN, new { @class = "control-label col-md-4 col-lg-4" })
 
                     <div class="col-md-8 col-lg-8">
-                        @Html.TextBoxFor(model => model.SSN, new { @class = "form-control", placeholder = "(No--" })
+                        @Html.TextBoxFor(model => model.Employee_tbl.SSN, new { @class = "form-control", placeholder = "(No--" })
                     </div>
 
                 </div>
                 <div class="form-group">
 
-                    @Html.LabelFor(model => model.SSN, new { @class = "control-label col-md-4 col-lg-4" })
+                    @Html.LabelFor(model => model.Employee_tbl.SSN, new { @class = "control-label col-md-4 col-lg-4" })
 
                     <div class="col-md-8 col-lg-8">
-                        @Html.TextBoxFor(model => model.SSN, new { @class = "form-control", placeholder = "(No--" })
+                        @Html.TextBoxFor(model => model.Employee_tbl.SSN, new { @class = "form-control", placeholder = "(No--" })
                     </div>
 
                 </div>
@@ -438,6 +439,25 @@
                 <section class="col-md-6">
                     <input type="submit" class="btn btn-default" value="SAVE" />
                     <input type="submit" class="btn btn-default" value="Close" />
+                    <input type="button" class="btn btn-primary" value="ADD NEW" onclick="location.href='@Url.Action("Index", "Home")'" />
+                </section>
+                <section>
+                    <div class="form-group">
+
+                        @Html.LabelFor(model => model.Employee_Department.Dept_Desc, new { @class = "control-label col-md-4 col-lg-4" })
+
+                        <div class="col-md-8 col-lg-8">
+                            @Html.TextBoxFor(model => model.Employee_Department.Dept_Desc, new { @class = "form-control", placeholder = "(No--" })
+                          
+
+                            @*@Html.DropDownList("SlNo", (IEnumerable<SelectListItem>)ViewData["Department"], "-Select-", new { @class = "form-control col-lg-4 col-md-4" })
+
+                            @Html.TextBoxFor("SlNo", (IEnumerable<SelectListItem>)ViewData["Department"],"s", new { @class = "form-control", placeholder = "(No--" })
+                             @Html.TextBoxFor(model => model.SSN., new { @class = "form-control", placeholder = "(No--" })*@
+                        </div>
+
+                    </div>
+
                 </section>
             </section>
 

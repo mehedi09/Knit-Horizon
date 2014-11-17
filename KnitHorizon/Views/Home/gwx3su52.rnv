@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<section>
+    <h1> Check Book Design</h1>
+</section>
+<section class="row">
+    <div class="col-md-offset-2 col-md-10 my-div">
+        <div class="ab-bank">
+            AB BanK
+        </div>
+    </div>
+    @*<hr id="hr-one" style="clear:both" />*@
+</section>
